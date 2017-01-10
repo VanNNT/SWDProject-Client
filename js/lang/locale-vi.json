@@ -1,0 +1,23 @@
+{
+  "toolbar": {
+    "name": "WebSiteName",
+    "movie": "PHIM",
+    "showtime": "LỊCH CHIẾU",
+    "theater": "RẠP/GIÁ VÉ",
+    "sale": "SALE & SERVICE",
+    "contact": "LIÊN HỆ"
+  },
+  "button":{
+    "login": " ĐăngNhập",
+    "buy": "Mua vé"
+  },
+  "label":{
+    "now": "Phim Đang Chiếu",
+    "soon": "Phim Sắp Chiếu",
+    "username": "UserName",
+    "password": "Password"
+  },
+  "message":{
+    "required": "Trường bắt buộc."
+  }
+}

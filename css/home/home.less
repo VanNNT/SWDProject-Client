@@ -1,0 +1,72 @@
+.home-wrapper{
+  .film-content {
+    padding-top: 20px;
+    background-color: @color_white;
+  }
+  .film-group {
+    .film-item {
+      padding: 0px 20px 20px 20px;
+      background-color: white;
+      .film-intro {
+        position: relative;
+        margin: 2%;
+        overflow: hidden;
+        width: 265px;
+        height: 300px;
+        -webkit-box-shadow: 2px 3px 6px rgba(0,0,0,.5);
+        -moz-box-shadow: 2px 3px 6px rgba(0,0,0,.5);
+        box-shadow: 2px 3px 6px rgba(0,0,0,.5);
+        img {
+          height: 100%;
+          width: 100%;
+
+          -moz-transition: all 1s;
+          -webkit-transition: all 1s;
+          transition: all 1s;
+        }
+        &:hover img {
+          -moz-transform: scale(1.2);
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+        .buy{
+          position: absolute;
+          bottom: 7px;
+          right: 14px;
+          background-color: #ff7727;
+          color: white;
+          text-transform: uppercase;
+          padding-left: 10px;
+          padding-right: 10px;
+          border-radius: 4px;
+          font-weight: 700;
+          &:hover{
+            background-color: #ffab06;
+            color: black;
+          }
+        }
+      }
+      .film-title {
+        color: @color_pramary;
+        font-size: 16px;
+        padding: 2px 0 0;
+        white-space: nowrap;
+        display: block;
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 265px;
+        margin-top: 5px;
+        overflow: hidden;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .film-description {
+        width: 300px;
+        padding-left: 16px;
+      }
+    }
+  }
+  md-tabs-canvas{
+    .background-white;
+  }
+}

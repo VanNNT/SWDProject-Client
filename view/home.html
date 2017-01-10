@@ -1,0 +1,36 @@
+<div class="home-wrapper">
+    <div style="height: 400px; background-color: #ff7727"></div>
+    <div ng-cloak layout-align="center center" layout="row" class="background-white">
+        <div style="width: 50%">
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="{{ 'label.now' | translate }}">
+                        <md-content class="md-padding film-content"flex>
+                            <div class="film-group" layout-wrap layout="row" layout-align="center center">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilm |limitTo:4">
+                                    <div  class="film-intro">
+                                        <a href="#!/about"> <img src="{{film.photo}}"/></a>
+                                       <a class="buy cursor-pointer" href="#!/about" translate="button.buy"></a>
+                                    </div>
+                                    <div class="film-title">{{film.title}}</div>
+                                </div>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="{{ 'label.soon' | translate }}">
+                        <md-content class="md-padding film-content"flex>
+                            <div class="film-group" layout-wrap layout="row" layout-align="center center">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilm">
+                                    <div  class="film-intro">
+                                        <img src="{{film.photo}}"/>
+                                    </div>
+                                    <div class="film-title">{{film.title}}</div>
+                                </div>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+    </div>
+</div>

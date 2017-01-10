@@ -1,0 +1,44 @@
+<div ng-controller="LoginController" class="login-wrapper" flex layout="column">
+    <md-toolbar layout="row">
+        <div flex="20" layout="row" layout-align="start center">
+            <md-button class="md-icon-button " aria-label="More" ng-click="closePopUp()">
+                <img class="close-btn" src="img/button_close.png"/>
+            </md-button>
+        </div>
+        <div layout="row" layout-align="center center" flex>
+            <img class="logo" src="img/logo_grey.png"/>
+        </div>
+        <div flex="20"></div>
+        <span></span>
+    </md-toolbar>
+    <form name="loginForm" layout="column" flex>
+        <div class="login-content" layout="column" flex>
+            <md-input-container class="mag-b-0">
+                <label translate="label.username"></label>
+                <input type="text"
+                       ng-model="username"
+                       name="username"
+                       required/>
+                <div ng-messages="loginForm.username.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="">
+                <label translate="label.password"></label>
+                <input type="password"
+                       ng-model="password"
+                       name="password"
+                       required/>
+                <div ng-messages="loginForm.password.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-button class="md-raised md-primary mag-t-15 login-btn"
+                       ng-click="Login()" flex>
+                <span translate="button.login"></span>
+            </md-button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,39 @@
+.home-wrapper{
+  &.movie-wrapper{
+    .film-content {
+      background-color: @color_pramary;
+    }
+    .film-group {
+      .film-item {
+        background-color: @color_pramary;
+        .film-intro {
+        }
+        .film-title {
+          color: @color_white;
+          font-size: 16px;
+          padding: 2px 0 0;
+          white-space: nowrap;
+          display: block;
+          text-overflow: ellipsis;
+          width: 100%;
+          max-width: 265px;
+          margin-top: 5px;
+          overflow: hidden;
+          text-align: center;
+          text-transform: uppercase;
+        }
+        .film-description {
+          width: 300px;
+          padding-left: 16px;
+        }
+      }
+    }
+    md-tabs-canvas{
+      .background-primary;
+    }
+    md-tabs .md-tab.md-active{
+      color: white;
+      font-weight: 700;
+    }
+  }
+}

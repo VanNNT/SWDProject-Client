@@ -1,0 +1,23 @@
+{
+  "toolbar": {
+    "name": "WebSiteName",
+    "movie": "MOVIES",
+    "showtime": "SHOWTIMES",
+    "theater": "THEATER/TICKET PRICES",
+    "sale": "SALE & SERVICE",
+    "contact": "CONTACT"
+  },
+  "button":{
+    "login": " Login",
+    "buy": "Buy Ticket"
+  },
+  "label":{
+    "now": "Now Showing",
+    "soon": "Coming soon",
+    "username": "UserName",
+    "password": "Password"
+  },
+  "message":{
+    "required": "This is required."
+  }
+}
