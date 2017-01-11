@@ -15,7 +15,8 @@
     "now": "Now Showing",
     "soon": "Coming soon",
     "username": "UserName",
-    "password": "Password"
+    "password": "Password",
+    "seemore": "See More"
   },
   "message":{
     "required": "This is required."

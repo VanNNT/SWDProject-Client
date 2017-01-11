@@ -1,7 +1,7 @@
 /**
  * Created by Van on 06/01/2017.
  */
-SWDApp.controller('MainController', function($scope, $mdDialog, $mdMedia,$translate,$scope) {
+SWDApp.controller('MainController', function($scope, $mdDialog, $mdMedia,$translate,$rootScope) {
     $scope.lang = LANG_EN;
     $scope.showLoginFrom = function (ev) {
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
@@ -75,4 +75,13 @@ SWDApp.controller('MainController', function($scope, $mdDialog, $mdMedia,$transl
             $scope.lang = LANG_VI;
         }
     };
+
+    $scope.go = function (value) {
+        if(value ==1){
+            $rootScope.selectIndex=1;
+        }else{
+            $rootScope.selectIndex=0;
+        }
+
+    }
 });

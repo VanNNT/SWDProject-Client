@@ -1,11 +1,11 @@
 <div class="home-wrapper">
     <div style="height: 400px; background-color: #ff7727"></div>
     <div ng-cloak layout-align="center center" layout="row" class="background-white">
-        <div style="width: 50%">
+        <div class="tab-width">
             <md-content>
                 <md-tabs md-dynamic-height md-border-bottom>
                     <md-tab label="{{ 'label.now' | translate }}">
-                        <md-content class="md-padding film-content"flex>
+                        <md-content class="md-padding film-content"flex layout="column" layout-align="center center">
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
                                 <div class="film-item" layout="column" ng-repeat="film in listFilm |limitTo:4">
                                     <div  class="film-intro">
@@ -15,10 +15,13 @@
                                     <div class="film-title">{{film.title}}</div>
                                 </div>
                             </div>
+                            <div class="view-more cursor-pointer">
+                                <a href="#!/movies" ng-click="go(0)" translate="label.seemore"></a>
+                            </div>
                         </md-content>
                     </md-tab>
                     <md-tab label="{{ 'label.soon' | translate }}">
-                        <md-content class="md-padding film-content"flex>
+                        <md-content class="md-padding film-content"flex layout="column" layout-align="center center">
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
                                 <div class="film-item" layout="column" ng-repeat="film in listFilm">
                                     <div  class="film-intro">
@@ -26,6 +29,9 @@
                                     </div>
                                     <div class="film-title">{{film.title}}</div>
                                 </div>
+                            </div>
+                            <div class="view-more cursor-pointer">
+                                <a href="#!/movies" ng-click="go(1)" translate="label.seemore"></a>
                             </div>
                         </md-content>
                     </md-tab>

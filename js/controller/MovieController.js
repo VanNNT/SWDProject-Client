@@ -1,7 +1,24 @@
 /**
  * Created by Van on 10/01/2017.
  */
-SWDApp.controller('MovieController', function($scope,$mdDialog) {
+SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope) {
+
+
+    initController();
+    function initController(){
+        initView();
+        initData();
+    }
+    function initView(){
+        if(!$rootScope.selectIndex){
+            $rootScope.selectIndex = 0;
+        }
+    }
+
+    function initData(){
+
+    }
+
     $scope.listFilm = [
         {
             id: 0,

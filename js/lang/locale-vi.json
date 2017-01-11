@@ -15,7 +15,8 @@
     "now": "Phim Đang Chiếu",
     "soon": "Phim Sắp Chiếu",
     "username": "UserName",
-    "password": "Password"
+    "password": "Password",
+    "seemore": "Xem Thêm"
   },
   "message":{
     "required": "Trường bắt buộc."

@@ -2,6 +2,38 @@
   .film-content {
     padding-top: 20px;
     background-color: @color_white;
+    .view-more{
+      color: #ff7727;
+      font-size: 14px;
+      position: relative;
+      display: inline-block;
+      margin: 0 0 20px;
+      &::before{
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 5px 35px 0 35px;
+        border-color: @color_primary transparent transparent transparent;
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        margin-left: -35px;
+      }
+      &:hover{
+        color: #ff6600;
+        letter-spacing: 1px;
+      }
+      a{
+        color: @color_primary !important;
+        &:hover{
+          text-decoration: none !important;
+        }
+      }
+    }
+    .view-more:hover::before{
+      bottom: -10px;
+    }
   }
   .film-group {
     .film-item {
@@ -47,7 +79,7 @@
         }
       }
       .film-title {
-        color: @color_pramary;
+        color: @color_primary;
         font-size: 16px;
         padding: 2px 0 0;
         white-space: nowrap;
@@ -68,5 +100,15 @@
   }
   md-tabs-canvas{
     .background-white;
+  }
+  md-pagination-wrapper{
+    width: 100% !important;
+  }
+  md-tabs .md-tab.md-active{
+    color: @color_primary;
+    font-weight: 600;
+  }
+  .tab-width{
+    width: 50%;
   }
 }
