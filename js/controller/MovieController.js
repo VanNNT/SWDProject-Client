@@ -10,6 +10,7 @@ SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope) {
         initData();
     }
     function initView(){
+        // $rootScope.view =
         if(!$rootScope.selectIndex){
             $rootScope.selectIndex = 0;
         }

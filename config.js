@@ -17,6 +17,10 @@ SWDApp.config(function($routeProvider,$translateProvider) {
             templateUrl : 'view/movie.html',
             controller  : 'MovieController'
         })
+        .when('/sale-service',{
+            templateUrl : 'view/sale-service.html',
+            controller  : 'SaleController'
+        })
         .otherwise({
             redirectTo: '/'
         });
