@@ -7,23 +7,20 @@
       .film-item {
         background-color: @color_primary;
         max-width: 244px;
+        box-sizing: content-box;
         .film-intro {
           width: 224px;
           height: 300px;
         }
-        .film-title {
+        .film-title{
           color: @color_white;
           font-size: 16px;
           padding: 2px 0 0;
-          white-space: nowrap;
           display: block;
-          text-overflow: ellipsis;
           width: 100%;
-          max-width: 265px;
-          margin-top: 5px;
-          overflow: hidden;
           text-align: center;
           text-transform: uppercase;
+
         }
         .film-description {
           width: 300px;
@@ -34,13 +31,11 @@
     md-tabs-canvas{
       .background-primary;
     }
-    md-tabs .md-tab.md-active{
-      color: white;
-      font-weight: 700;
-      font-size: large;
+    md-next-button, md-prev-button{
+      background-color: @color_primary;
     }
-    md-pagination-wrapper{
-      width: 100% !important;
+    .tab-width{
+      width: 80%;
     }
   }
 }

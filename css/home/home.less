@@ -86,7 +86,7 @@
         display: block;
         text-overflow: ellipsis;
         width: 100%;
-        max-width: 224px;
+        max-width: 235px;
         margin-top: 5px;
         overflow: hidden;
         text-align: center;
@@ -101,12 +101,12 @@
   md-tabs-canvas{
     .background-white;
   }
-  md-pagination-wrapper{
-    width: 100% !important;
-  }
   md-tabs .md-tab.md-active{
-    color: @color_primary;
+    color: @color_primary !important;
     font-weight: 600;
+  }
+  md-next-button, md-prev-button{
+    background-color: @color_white;
   }
   .tab-width{
     width: 50%;
