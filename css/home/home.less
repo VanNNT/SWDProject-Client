@@ -112,23 +112,51 @@
     width: 50%;
   }
 }
-div#slide_show {
-    width: 100%;
+
+
+
+div.slide_show {
+    width: 80%;
     position: relative;
     height: 400px;
-}
 
-div#slide_show img {
-    width: 100%;
+  .silde-item {
     height: 400px;
+    width: 100%;
     position: absolute;
-//    left: 100px;
     top: 0;
 
     animation-name: sample;
-    animation-duration: 12s;
+    animation-duration: 24s;
     animation-iteration-count: infinite;
+    img{
+      height: 400px;
+      width: 100%;
+    }
+    .caption{
+      position: absolute;
+      right: 0;
+      height: 400px;
+      width: 345px;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+      h2{
+        font-size: 30px;
+        line-height: 1.1;
+        font-style: italic;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        padding-top: 2px;
+        color: @color_white;
+      }
+      span{
+        color: @color_white;
+      }
+    }
+  }
 }
+
 @keyframes sample {
     0% {
         opacity: 1;
@@ -149,61 +177,24 @@ div#slide_show img {
         opacity: 1;
     }
 }
-div img:nth-of-type(1) {
-    animation-delay: 9s;
+div .silde-item:nth-of-type(1) {
+    animation-delay: 18s;
 }
 
-div img:nth-of-type(2) {
+div .silde-item:nth-of-type(2) {
+    animation-delay: 12s;
+}
+
+div .silde-item:nth-of-type(3) {
     animation-delay: 6s;
 }
 
-div img:nth-of-type(3) {
-    animation-delay: 3s;
-}
-
-div img:nth-of-type(4) {
+div .silde-item:nth-of-type(4) {
     animation-delay: 0s;
 }
-footer {
-    display: block;
-}
-#contact_info {
-    width: 100%;
-    height: 50px;
-    background-color: white;
-}
-#info_wrapper {
-    width: 90%;
-    height: 100%;
-    margin: auto;
-    line-height: 50px;
-}
 
-#left_info {
-    float: left;
-}
 
-#info_wrapper ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 0.75em;
-}
 
-#info_wrapper ul li a {
-    color: darkgrey;
-    transition: all 0.5s;
-}
 
-#info_wrapper ul li a:hover {
-    color: aqua;
-    transition: all 0.5s;
-}
 
-#right_info {
-    float: right;
-}
 
-#right_info ul li a i {
-    font-size: 2em !important;
-}
