@@ -11,7 +11,7 @@
     <title>Cinema</title>
 </head>
 <body ng-cloak ng-app="SWDApp" class="background-primary">
-<nav class="navbar navbar-inverse" ng-controller="MainController" nav-dropdown>
+<nav class="navbar navbar-inverse" ng-controller="HomeController" nav-dropdown style="z-index: 1;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -23,11 +23,11 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li ng-class="{'active': true}"><a href="#!/movies" translate="toolbar.movie"></a></li>
-                <li><a href="#" translate="toolbar.showtime"></a></li>
-                <li><a href="#" translate="toolbar.theater"></a></li>
-                <li><a href="#!/sale-service" translate="toolbar.sale"></a></li>
-                <li><a href="#" translate="toolbar.contact"></a></li>
+                <li ng-class="{'active': $root.view==1}"><a href="#!/movies" translate="toolbar.movie"></a></li>
+                <li ng-class="{'active': $root.view==2}"><a href="#" translate="toolbar.showtime"></a></li>
+                <li ng-class="{'active': $root.view==5}"><a href="#" translate="toolbar.theater"></a></li>
+                <li ng-class="{'active': $root.view==3}"><a href="#!/sale-service" translate="toolbar.sale"></a></li>
+                <li ng-class="{'active': $root.view==4}"><a href="#" translate="toolbar.contact"></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right show-on-lg">
                 <li><a ng-click="showLoginFrom()"><span class="glyphicon glyphicon-log-in cursor-pointer"
@@ -58,12 +58,14 @@
 <script type="text/javascript" src="config.js"></script>
 <script type="text/javascript" src="js/Constant.js"></script>
 
+<!--Directive-->
 <script type="text/javascript" src="js/directive/navDropdownDirective.js"></script>
 
 <!--Controller-->
-<script type="text/javascript" src="js/controller/MainController.js"></script>
+<script type="text/javascript" src="js/controller/HomeController.js"></script>
 <script type="text/javascript" src="js/controller/LoginController.js"></script>
 <script type="text/javascript" src="js/controller/MovieController.js"></script>
+<script type="text/javascript" src="js/controller/SaleController.js"></script>
 
 
 </body>

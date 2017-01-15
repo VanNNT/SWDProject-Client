@@ -1,7 +1,9 @@
 /**
  * Created by Van on 06/01/2017.
  */
-SWDApp.controller('MainController', function($scope, $mdDialog, $mdMedia,$translate,$rootScope) {
+SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$translate,$rootScope) {
+
+    $rootScope.view = 0;
     $scope.lang = LANG_EN;
     $scope.showLoginFrom = function (ev) {
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');

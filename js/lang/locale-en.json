@@ -16,7 +16,19 @@
     "soon": "Coming soon",
     "username": "UserName",
     "password": "Password",
-    "seemore": "See More"
+    "seemore": "See More",
+    "sale": "Sale & Service"
+  },
+  "sale":{
+    "promotion": "advertising services",
+    "ticketVoucher": "ticket voucher",
+    "room": "conference room rental",
+    "gift": "gift voucher",
+    "typeTicket": "group tickets",
+    "contact": "Contact the service:",
+    "time": "From 2nd to 6th office hours",
+    "phone": "Phone:",
+    "address": "Address:"
   },
   "message":{
     "required": "This is required."

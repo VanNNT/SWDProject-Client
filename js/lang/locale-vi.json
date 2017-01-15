@@ -16,7 +16,19 @@
     "soon": "Phim Sắp Chiếu",
     "username": "UserName",
     "password": "Password",
-    "seemore": "Xem Thêm"
+    "seemore": "Xem Thêm",
+    "sale": "Sale & Service"
+  },
+  "sale":{
+    "promotion": "Dịch vụ quảng cáo",
+    "ticketVoucher": "ticket voucher",
+    "room": "Cho thuê phòng hội nghị",
+    "gift": "gift voucher",
+    "typeTicket": "Vé Nhóm",
+    "contact": "Liên hệ đặt dịch vụ:",
+    "time": "Từ thứ 2 đến thứ 6 giờ hành chính",
+    "phone": "Điện thoại:",
+    "address": "Địa chỉ:"
   },
   "message":{
     "required": "Trường bắt buộc."
