@@ -1,13 +1,14 @@
-@media (max-width: 630px) {
+@media (max-width: @screen-sm) {
   .home-wrapper{
     .tab-width{
       width: 100%;
     }
     .film-group {
       .film-item {
+        padding: 0px 5px 20px 5px;
         .film-intro {
           width: 160px;
-          height: 222px;
+          height: 250px;
           .buy{
             &:hover{
               background-color: #ffab06;
@@ -16,11 +17,31 @@
           }
         }
         .film-title {
-          max-width: 162px;
+          max-width: 160px;
         }
         .film-description {
         }
       }
     }
+    .md-tab{
+      font-size: 20px;
+    }
+  }
+
+  div.slide_show {
+    width: 100%;
+  }
+
+  footer {
+    display: block;
+    #contact_info {
+      height: 190px;
+    }
+  }
+}
+
+@media (max-width: 411px){
+  .md-tab{
+    font-size: 14px !important;
   }
 }

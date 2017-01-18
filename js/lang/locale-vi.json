@@ -16,7 +16,31 @@
     "soon": "Phim Sắp Chiếu",
     "username": "UserName",
     "password": "Password",
-    "seemore": "Xem Thêm"
+    "seemore": "Xem Thêm",
+    "sale": "Sale & Service"
+  },
+  "sale":{
+    "promotion": "Dịch vụ quảng cáo",
+    "ticketVoucher": "ticket voucher",
+    "room": "Cho thuê phòng hội nghị",
+    "gift": "gift voucher",
+    "typeTicket": "Vé Nhóm",
+    "contact": "Liên hệ đặt dịch vụ:",
+    "time": "Từ thứ 2 đến thứ 6 giờ hành chính",
+    "phone": "Điện thoại:",
+    "address": "Địa chỉ:"
+  },
+  "slide":{
+    "packet": "Gói Phim Năm Mới",
+    "packet1": "Đón năm mới cùng các gói phim hấp dẫn",
+    "combo": "Combo Độc-Lạ",
+    "combo1": "Nhận ngay combo khi đến với Cinema",
+    "ticket": "Đón xuân rộn ràng củng ngàn vé tặng",
+    "ticket1": "Rạp phim sẽ tổ chức một chương trình xem phim miễn phí lớn nhất từ trước đến nay.",
+    "lixi": "Ngàn bao lì-xi đón xuân như ý",
+    "lixi1": "Rạp phim tặng ngay bộ bao lì xì cực dễ thương để khởi đầu một năm đầy may mắn các Stars nhé.",
+    "type": "Xem phim theo đối tượng",
+    "type1": "Ưu đãi hấp dẫn cho sinh viên và học sinh. Go go!!!"
   },
   "message":{
     "required": "Trường bắt buộc."

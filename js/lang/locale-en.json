@@ -16,7 +16,31 @@
     "soon": "Coming soon",
     "username": "UserName",
     "password": "Password",
-    "seemore": "See More"
+    "seemore": "See More",
+    "sale": "Sale & Service"
+  },
+  "sale":{
+    "promotion": "advertising services",
+    "ticketVoucher": "ticket voucher",
+    "room": "conference room rental",
+    "gift": "gift voucher",
+    "typeTicket": "group tickets",
+    "contact": "Contact the service:",
+    "time": "From 2nd to 6th office hours",
+    "phone": "Phone:",
+    "address": "Address:"
+  },
+  "slide":{
+    "packet": "Package Movies of New Year",
+    "packet1": "The new year with attractive film packages",
+    "combo": "Single-Strange Combo",
+    "combo1": "Get the combo coming to Cinema",
+    "ticket": "Boisterous welcome spring with thousands of tickets donated",
+    "ticket1": "Cinema will host a free program greatest movie ever.",
+    "lixi": "Thousand packets-cylinder as standard welcome spring",
+    "lixi1": "Theaters immediately donated the ultra cute red envelopes to start a year of good luck the Stars offline.",
+    "type": "View movie by audience",
+    "type1": "Attractive incentives for students and pupils. Go go !!!"
   },
   "message":{
     "required": "This is required."

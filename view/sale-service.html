@@ -1,40 +1,42 @@
 <div class="home-wrapper movie-wrapper">
     <div ng-cloak layout-align="center center" layout="row" class="background-primary">
-        <div style="width: 80%">
+        <div class="tab-width">
             <md-content>
                 <md-tabs md-dynamic-height md-border-bottom>
-                    <md-tab label="{{ 'label.now' | translate }}">
+                    <md-tab label="{{ 'label.sale' | translate }}">
                         <md-content class="md-padding film-content" flex>
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
-                                <div class="film-item" layout="column">
+                                <div class="film-item" layout="column" ng-repeat="sale in listSale">
                                     <div class="film-intro">
-                                        <img src="https://www.galaxycine.vn/media/files/upload/promotion/sale_n_service/ticket_voucher.jpg"/>
+                                        <img src="{{sale.photo}}"/>
                                     </div>
-                                    <div class="film-title">DỊCH VỤ QUẢNG CÁO</div>
-                                </div>
-                                <div class="film-item" layout="column">
-                                    <div class="film-intro">
-                                        <img src="https://www.galaxycine.vn/media/files/upload/promotion/sale_n_service/dvqc.jpg"/>
+                                    <div class="film-title">
+                                        {{sale.title}}
                                     </div>
-                                    <div class="film-title">DỊCH VỤ QUẢNG CÁO</div>
-                                </div>
-                                <div class="film-item" layout="column">
-                                    <div class="film-intro">
-                                        <img src="https://www.galaxycine.vn/media/files/upload/promotion/Giftvoucher(2).jpg"/>
-                                    </div>
-                                    <div class="film-title">DỊCH VỤ QUẢNG CÁO</div>
-                                </div>
-                                <div class="film-item" layout="column">
-                                    <div class="film-intro">
-                                        <img src="https://www.galaxycine.vn/media/files/upload/promotion/sale_n_service/phong_hoi_nghi_200.jpg"/>
-                                    </div>
-                                    <div class="film-title">DỊCH VỤ QUẢNG CÁO</div>
                                 </div>
                             </div>
                         </md-content>
                     </md-tab>
                 </md-tabs>
             </md-content>
+            <div style="padding: 0px 5px 0px 8px;">
+                <div style="font-weight: bolder; font-size: 20px" translate="sale.contact" class="pad-b-10"></div>
+                <div layout="column" style="color: white">
+                    <div translate="sale.time"  class="pad-b-10"></div>
+                    <div layout="row" class="pad-b-10">
+                        <span style="font-weight: bolder" translate="sale.phone"></span>
+                        <span style="padding-left: 5px"> 3933 3303 (115) - 090.774.8003 (Mr Tín) </span>
+                    </div>
+                    <div layout="row"  class="pad-b-10">
+                        <span style="font-weight: bolder">Email: </span>
+                        <span  style="padding-left: 5px"> vannnt2112@gmail.com</span>
+                    </div>
+                    <div layout="row"  class="pad-b-10">
+                        <span style="font-weight: bolder" translate="sale.address"></span>
+                        <span  style="padding-left: 5px"> Tầng 3, 63A Võ Văn Tần, P.6, Q.3, TP.HCM</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

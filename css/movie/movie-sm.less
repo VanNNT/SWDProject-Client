@@ -1,11 +1,11 @@
-@media (max-width: 630px) {
+@media (max-width: @screen-sm) {
   .home-wrapper{
     &.movie-wrapper{
       .film-group {
         .film-item {
           .film-intro {
             width: 160px;
-            height: 222px;
+            height: 250px;
           }
           .film-title {
             max-width: 160px;
@@ -13,6 +13,12 @@
           .film-description {
           }
         }
+      }
+      md-tabs .md-tab.md-active{
+        color: white !important;
+      }
+      .tab-width{
+        width: 100%;
       }
     }
   }

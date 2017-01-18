@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
     <link rel="stylesheet/less" type="text/css" href="css/styles.less">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="lib/angular-material.min.css">
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
     <title>Cinema</title>
 </head>
 <body ng-cloak ng-app="SWDApp" class="background-primary">
-<nav class="navbar navbar-inverse" ng-controller="MainController" nav-dropdown>
+<nav class="navbar navbar-inverse" ng-controller="HomeController" nav-dropdown style="z-index: 1;">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -24,13 +23,13 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li ng-class="{'active': true}"><a href="#!/movies" translate="toolbar.movie"></a></li>
-                <li><a href="#" translate="toolbar.showtime"></a></li>
-                <li><a href="#" translate="toolbar.theater"></a></li>
-                <li><a href="#!/sale-service" translate="toolbar.sale"></a></li>
-                <li><a href="#" translate="toolbar.contact"></a></li>
+                <li ng-class="{'active': $root.view==1}"><a href="#!/movies" translate="toolbar.movie"></a></li>
+                <li ng-class="{'active': $root.view==2}"><a href="#" translate="toolbar.showtime"></a></li>
+                <li ng-class="{'active': $root.view==5}"><a href="#" translate="toolbar.theater"></a></li>
+                <li ng-class="{'active': $root.view==3}"><a href="#!/sale-service" translate="toolbar.sale"></a></li>
+                <li ng-class="{'active': $root.view==4}"><a href="#" translate="toolbar.contact"></a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right show-on-lg">
+            <ul class="nav navbar-nav navbar-right show-on-sm">
                 <li><a ng-click="showLoginFrom()"><span class="glyphicon glyphicon-log-in cursor-pointer"
                                                         translate="button.login"></span></a></li>
             </ul>
@@ -44,38 +43,40 @@
 <div id="main">
     <div ng-view=""></div>
 </div>
-    <footer>
-        <div id="contact_info">
-            <div id="info_wrapper">
-                <div id="left_info">
-                    <ul>
-                        <li><a href="/">&copy; 2016 Trần Nguyên Bảo Duy, No SE61589</a></li>
-                        <li><a href="/">Liên Hệ</a></li>
-                        <li><a href="/">SITE USE</a></li>
-                        <li><a href="/">TERMS</a></li>
-                        <li><a href="/">FAQS</a></li>
-                        <li><a href="/">CONTACT</a></li>
-                        <li><a href="/">SITE BY DuyTNB</a></li>
-                    </ul>
-                </div>
-                <div id="right_info">
-                    <ul>
-                        <li><a href="/">SOCIAL HUB</a></li>
-                        <li>
-                            <a href="/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                        </li>
-                        <li><a href="/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="/"><i class="fa fa-google-wallet" aria-hidden="true"></i></a></li>
-                        <li><a href="/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                        <li><a href="/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
+<footer>
+    <div id="contact_info">
+        <div id="info_wrapper">
+            <div id="left_info">
+                <ul>
+                    <li><a href="/">&copy; 2016 Trần Nguyên Bảo Duy, No SE61589</a></li>
+                    <li><a href="/">Liên Hệ</a></li>
+                    <li><a href="/">SITE USE</a></li>
+                    <li><a href="/">TERMS</a></li>
+                    <li><a href="/">FAQS</a></li>
+                    <li><a href="/">CONTACT</a></li>
+                    <li><a href="/">SITE BY DuyTNB</a></li>
+                </ul>
             </div>
-
+            <div id="right_info">
+                <ul>
+                    <li><a href="/">SOCIAL HUB</a></li>
+                    <li>
+                        <a href="/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="/"><i class="fa fa-google-wallet" aria-hidden="true"></i></a></li>
+                    <li><a href="/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
         </div>
-    </footer>
+
+    </div>
+</footer>
 
 <!--Lib-->
+<script src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
 <script src="lib/less.js" type="text/javascript"></script>
 <script src="lib/angular.min.js"></script>
 <script src="lib/angular-route.js"></script>
@@ -84,17 +85,21 @@
 <script src="lib/angular-messages.min.js"></script>
 <script src="lib/angular-material.min.js"></script>
 
+<script type="text/javascript" src="lib/cordova.js"></script>
+
 <script src="app.js"></script>
-<script src="lib/angular-translate.js"></script>
 <script type="text/javascript" src="config.js"></script>
+<script src="lib/angular-translate.js"></script>
 <script type="text/javascript" src="js/Constant.js"></script>
 
+<!--Directive-->
 <script type="text/javascript" src="js/directive/navDropdownDirective.js"></script>
 
 <!--Controller-->
-<script type="text/javascript" src="js/controller/MainController.js"></script>
+<script type="text/javascript" src="js/controller/HomeController.js"></script>
 <script type="text/javascript" src="js/controller/LoginController.js"></script>
 <script type="text/javascript" src="js/controller/MovieController.js"></script>
+<script type="text/javascript" src="js/controller/SaleController.js"></script>
 
 
 </body>
