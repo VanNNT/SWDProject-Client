@@ -4,6 +4,7 @@
 SWDApp.config(function($routeProvider,$translateProvider) {
     $routeProvider
 
+
     // route for the home page
         .when('/', {
             templateUrl : 'view/home.html',
