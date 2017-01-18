@@ -4,6 +4,7 @@
 SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$translate,$rootScope) {
 
     $rootScope.view = 0;
+    $rootScope.selectIndex=0;
     $scope.lang = LANG_EN;
     $scope.showLoginFrom = function (ev) {
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
