@@ -1,5 +1,62 @@
-<div class="jumbotron text-center">
-    <h1>About Page</h1>
+<div class="info-wrapper">
+    <div ng-cloak layout-align="center center" layout="row" class="background-primary">
+        <div class="tab-width">
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="{{ 'label.info' | translate }}">
+                        <md-content class="md-padding info-content" flex >
+                            <div layout="row" layout-wrap="" layout-align-xs="center center" class="info-group">
+                                <img src="{{item.photo}}"/>
+                                <div layout="column" class="info" flex>
+                                    <div class="movie-title">{{item.title}}</div>
+                                    <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.title)">trailer</md-button>
+                                    <div layout="column">
+                                        <div layout="row">
+                                            <span>Date:</span>
+                                            <div class="movie-date">{{item.date}}</div>
+                                        </div>
+                                        <div layout="row">
+                                            <span>Type</span>
+                                            <div class="movie-type">{{item.type}}</div>
+                                        </div>
+                                        <div layout="row">
+                                            <span>Actor</span>
+                                            <div class="movie-actor">{{item.actor}}</div>
+                                        </div>
+                                        <div layout="row">
+                                            <span>Time:</span>
+                                            <div class="movie-time">{{item.time}}</div>
+                                        </div>
+                                        <div>
+                                            <span>Description: </span>
+                                            <div class="movie-des">{{item.des}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-    <p>{{ message }}</p>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+            <div style="padding: 0px 5px 0px 8px;">
+                <div style="font-weight: bolder; font-size: 20px" translate="sale.contact" class="pad-b-10"></div>
+                <div layout="column" style="color: white">
+                    <div translate="sale.time"  class="pad-b-10"></div>
+                    <div layout="row" class="pad-b-10">
+                        <span style="font-weight: bolder" translate="sale.phone"></span>
+                        <span style="padding-left: 5px"> 3933 3303 (115) - 090.774.8003 (Mr Tín) </span>
+                    </div>
+                    <div layout="row"  class="pad-b-10">
+                        <span style="font-weight: bolder">Email: </span>
+                        <span  style="padding-left: 5px"> vannnt2112@gmail.com</span>
+                    </div>
+                    <div layout="row"  class="pad-b-10">
+                        <span style="font-weight: bolder" translate="sale.address"></span>
+                        <span  style="padding-left: 5px"> Tầng 3, 63A Võ Văn Tần, P.6, Q.3, TP.HCM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

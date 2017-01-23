@@ -17,7 +17,8 @@
     "username": "UserName",
     "password": "Password",
     "seemore": "Xem Thêm",
-    "sale": "Sale & Service"
+    "sale": "Sale & Service",
+    "info": "Thông tin phim"
   },
   "sale":{
     "promotion": "Dịch vụ quảng cáo",
