@@ -3,8 +3,6 @@
  */
 SWDApp.config(function($routeProvider,$translateProvider) {
     $routeProvider
-
-
     // route for the home page
         .when('/', {
             templateUrl : 'view/home.html',
@@ -12,7 +10,7 @@ SWDApp.config(function($routeProvider,$translateProvider) {
         })
         .when('/about', {
             templateUrl : 'view/about.html',
-            controller  : 'AboutController'
+            controller  : 'InfoController'
         })
         .when('/movies', {
             templateUrl : 'view/movie.html',
@@ -47,8 +45,4 @@ SWDApp.config(function($routeProvider,$translateProvider) {
     $translateProvider.translations('vi', vi);
 
     $translateProvider.preferredLanguage('en');
-});
-
-SWDApp.controller('AboutController', function($scope,$mdDialog) {
-   $scope.message = 'ffsdfsfsdfsdfsdfsdfsd';
 });

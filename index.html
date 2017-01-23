@@ -10,7 +10,7 @@
 
     <title>Cinema</title>
 </head>
-<body ng-cloak ng-app="SWDApp" class="background-primary">
+<body ng-cloak ng-app="SWDApp" class="background-primary" >
 <nav class="navbar navbar-inverse" ng-controller="HomeController" nav-dropdown style="z-index: 1;">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -24,8 +24,8 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li ng-class="{'active': $root.view==1}"><a href="#!/movies" translate="toolbar.movie"></a></li>
-                <li ng-class="{'active': $root.view==2}"><a href="#" translate="toolbar.showtime"></a></li>
-                <li ng-class="{'active': $root.view==5}"><a href="#" translate="toolbar.theater"></a></li>
+                <!--<li ng-class="{'active': $root.view==2}"><a href="#" translate="toolbar.showtime"></a></li>-->
+                <!--<li ng-class="{'active': $root.view==5}"><a href="#" translate="toolbar.theater"></a></li>-->
                 <li ng-class="{'active': $root.view==3}"><a href="#!/sale-service" translate="toolbar.sale"></a></li>
                 <li ng-class="{'active': $root.view==4}"><a href="#" translate="toolbar.contact"></a></li>
             </ul>
@@ -95,11 +95,19 @@
 <!--Directive-->
 <script type="text/javascript" src="js/directive/navDropdownDirective.js"></script>
 
+<!--Service-->
+<script type="text/javascript" src="js/service/BaseService.js"></script>
+<script type="text/javascript" src="js/service/MovieService.js"></script>
+
+
+
 <!--Controller-->
 <script type="text/javascript" src="js/controller/HomeController.js"></script>
 <script type="text/javascript" src="js/controller/LoginController.js"></script>
 <script type="text/javascript" src="js/controller/MovieController.js"></script>
 <script type="text/javascript" src="js/controller/SaleController.js"></script>
+<script type="text/javascript" src="js/controller/InfoController.js"></script>
+<script type="text/javascript" src="js/controller/BaseController.js"></script>
 
 
 </body>

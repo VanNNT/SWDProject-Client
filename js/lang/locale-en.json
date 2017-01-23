@@ -17,7 +17,8 @@
     "username": "UserName",
     "password": "Password",
     "seemore": "See More",
-    "sale": "Sale & Service"
+    "sale": "Sale & Service",
+    "info": "Movie Information"
   },
   "sale":{
     "promotion": "advertising services",
