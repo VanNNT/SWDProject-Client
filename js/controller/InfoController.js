@@ -30,12 +30,26 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         }).then();
     };
+
+    $scope.showPopup = function (name,ev) {
+        $rootScope.titleMovie = name;
+        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+        $mdDialog.show({
+            controller: '',
+            templateUrl: 'view/bookTicket.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        }).then();
+    };
     $rootScope.closePopUp = function () {
         $mdDialog.cancel();
     };
     $scope.$on("$destroy", function() {
         delete $rootScope.titleTrailer;
         delete $rootScope.videoTrailer;
+        delete  $rootScope.titleMovie;
         delete $rootScope.closePopUp;
     });
 
