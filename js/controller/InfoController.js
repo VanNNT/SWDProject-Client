@@ -35,7 +35,7 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
         $rootScope.titleMovie = name;
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
         $mdDialog.show({
-            controller: '',
+            controller: 'bookTicketController',
             templateUrl: 'view/bookTicket.html',
             parent: angular.element(document.body),
             targetEvent: ev,
