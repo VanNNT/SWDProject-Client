@@ -1,14 +1,16 @@
-.home-wrapper{
+// For all screen
+
+.home-wrapper {
   .film-content {
     padding-top: 20px;
     background-color: @color_white;
-    .view-more{
+    .view-more {
       color: #ff7727;
       font-size: 14px;
       position: relative;
       display: inline-block;
       margin: 0 0 20px;
-      &::before{
+      &::before {
         content: "";
         width: 0;
         height: 0;
@@ -20,18 +22,18 @@
         left: 50%;
         margin-left: -35px;
       }
-      &:hover{
+      &:hover {
         color: #ff6600;
         letter-spacing: 1px;
       }
-      a{
+      a {
         color: @color_primary !important;
-        &:hover{
+        &:hover {
           text-decoration: none !important;
         }
       }
     }
-    .view-more:hover::before{
+    .view-more:hover::before {
       bottom: -10px;
     }
   }
@@ -45,9 +47,9 @@
         overflow: hidden;
         width: 224px;
         height: 300px;
-        -webkit-box-shadow: 2px 3px 6px rgba(0,0,0,.5);
-        -moz-box-shadow: 2px 3px 6px rgba(0,0,0,.5);
-        box-shadow: 2px 3px 6px rgba(0,0,0,.5);
+        -webkit-box-shadow: 2px 3px 6px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 2px 3px 6px rgba(0, 0, 0, .5);
+        box-shadow: 2px 3px 6px rgba(0, 0, 0, .5);
         img {
           height: 100%;
           width: 100%;
@@ -61,7 +63,7 @@
           -webkit-transform: scale(1.2);
           transform: scale(1.2);
         }
-        .buy{
+        .buy {
           position: absolute;
           bottom: 7px;
           right: 14px;
@@ -72,7 +74,7 @@
           padding-right: 10px;
           border-radius: 4px;
           font-weight: 700;
-          &:hover{
+          &:hover {
             background-color: #ffab06;
             color: black;
           }
@@ -98,27 +100,25 @@
       }
     }
   }
-  md-tabs-canvas{
+  md-tabs-canvas {
     .background-white;
   }
-  md-tabs .md-tab.md-active{
+  md-tabs .md-tab.md-active {
     color: @color_primary !important;
     font-weight: 600;
   }
-  md-next-button, md-prev-button{
+  md-next-button, md-prev-button {
     background-color: @color_white;
   }
-  .tab-width{
+  .tab-width {
     width: 50%;
   }
 }
 
-
-
 div.slide_show {
-    width: 80%;
-    position: relative;
-    height: 400px;
+  width: 80%;
+  position: relative;
+  height: 400px;
 
   .silde-item {
     height: 400px;
@@ -129,18 +129,18 @@ div.slide_show {
     animation-name: sample;
     animation-duration: 24s;
     animation-iteration-count: infinite;
-    img{
+    img {
       height: 400px;
       width: 100%;
     }
-    .caption{
+    .caption {
       position: absolute;
       right: 0;
       height: 400px;
       width: 345px;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       text-align: center;
-      h2{
+      h2 {
         font-size: 30px;
         line-height: 1.1;
         font-style: italic;
@@ -150,7 +150,7 @@ div.slide_show {
         padding-top: 2px;
         color: @color_white;
       }
-      span{
+      span {
         color: @color_white;
       }
     }
@@ -158,41 +158,41 @@ div.slide_show {
 }
 
 @keyframes sample {
-    0% {
-        opacity: 1;
-    }
-    /*~ 2.05s*/
-    17% {
-        opacity: 1;
-    }
-    /*~3s*/
-    25% {
-        opacity: 0;
-    }
-    /*~11.4s*/
-    92% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  /*~ 2.05s*/
+  17% {
+    opacity: 1;
+  }
+  /*~3s*/
+  25% {
+    opacity: 0;
+  }
+  /*~11.4s*/
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
+
 div .silde-item:nth-of-type(1) {
-    animation-delay: 18s;
+  animation-delay: 18s;
 }
 
 div .silde-item:nth-of-type(2) {
-    animation-delay: 12s;
+  animation-delay: 12s;
 }
 
 div .silde-item:nth-of-type(3) {
-    animation-delay: 6s;
+  animation-delay: 6s;
 }
 
 div .silde-item:nth-of-type(4) {
-    animation-delay: 0s;
+  animation-delay: 0s;
 }
-
 
 footer {
   display: block;

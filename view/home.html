@@ -80,7 +80,7 @@
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
                                 <div class="film-item" layout="column" ng-repeat="film in listFilm">
                                     <div  class="film-intro">
-                                        <img src="{{film.photo}}"/>
+                                        <a href="#!/about" ng-click="setData(film)"> <img src="{{film.photo}}"/> </a>
                                     </div>
                                     <div class="film-title">{{film.title}}</div>
                                 </div>

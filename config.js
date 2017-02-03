@@ -20,6 +20,10 @@ SWDApp.config(function($routeProvider,$translateProvider) {
             templateUrl : 'view/sale-service.html',
             controller  : 'SaleController'
         })
+        .when('/admin',{
+            templateUrl : 'view/admin.html',
+            controller  : 'AdminController'
+        })
         .otherwise({
             redirectTo: '/'
         });

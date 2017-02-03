@@ -9,7 +9,11 @@
                                 <img src="{{item.photo}}"/>
                                 <div layout="column" class="info" flex>
                                     <div class="movie-title">{{item.title}}</div>
-                                    <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.title)">trailer</md-button>
+                                    <div layout="row">
+                                        <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.title)">trailer</md-button>
+                                        <md-button class="md-primary md-raised movie-btn" ng-click="showPopup(item.title)">mua vé</md-button>
+                                    </div>
+
                                     <div layout="column">
                                         <div layout="row">
                                             <span>Date:</span>
