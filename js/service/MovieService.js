@@ -1,8 +1,7 @@
 /**
  * Created by Van on 19/01/2017.
  */
-SWDApp.service('MovieService', ["BaseService",
-    function(BaseService) {
+SWDApp.service('MovieService', function(BaseService) {
     var movie = [];
         this.getListFilm= function (data) {
             BaseService.postAPI(url, data, success, fail);
@@ -28,4 +27,4 @@ SWDApp.service('MovieService', ["BaseService",
 
         };
 
-}]);
+});

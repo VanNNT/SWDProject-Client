@@ -1,7 +1,7 @@
 /**
  * Created by Van on 06/01/2017.
  */
-SWDApp.config(function($routeProvider,$translateProvider) {
+SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDateLocaleProvider) {
     $routeProvider
     // route for the home page
         .when('/', {
@@ -21,7 +21,7 @@ SWDApp.config(function($routeProvider,$translateProvider) {
             controller  : 'SaleController'
         })
         .when('/admin',{
-            templateUrl : 'view/admin.html',
+            templateUrl : 'view/admin/admin.html',
             controller  : 'AdminController'
         })
         .otherwise({
@@ -41,12 +41,15 @@ SWDApp.config(function($routeProvider,$translateProvider) {
         });
         return json;
     }
-
     var vi = getJSON('js/lang/locale-vi.json');
     var en = getJSON('js/lang/locale-en.json');
-
     $translateProvider.translations('en', en);
     $translateProvider.translations('vi', vi);
-
     $translateProvider.preferredLanguage('en');
+
+    $compileProvider.preAssignBindingsEnabled(true);
+    // $mdDateLocaleProvider.formatDate = function(date) {
+    //     var m = moment(dateString, 'DD-MM-YYYY', true);
+    //     return m.isValid() ? m.toDate() : new Date(NaN);
+    // };
 });

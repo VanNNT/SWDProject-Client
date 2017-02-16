@@ -9,6 +9,7 @@
   },
   "button":{
     "login": " ĐăngNhập",
+    "logout": " ĐăngXuất",
     "buy": "Mua vé"
   },
   "label":{
@@ -43,7 +44,20 @@
     "type": "Xem phim theo đối tượng",
     "type1": "Ưu đãi hấp dẫn cho sinh viên và học sinh. Go go!!!"
   },
+  "infoMovie":{
+    "movieName": "Tên Phim",
+    "poster": "Poster",
+    "movieGenre": "Thể loại",
+    "movieDes": "Chi tiết",
+    "movieActor": "Diễn viên",
+    "movieTrailer": "Trailer",
+    "start" : "Ngày bắt đầu",
+    "end": "Ngày kết thúc"
+  },
   "message":{
-    "required": "Trường bắt buộc."
+    "required": "Trường bắt buộc.",
+    "valid":"Giá trị không phải ngày",
+    "mindate": "Ngày này quá sớm",
+    "maxdate": "Ngày này quá trễ"
   }
 }
