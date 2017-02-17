@@ -35,7 +35,7 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$transl
             {
                 id:1,
                 photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
-                title: 'TWILIGHTggggggggggggggggggggggggggggggggggg',
+                title: 'TWILIGHTggggggg',
                 actor: 'aa,ss,cc',
                 type: 'AAA,CCC,YYY',
                 date: '18.01.2017 - 02.02.2017',
