@@ -10,7 +10,7 @@
 
     <title>Cinema</title>
 </head>
-<body ng-cloak ng-app="SWDApp" class="background-primary" >
+<body ng-cloak ng-app="SWDApp" >
 <nav class="navbar navbar-inverse" ng-controller="HomeController" nav-dropdown style="z-index: 1;">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -41,7 +41,7 @@
         </div>
     </div>
 </nav>
-<div id="main">
+<div id="main" class="background-primary">
     <div ng-view=""></div>
 </div>
 <footer>
