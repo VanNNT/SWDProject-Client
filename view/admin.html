@@ -1,4 +1,37 @@
-<div flex>
-    Hello Admin
-    asdasdasd
+<div class="home-wrapper movie-wrapper">
+    <h1>ADMIN</h1>
+    <table style=" border-style: solid;
+        border-color: green;
+        border-width: 5px;">
+        <thead style="text-align: center;">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Actor</th>
+            <th>Type</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Trailer</th>
+            <th >ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  ng-repeat="film in listFilm">
+            <td>{{film.id}}</td>
+            <td>{{film.title}}</td>
+            <td style="width: 5%">{{film.photo}}</td>
+            <td style="width: 10%">{{film.actor}}</td>
+            <td style="width: 10%">{{film.type}}</td>
+            <td style="width: 10%">{{film.date}}</td>
+            <td style="width: 10%">{{film.time}}</td>
+            <td style="width: 5%">{{film.trailer}}</td>
+            <td style="width: 10%"><button>Sua</button>
+                <button>XOA</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center"><button>Them</button></div>
 </div>
+
