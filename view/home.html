@@ -62,12 +62,12 @@
                     <md-tab label="{{ 'label.now' | translate }}">
                         <md-content class="md-padding film-content"flex layout="column" layout-align="center center">
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
-                                <div class="film-item" layout="column" ng-repeat="film in listFilm |limitTo:4">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilmSoon |limitTo:4">
                                     <div  class="film-intro">
-                                        <a href="#!/about" ng-click="setData(film)"> <img src="{{film.photo}}"/></a>
+                                        <a href="#!/about" ng-click="setData(film)"> <img src="{{film.picture}}"/></a>
                                        <a class="buy cursor-pointer" href="#!/about" ng-click="setData(film)" translate="button.buy"></a>
                                     </div>
-                                    <div class="film-title">{{film.title}}</div>
+                                    <div class="film-title">{{film.movieName}}</div>
                                 </div>
                             </div>
                             <div class="view-more cursor-pointer">
@@ -78,11 +78,11 @@
                     <md-tab label="{{ 'label.soon' | translate }}">
                         <md-content class="md-padding film-content"flex layout="column" layout-align="center center">
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
-                                <div class="film-item" layout="column" ng-repeat="film in listFilm">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilmSoon |limitTo:4">
                                     <div  class="film-intro">
-                                        <a href="#!/about" ng-click="setData(film)"> <img src="{{film.photo}}"/> </a>
+                                        <a href="#!/about" ng-click="setData(film)"> <img src="{{film.picture}}"/> </a>
                                     </div>
-                                    <div class="film-title">{{film.title}}</div>
+                                    <div class="film-title">{{film.movieName}}</div>
                                 </div>
                             </div>
                             <div class="view-more cursor-pointer">

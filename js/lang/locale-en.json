@@ -1,6 +1,6 @@
 {
   "toolbar": {
-    "name": "WebSiteName",
+    "name": "WhiteBear",
     "movie": "MOVIES",
     "showtime": "SHOWTIMES",
     "theater": "THEATER/TICKET PRICES",
@@ -47,19 +47,20 @@
   "infoMovie":{
     "movieName": "Movie Name",
     "poster": "Poster",
-    "movieGenre": "Genre",
-    "movieDes": "Description",
-    "movieActor": "Actor",
+    "movieGenre": "Genre:",
+    "movieDes": "Description:",
+    "movieActor": "Actor:",
     "movieTrailer": "Trailer",
-    "start" : "Start Date",
-    "end": "End Date"
+    "start" : "Start Date:",
+    "end": "End Date:"
   },
   "message":{
-    "error": "Error",
+    "error": "Error!!!",
     "required": "This is required.",
     "valid":"The entered value is not a date!",
     "mindate": "Date is too early!",
-    "maxdate": "Date is too late!"
+    "maxdate": "Date is too late!",
+    "connect": "Please check connect to server. Check network again!!!"
   },
   "errors":{
     "403": "Wrong username or password!!!"

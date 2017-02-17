@@ -1,6 +1,6 @@
 {
   "toolbar": {
-    "name": "WebSiteName",
+    "name": "WhiteBear",
     "movie": "PHIM",
     "showtime": "LỊCH CHIẾU",
     "theater": "RẠP/GIÁ VÉ",
@@ -47,17 +47,18 @@
   "infoMovie":{
     "movieName": "Tên Phim",
     "poster": "Poster",
-    "movieGenre": "Thể loại",
-    "movieDes": "Chi tiết",
-    "movieActor": "Diễn viên",
+    "movieGenre": "Thể loại:",
+    "movieDes": "Chi tiết:",
+    "movieActor": "Diễn viên:",
     "movieTrailer": "Trailer",
-    "start" : "Ngày bắt đầu",
-    "end": "Ngày kết thúc"
+    "start" : "Ngày bắt đầu:",
+    "end": "Ngày kết thúc:"
   },
   "message":{
     "required": "Trường bắt buộc.",
     "valid":"Giá trị không phải ngày",
     "mindate": "Ngày này quá sớm",
-    "maxdate": "Ngày này quá trễ"
+    "maxdate": "Ngày này quá trễ",
+    "connect": "Vui lòng kiểm tra kết nối tới server."
   }
 }

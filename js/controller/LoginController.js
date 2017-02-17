@@ -16,9 +16,8 @@ SWDApp.controller('LoginController', function ($scope,$rootScope, $mdDialog, $co
             $scope.errorMsg = $translate.instant('errors.' + response.data.errorCode)
         }
     };
-    function LoginFail(response) {
-        $scope.showAlert('', 'Error', 'login tach nha!!! ahihi');
-        console.log(response.userId);
+    function LoginFail() {
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     };
     $scope.Login = function () {
         var data = {

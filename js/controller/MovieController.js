@@ -19,7 +19,7 @@ SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieS
     }
 
     function initData() {
-        $scope.listFilm = JSON.parse(localStorage.getItem(LOCAL_MOVIE_LIST));
+        $scope.listFilmSoon = JSON.parse(localStorage.getItem(LOCAL_MOVIE_SOON));
     }
 
     $scope.setData = function(value){

@@ -2,7 +2,7 @@
  * Created by Van on 06/01/2017.
  */
 SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$location,
-                                             $translate,$rootScope, MovieService,$controller,LoginService) {
+                                             $translate,$rootScope, MovieService,$controller,LoginService,BaseService) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -20,89 +20,15 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
         $scope.lang = LANG_EN;
     }
 
+    function getSoonSuccess(response){
+        $scope.listFilmSoon = response.data;
+        localStorage.setItem(LOCAL_MOVIE_SOON,JSON.stringify($scope.listFilmSoon));
+    }
+    function getSoonFail(){
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
+    }
     function initData() {
-        $scope.listFilm = [
-            {
-                id: 0,
-                photo: 'http://moviemarker.co.uk/wp-content/uploads/2012/03/Thor-Film-Poster.jpg',
-                title: 'THOR',
-                actor: 'aa,ss,cc',
-                type: 'AAA,CCC,YYY',
-                date: '18.01.2017 - 02.02.2017',
-                time: '92 minite',
-                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
-                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
-                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
-                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
-            },
-            {
-                id:1,
-                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
-                title: 'TWILIGHTggggggggggggggggggggggggggggggggggg',
-                actor: 'aa,ss,cc',
-                type: 'AAA,CCC,YYY',
-                date: '18.01.2017 - 02.02.2017',
-                time: '92 minite',
-                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
-                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
-                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
-                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
-            },
-            {
-                id:1,
-                photo: 'http://moviemarker.co.uk/wp-content/uploads/2012/03/Thor-Film-Poster.jpg',
-                title: 'THOR',
-                actor: 'aa,ss,cc',
-                type: 'AAA,CCC,YYY',
-                date: '18.01.2017 - 02.02.2017',
-                time: '92 minite',
-                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
-                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
-                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
-                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
-            },
-            {
-                id:1,
-                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
-                title: 'TWILIGHT',
-                actor: 'aa,ss,cc',
-                type: 'AAA,CCC,YYY',
-                date: '18.01.2017 - 02.02.2017',
-                time: '92 minite',
-                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
-                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
-                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
-                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
-            },
-            {
-                id:1,
-                photo: 'http://moviemarker.co.uk/wp-content/uploads/2012/03/Thor-Film-Poster.jpg',
-                title: 'THOR',
-                actor: 'aa,ss,cc',
-                type: 'AAA,CCC,YYY',
-                date: '18.01.2017 - 02.02.2017',
-                time: '92 minite',
-                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
-                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
-                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
-                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
-            },
-            {
-                id:1,
-                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
-                title: 'TWILIGHT',
-                actor: 'aa,ss,cc',
-                type: 'AAA,CCC,YYY',
-                date: '18.01.2017 - 02.02.2017',
-                time: '92 minite',
-                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
-                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
-                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
-                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
-            }
-
-        ];
-        localStorage.setItem(LOCAL_MOVIE_LIST,JSON.stringify($scope.listFilm));
+        BaseService.getAPI(URL_MOVIE,'',getSoonSuccess, getSoonFail);
     }
 
     $scope.showLoginFrom = function (ev) {
