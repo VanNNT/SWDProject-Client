@@ -10,7 +10,7 @@
 
     <title>Cinema</title>
 </head>
-<body ng-cloak ng-app="SWDApp" class="background-primary" >
+<body ng-cloak ng-app="SWDApp" >
 <nav class="navbar navbar-inverse" ng-controller="HomeController" nav-dropdown style="z-index: 1;">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -20,7 +20,9 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#" translate="toolbar.name"></a>
+            <a class="navbar-brand hello not-show-on-lg" href="#" ng-show="$root.logged">Hello,{{$root.nameUser}}</a>
         </div>
+            <a class="navbar-brand hello not-show-on-sm" href="#" ng-show="$root.logged">Hello,{{$root.nameUser}}</a>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li ng-class="{'active': $root.view==1}"><a href="#!/movies" translate="toolbar.movie"></a></li>
@@ -28,11 +30,15 @@
                 <!--<li ng-class="{'active': $root.view==5}"><a href="#" translate="toolbar.theater"></a></li>-->
                 <li ng-class="{'active': $root.view==3}"><a href="#!/sale-service" translate="toolbar.sale"></a></li>
                 <li ng-class="{'active': $root.view==4}"><a href="#" translate="toolbar.contact"></a></li>
-                <li ng-class="{'active': $root.view==4}" class="show-on-sm"><a href="#!/admin">ADMIN</a></li>
+                <li ng-show="true" ng-class="{'active': $root.view==4}" class="not-show-on-sm"><a href="#!/admin">ADMIN</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right show-on-sm">
-                <li><a ng-click="showLoginFrom()"><span class="glyphicon glyphicon-log-in cursor-pointer"
+            <ul class="nav navbar-nav navbar-right not-show-on-sm">
+                <li><a ng-show="!$root.logged" ng-click="showLoginFrom()"><span class="glyphicon glyphicon-log-in cursor-pointer"
                                                         translate="button.login"></span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right not-show-on-sm">
+                <li><a ng-show="$root.logged" ng-click="logoutConfirm()"><span class="glyphicon glyphicon-log-out cursor-pointer"
+                                                                               translate="button.logout"></span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right pad-t-15 cursor-pointer" layout="row">
                 <li><a class="lang-vi" ng-class="{'active-lang': lang==0}" ng-click="changeLanguage('vi')">VI</a></li>
@@ -41,7 +47,7 @@
         </div>
     </div>
 </nav>
-<div id="main">
+<div id="main" class="background-primary">
     <div ng-view=""></div>
 </div>
 <footer>
@@ -75,20 +81,23 @@
     </div>
 </footer>
 
+
 <!--Lib-->
 <script src="lib/jquery.min.js"></script>
 <script src="lib/bootstrap.min.js"></script>
 <script src="lib/less.js" type="text/javascript"></script>
 <script src="lib/angular.min.js"></script>
 <script src="lib/angular-route.js"></script>
+<script src="lib/angular-cookies.js"></script>
 <script src="lib/angular-animate.min.js"></script>
 <script src="lib/angular-aria.min.js"></script>
 <script src="lib/angular-messages.min.js"></script>
 <script src="lib/angular-material.min.js"></script>
 
-<script type="text/javascript" src="lib/cordova.js"></script>
+
 
 <script src="app.js"></script>
+<script src="run.js"></script>
 <script type="text/javascript" src="config.js"></script>
 <script src="lib/angular-translate.js"></script>
 <script type="text/javascript" src="js/Constant.js"></script>
@@ -99,6 +108,8 @@
 <!--Service-->
 <script type="text/javascript" src="js/service/BaseService.js"></script>
 <script type="text/javascript" src="js/service/MovieService.js"></script>
+<script type="text/javascript" src="js/service/LoginService.js"></script>
+
 
 
 
@@ -109,9 +120,10 @@
 <script type="text/javascript" src="js/controller/SaleController.js"></script>
 <script type="text/javascript" src="js/controller/InfoController.js"></script>
 <script type="text/javascript" src="js/controller/BaseController.js"></script>
-<script type="text/javascript" src="js/controller/AdminController.js"></script>
 <script type="text/javascript" src="js/controller/bookTicketController.js"></script>
-
+<script type="text/javascript" src="js/controller/admin/AdminController.js"></script>
+<script type="text/javascript" src="js/controller/admin/updateInfoController.js"></script>
+<script type="text/javascript" src="js/controller/admin/showtimeController.js"></script>
 
 </body>
 </html>

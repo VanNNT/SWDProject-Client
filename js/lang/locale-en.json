@@ -1,6 +1,6 @@
 {
   "toolbar": {
-    "name": "WebSiteName",
+    "name": "WhiteBear",
     "movie": "MOVIES",
     "showtime": "SHOWTIMES",
     "theater": "THEATER/TICKET PRICES",
@@ -9,6 +9,7 @@
   },
   "button":{
     "login": " Login",
+    "logout": " Logout",
     "buy": "Buy Ticket"
   },
   "label":{
@@ -43,7 +44,33 @@
     "type": "View movie by audience",
     "type1": "Attractive incentives for students and pupils. Go go !!!"
   },
+  "infoMovie":{
+    "movieName": "Movie Name",
+    "poster": "Poster",
+    "movieGenre": "Genre:",
+    "movieDes": "Description:",
+    "movieActor": "Actor:",
+    "movieTrailer": "Trailer",
+    "start" : "Start Date:",
+    "end": "End Date:"
+  },
+  "admin":{
+    "genre": "Genre",
+    "actor": "Actor",
+    "start": "Start Date",
+    "end":"End Date",
+    "list": "List Of Movie",
+    "add": "Add a Movie"
+  },
   "message":{
-    "required": "This is required."
+    "error": "Error!!!",
+    "required": "This is required.",
+    "valid":"The entered value is not a date!",
+    "mindate": "Date is too early!",
+    "maxdate": "Date is too late!",
+    "connect": "Please check connect to server. Check network again!!!"
+  },
+  "errors":{
+    "403": "Wrong username or password!!!"
   }
 }

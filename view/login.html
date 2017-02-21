@@ -34,9 +34,21 @@
                 </div>
             </md-input-container>
         </div>
+        <div ng-show="error" style="color: red;
+    /* background-color: red; */
+    /* opacity: 0.5; */
+    border: 1px solid;
+    border-radius: 8px;
+    /* padding: 5px; */
+    margin: 5px;
+    padding-left: 15px;
+    background-color: burlywood;">{{errorMsg}}</div>
         <div layout="row">
             <md-button class="md-raised md-primary mag-t-15 login-btn"
-                       ng-click="Login()" flex>
+                       ng-class=""
+                       type = "submit"
+                       ng-disabled="loginForm.$invalid"
+                       ng-click="Login()"  flex>
                 <span translate="button.login"></span>
             </md-button>
         </div>
