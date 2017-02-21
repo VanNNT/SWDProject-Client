@@ -35,7 +35,7 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$transl
             {
                 id:1,
                 photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
-                title: 'TWILIGHTggggggggggggggggggggggggggggggggggg',
+                title: 'TWILIGHTggggggg',
                 actor: 'aa,ss,cc',
                 type: 'AAA,CCC,YYY',
                 date: '18.01.2017 - 02.02.2017',
@@ -75,6 +75,97 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$transl
                 id:1,
                 photo: 'http://moviemarker.co.uk/wp-content/uploads/2012/03/Thor-Film-Poster.jpg',
                 title: 'THOR',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
+                actor: 'aa,ss,cc',
+                type: 'AAA,CCC,YYY',
+                date: '18.01.2017 - 02.02.2017',
+                time: '92 minite',
+                trailer: 'https://www.youtube.com/embed/bE4835fXxb8',
+                des: 'Khi một phi thuyền bí ẩn đáp xuống trái đất, một biệt đội tinh anh dưới sự dẫn dắt của chuyên ' +
+                'gia ngôn ngữ học kiệt xuất Louise Banks được đưa đến để điều tra. ' +
+                'Louise và các đồng đội phải chạy đua với thời gian để tìm câu trả lời cho nhiều bí ẩn.'
+            },
+            {
+                id:1,
+                photo: 'https://rianna92.files.wordpress.com/2010/04/movie-posters-twilight-series-720496_600_900.jpg',
+                title: 'TWILIGHT',
                 actor: 'aa,ss,cc',
                 type: 'AAA,CCC,YYY',
                 date: '18.01.2017 - 02.02.2017',
