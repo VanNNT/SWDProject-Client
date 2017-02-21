@@ -54,6 +54,14 @@
     "start" : "Ngày bắt đầu:",
     "end": "Ngày kết thúc:"
   },
+  "admin":{
+    "genre": "Thể loại",
+    "actor": "Diễn Viên",
+    "start": "Ngày bắt đầu",
+    "end":"Ngày kết thúc",
+    "list": "Danh sách phim",
+    "add": "Thêm một phim"
+  },
   "message":{
     "required": "Trường bắt buộc.",
     "valid":"Giá trị không phải ngày",

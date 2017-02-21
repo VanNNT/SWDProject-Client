@@ -1,5 +1,5 @@
 var HTTP = 'http://';
-var SERVER_IP = '192.168.1.5';
+var SERVER_IP = '10.82.131.189';
 var SERVER_PORT = ':8080';
 var SERVER_PATH= '/cm';
 

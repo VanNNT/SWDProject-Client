@@ -54,6 +54,14 @@
     "start" : "Start Date:",
     "end": "End Date:"
   },
+  "admin":{
+    "genre": "Genre",
+    "actor": "Actor",
+    "start": "Start Date",
+    "end":"End Date",
+    "list": "List Of Movie",
+    "add": "Add a Movie"
+  },
   "message":{
     "error": "Error!!!",
     "required": "This is required.",
