@@ -1,0 +1,128 @@
+<div class="update-wrapper" layout="column" layout-align="center center" flex>
+    <div class="info-header" layout="row">
+        <div flex="20" layout="row" layout-align="start center">
+            <md-button class="md-icon-button " aria-label="More" ng-click="close()">
+                <img class="close-btn" src="img/button_close_1.png"/>
+            </md-button>
+        </div>
+        <div class="info-title" flex layout="row" layout-align="center center">
+            AAAAAAAAAAAAAAAAAA
+        </div>
+        <div flex="20" ></div>
+    </div>
+    <form name="infoForm" flex style="width: 100%">
+        <div class="info-body" flex layout="row">
+            <div layout="column" flex>
+                <div layout="row" flex style="max-height: 157px;">
+                    <div ng-if="posterMovie" class="mag-r-10 info-img">
+                        <img class="info-img"  ng-src="{{posterMovie}}"/>
+                    </div>
+                    <div layout="column" flex>
+                        <md-input-container class="mag-b-0">
+                            <label translate="infoMovie.movieName"></label>
+                            <input type="text"
+                                   ng-model="nameMovie"
+                                   name="name"
+                                   required/>
+                            <div ng-messages="infoForm.name.$error">
+                                <div ng-message="required" translate="message.required"></div>
+                            </div>
+                        </md-input-container>
+                        <div layout="row">
+                            <md-input-container class="mag-b-0" flex="95">
+                                <label translate="infoMovie.poster"></label>
+                                <input type="text"
+                                       ng-model="posterMovie"
+                                       name="poster"
+                                       ng-change = "setPoster()"
+                                       required/>
+                                <div ng-messages="infoForm.poster.$error">
+                                    <div ng-message="required" translate="message.required"></div>
+                                </div>
+                            </md-input-container>
+                            <div class="content-x" ng-click="clear(true)"></div>
+                        </div>
+                    </div>
+                </div>
+                <md-input-container class="mag-b-0">
+                    <label translate="infoMovie.movieGenre"></label>
+                    <input type="text"
+                           ng-model="movieGenre"
+                           name="genre"
+                           required/>
+                    <div ng-messages="infoForm.genre.$error">
+                        <div ng-message="required" translate="message.required"></div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="mag-b-0">
+                    <label translate="infoMovie.movieDes"></label>
+                    <textarea type="text"
+                              ng-model="desMovie"
+                              name="des"
+                              rows="5"
+                              md-maxlength="150"
+                              required></textarea>
+                    <div ng-messages="infoForm.des.$error">
+                        <div ng-message="required" translate="message.required"></div>
+                    </div>
+                </md-input-container>
+            </div>
+            <div flex="5"></div>
+            <div flex layout="column">
+                <div layout="row">
+                    <md-input-container class="input-wide mag-b-0">
+                        <label translate="infoMovie.start"></label>
+                        <md-datepicker ng-model="startDate" required name="start" id="start" md-min-date="startMinDate"
+                                       md-max-date="startMaxDate" ng-change="checkEndDate()" flex></md-datepicker>
+
+                        <div ng-messages="infoForm.start.$error">
+                            <div ng-message="valid" class="pad-t-0" translate="message.valid"></div>
+                            <div ng-message="required" class="pad-t-0" translate="message.required"></div>
+                            <div ng-message="mindate" class="pad-t-0" translate="message.mindate"></div>
+                            <div ng-message="maxdate" class="pad-t-0" translate="message.maxdate"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="input-wide mag-b-0" >
+                        <label translate="infoMovie.end"></label>
+                        <md-datepicker ng-model="endDate" required name="end" md-min-date="endMinDate"
+                                       ng-blur="checkStartDate()" flex></md-datepicker>
+
+                        <div ng-messages="infoForm.end.$error">
+                            <div ng-message="valid" class="pad-t-0" translate="message.valid"></div>
+                            <div ng-message="required" class="pad-t-0" translate="message.required"></div>
+                            <div ng-message="mindate" class="pad-t-0" translate="message.mindate"></div>
+                            <div ng-message="maxdate" class="pad-t-0" translate="message.maxdate"></div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <md-input-container class="mag-b-0">
+                    <label translate="infoMovie.movieActor"></label>
+                    <input type="text"
+                           ng-model="movieActor"
+                           name="actor"
+                           required/>
+                    <div ng-messages="infoForm.actor.$error">
+                        <div ng-message="required" translate="message.required"></div>
+                    </div>
+                </md-input-container>
+                <div layout="row" flex>
+                    <md-input-container class="mag-b-0" flex="95">
+                        <label translate="infoMovie.movieTrailer"></label>
+                        <input type="text"
+                               ng-model="movieTrailer"
+                               name="trailer"
+                               required/>
+                        <div ng-messages="infoForm.trailer.$error">
+                            <div ng-message="required" translate="message.required"></div>
+                        </div>
+                    </md-input-container>
+                    <div class="content-x" ng-click="clear(false)"></div>
+                </div>
+                <div layout="row" flex ng-if="movieTrailer">
+                    <iframe flex class="trailer-video"  ng-src="{{movieTrailer}}" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -6,34 +6,74 @@
                     <md-tab label="{{ 'label.info' | translate }}">
                         <md-content class="md-padding info-content" flex >
                             <div layout="row" layout-wrap="" layout-align-xs="center center" class="info-group">
-                                <img src="{{item.photo}}"/>
+                                <img src="{{item.picture}}"/>
                                 <div layout="column" class="info" flex>
-                                    <div class="movie-title">{{item.title}}</div>
+                                    <div class="movie-title">{{item.movieName}}</div>
                                     <div layout="row">
-                                        <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.title)">trailer</md-button>
-                                        <md-button class="md-primary md-raised movie-btn" ng-click="showPopup(item.title)">mua vé</md-button>
+                                        <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.movieName)" translate="infoMovie.movieTrailer"></md-button>
+                                        <md-button class="md-primary md-raised movie-btn" ng-click="showPopup(item.movieName)">mua vé</md-button>
                                     </div>
 
                                     <div layout="column">
                                         <div layout="row">
-                                            <span>Date:</span>
-                                            <div class="movie-date">{{item.date}}</div>
+                                            <span translate="infoMovie.start"></span>
+                                            <div class="pad-l-10">{{item.startDate}}</div>
                                         </div>
                                         <div layout="row">
-                                            <span>Type</span>
-                                            <div class="movie-type">{{item.type}}</div>
+                                            <span translate="infoMovie.end"></span>
+                                            <div class="pad-l-10">{{item.endDate}}</div>
                                         </div>
                                         <div layout="row">
-                                            <span>Actor</span>
-                                            <div class="movie-actor">{{item.actor}}</div>
+                                            <span translate="infoMovie.movieGenre"></span>
+                                            <div class="pad-l-10">{{item.genre}}</div>
                                         </div>
                                         <div layout="row">
-                                            <span>Time:</span>
-                                            <div class="movie-time">{{item.time}}</div>
+                                            <span translate="infoMovie.movieActor"></span>
+                                            <div class="pad-l-10">{{item.actor}}</div>
                                         </div>
                                         <div>
-                                            <span>Description: </span>
-                                            <div class="movie-des">{{item.des}}</div>
+                                            <span translate="infoMovie.movieDes"></span>
+                                            <div class="movie-des">{{item.introduction}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="{{ 'toolbar.showtime' | translate }}">
+                        <md-content class="md-padding info-content" flex >
+                            <div layout="row" layout-wrap="" layout-align-xs="center center" class="info-group">
+                                <img src="{{item.picture}}"/>
+                                <div layout="column" class="info" flex>
+                                    <div class="movie-title">{{item.movieName}}</div>
+                                    <div layout="row">
+                                        <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.movieName)" translate="infoMovie.movieTrailer"></md-button>
+                                        <md-button class="md-primary md-raised movie-btn" ng-click="showPopup(item.movieName)">mua vé</md-button>
+                                    </div>
+
+                                    <div layout="column">
+                                        <div layout="row">
+                                            <span translate="infoMovie.start"></span>
+                                            <div class="pad-l-10">{{item.startDate}}</div>
+                                        </div>
+                                        <div layout="row">
+                                            <span translate="infoMovie.end"></span>
+                                            <div class="pad-l-10">{{item.endDate}}</div>
+                                        </div>
+                                        <div layout="row">
+                                            <span translate="infoMovie.movieGenre"></span>
+                                            <div class="pad-l-10">{{item.genre}}</div>
+                                        </div>
+                                        <div layout="row">
+                                            <span translate="infoMovie.movieActor"></span>
+                                            <div class="pad-l-10">{{item.actor}}</div>
+                                        </div>
+                                        <div>
+                                            <span translate="infoMovie.movieDes"></span>
+                                            <div class="movie-des">{{item.introduction}}</div>
                                         </div>
                                     </div>
                                 </div>
