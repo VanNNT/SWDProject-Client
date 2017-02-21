@@ -21,7 +21,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$rootScope,MovieS
 
     $scope.setData = function(value){
         MovieService.setItem(value);
-    }
+    };
 
 
     // SortData
@@ -35,16 +35,15 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$rootScope,MovieS
         else
             $scope.reverse = false;
         $scope.sortColumn = column;
-    }
+    };
     $scope.getSortClass = function (column) {
         if($scope.sortColumn == column){
             return $scope.reverse ? 'arrow-up':'arrow-down'
         }
         return '';
-    }
+    };
 
     // Button AddFilm
-
 
     var modal = document.getElementById('id01');
 
@@ -53,7 +52,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$rootScope,MovieS
         if (event.target == modal) {
             modal.style.display = "none";
         }
-    }
+    };
 
     // Tab
 
