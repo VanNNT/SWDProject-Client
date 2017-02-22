@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce) {
+SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce) {
     $controller('BaseController', {$scope: $scope});
 
     initController();

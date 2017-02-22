@@ -1,7 +1,7 @@
 /**
  * Created by Van on 02/02/2017.
  */
-SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootScope,$controller,$location) {
+SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootScope,$controller,$location,$timeout) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -106,7 +106,16 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
     }
 
     $scope.showPageInfo = function(){
-        $location.path('/add-movie');
+        // var current_url = window.location.href;
+         //window.location.replace('http://localhost:63342/SWD-client/index.html?_ijt=3vto5rkstpnb2s33dgsma8i3kl#!/add-movie');
+        // $scope.$apply(function() {
+        //     $location.path('/add-movie');
+        // });
+        // $timeout(function() {
+        //     $location.path('/add-movie');
+        // }, 1500);
+        $location.path('/add-movie').replace();
+        $scope.$apply();
     };
     $scope.showTime = function (ev) {
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');

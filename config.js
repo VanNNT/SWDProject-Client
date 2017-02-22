@@ -1,7 +1,7 @@
 /**
  * Created by Van on 06/01/2017.
  */
-SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDateLocaleProvider) {
+SWDApp.config(function($routeProvider,$translateProvider,$compileProvider) {
     $routeProvider
     // route for the home page
         .when('/', {
@@ -20,17 +20,17 @@ SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDat
             templateUrl : 'view/sale-service.html',
             controller  : 'SaleController'
         })
-        .when('/admin',{
-            templateUrl : 'view/admin/admin.html',
-            controller  : 'AdminController'
+        .when('/add-movie', {
+            templateUrl: 'view/admin/updateInfo.html',
+            controller: 'UpdateInfoController'
         })
         .when('/book-ticket',{
             templateUrl : 'view/bookTicket.html',
             controller  : 'bookTicketController'
         })
-        .when('/add-movie',{
-            templateUrl : 'view/admin/updateInfo.html',
-            controller  : 'updateInfoController'
+        .when('/admin',{
+            templateUrl : 'view/admin/admin.html',
+            controller  : 'AdminController'
         })
         .otherwise({
             redirectTo: '/'
@@ -56,8 +56,4 @@ SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDat
     $translateProvider.preferredLanguage('en');
 
     $compileProvider.preAssignBindingsEnabled(true);
-    // $mdDateLocaleProvider.formatDate = function(date) {
-    //     var m = moment(dateString, 'DD-MM-YYYY', true);
-    //     return m.isValid() ? m.toDate() : new Date(NaN);
-    // };
 });
