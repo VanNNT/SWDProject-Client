@@ -6,6 +6,7 @@ var SWDApp = angular.module('SWDApp', [
         'ngRoute',
         'ngMaterial',
         'ngMessages',
+        'angular.filter',
         'pascalprecht.translate',
         'ngCookies'
     ]);

@@ -24,6 +24,14 @@ SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDat
             templateUrl : 'view/admin/admin.html',
             controller  : 'AdminController'
         })
+        .when('/book-ticket',{
+            templateUrl : 'view/bookTicket.html',
+            controller  : 'bookTicketController'
+        })
+        .when('/add-movie',{
+            templateUrl : 'view/admin/updateInfo.html',
+            controller  : 'updateInfoController'
+        })
         .otherwise({
             redirectTo: '/'
         });

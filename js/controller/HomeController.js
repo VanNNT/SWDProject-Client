@@ -17,9 +17,12 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
         $rootScope.currentPage = HOME_PAGE;
         $rootScope.view = 0;
         $rootScope.selectIndex=0;
-        $scope.lang = LANG_EN;
     }
 
+    function getNowSuccess(response){
+        $scope.listFilmNow = response.data;
+        localStorage.setItem(LOCAL_MOVIE_NOW,JSON.stringify($scope.listFilmNow));
+    }
     function getSoonSuccess(response){
         $scope.listFilmSoon = response.data;
         localStorage.setItem(LOCAL_MOVIE_SOON,JSON.stringify($scope.listFilmSoon));
@@ -28,51 +31,27 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
     function initData() {
-        BaseService.getAPI(URL_MOVIE,'',getSoonSuccess, getSoonFail);
+        BaseService.getAPI(URL_MOVIE_SOON,'',getSoonSuccess, getSoonFail);
+        BaseService.getAPI(URL_MOVIE_NOW,'',getNowSuccess, getSoonFail);
     }
 
-    $scope.showLoginFrom = function (ev) {
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $mdDialog.show({
-            controller: 'LoginController',
-            templateUrl: 'view/login.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        }).then();
-    };
-
-    $scope.changeLanguage = function (key) {
-        $translate.use(key);
-        if(key=='en'){
-            $scope.lang = LANG_EN;
-        }else{
-            $scope.lang = LANG_VI;
-        }
-    };
 
     $scope.go = function (value) {
         if(value ==1){
-            $rootScope.selectIndex=1;
+            $rootScope.selectIndex= NOW_SHOWING;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }else{
-            $rootScope.selectIndex=0;
+            $rootScope.selectIndex= COMING_SOON;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }
 
     };
 
-    $scope.setData = function(value){
+    $scope.setData = function(value,boolean){
         MovieService.setItem(value);
+        if(boolean == false){
+            $rootScope.selectIndex = COMING_SOON;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
+        }
     };
-    
-    $scope.logoutConfirm = function(){
-        $scope.showConfirm('','Logout', "Are you sure to logout?",function () {
-            $rootScope.logged = false;
-            LoginService.ClearCredentials();
-            localStorage.removeItem(LOCAL_USER_INFO);
-            if($location.path() == '/admin') {
-                $location.path('/');
-            }
-        },'')
-    }
 });

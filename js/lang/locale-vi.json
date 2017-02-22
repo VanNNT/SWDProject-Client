@@ -67,6 +67,10 @@
     "valid":"Giá trị không phải ngày",
     "mindate": "Ngày này quá sớm",
     "maxdate": "Ngày này quá trễ",
-    "connect": "Vui lòng kiểm tra kết nối tới server."
+    "connect": "Vui lòng kiểm tra kết nối tới server.",
+    "confirmLogout": "Xác nhận đăng xuất?"
+  },
+  "errors":{
+    "ER001": "Sai username hoặc password!!!"
   }
 }
