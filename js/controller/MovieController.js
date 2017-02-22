@@ -14,7 +14,8 @@ SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieS
     function initView() {
         $rootScope.view = SCREEN_MOVIE;
         if (!$rootScope.selectIndex) {
-            $rootScope.selectIndex = 0;
+            $rootScope.selectIndex = NOW_SHOWING;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }
     }
 
@@ -23,7 +24,12 @@ SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieS
         $scope.listFilmNow = JSON.parse(localStorage.getItem(LOCAL_MOVIE_NOW));
     }
 
-    $scope.setData = function(value){
+    $scope.setData = function(value,boolean){
         MovieService.setItem(value);
-    }
+        if(boolean == false){
+            $rootScope.selectIndex = COMING_SOON;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
+        }
+    };
+
 });

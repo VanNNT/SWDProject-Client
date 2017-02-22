@@ -1,5 +1,5 @@
 var HTTP = 'http://';
-var SERVER_IP = '192.168.11.92';
+var SERVER_IP = '192.168.1.4';
 var SERVER_PORT = ':8080';
 var SERVER_PATH= '/cm';
 
@@ -18,11 +18,19 @@ var SCREEN_SALE= 3;
 var SCREEN_CONTACT = 4;
 var SCREEN_THEATER = 5;
 
+var GALAXY = "3";
+var CGV = "1";
+var LOTTE = "2";
+var CINEBOX = "4";
+var BHD = "5";
+var NOW_SHOWING = 0;
+var COMING_SOON = 1;
 
 // localStorage
 var LOCAL_USER_INFO = 'USER_INFO';
 var LOCAL_MOVIE_SOON = 'MOVIE_SOON_LIST';
 var LOCAL_MOVIE_NOW = 'MOVIE_NOW_LIST';
+var LOCAL_SELECT_INDEX = 'SELECT_INDEX';
 
 // Page
 var ADMIN_PAGE = 'adminPage';

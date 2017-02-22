@@ -43,7 +43,7 @@
                     </md-tab>
                 </md-tabs>
                 <md-tabs md-dynamic-height md-border-bottom>
-                    <md-tab label="{{ 'toolbar.showtime' | translate }}">
+                    <md-tab ng-if="index == 0" label="{{ 'toolbar.showtime' | translate }}">
                         <md-content class="md-padding info-content" flex >
                             <div ng-if="nameCGV" layout="column">
                                 <div class="info-group rap-title">{{nameCGV}}</div>
@@ -53,12 +53,11 @@
                             </div>
                           <div ng-if="nameGalaxy">
                               <div class="info-group rap-title">{{nameGalaxy}}</div>
-                              <div class="showtime" ng-repeat="(startDate,startTime) in listGalaxy | groupBy: 'startDate'" layout="column">
+                              <div class="showtime" ng-repeat="(startDate,value) in listGalaxy | groupBy: 'startDate'" layout="column">
                                   <div class="showtime-date">{{startDate}}</div>
                                   <div layout="row">
-                                      <div ng-repeat="item in startTime">
-                                          <div class="showtime-item">{{item.startTime}}</div>
-                                          <div>{{item}}</div>
+                                      <div ng-repeat="item in value">
+                                          <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
                                       </div>
                                   </div>
                               </div>
@@ -73,7 +72,7 @@
                     </md-tab>
                 </md-tabs>
             </md-content>
-            <div style="padding: 0px 5px 0px 8px;">
+            <div style="padding: 25px 5px 0px 8px;">
                 <div style="font-weight: bolder; font-size: 20px" translate="sale.contact" class="pad-b-10"></div>
                 <div layout="column" style="color: white">
                     <div translate="sale.time"  class="pad-b-10"></div>

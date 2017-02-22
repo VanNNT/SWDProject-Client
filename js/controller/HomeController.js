@@ -38,24 +38,20 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
 
     $scope.go = function (value) {
         if(value ==1){
-            $rootScope.selectIndex=1;
+            $rootScope.selectIndex= NOW_SHOWING;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }else{
-            $rootScope.selectIndex=0;
+            $rootScope.selectIndex= COMING_SOON;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }
 
     };
 
-    $scope.setData = function(value){
+    $scope.setData = function(value,boolean){
         MovieService.setItem(value);
+        if(boolean == false){
+            $rootScope.selectIndex = COMING_SOON;
+            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
+        }
     };
-    $scope.logoutConfirm = function(){
-        $scope.showConfirm('','Logout', "Are you sure to logout?",function () {
-            $rootScope.logged = false;
-            LoginService.ClearCredentials();
-            localStorage.removeItem(LOCAL_USER_INFO);
-            if($location.path() == '/admin') {
-                $location.path('/');
-            }
-        },'')
-    }
 });

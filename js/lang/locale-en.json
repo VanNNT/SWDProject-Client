@@ -68,7 +68,8 @@
     "valid":"The entered value is not a date!",
     "mindate": "Date is too early!",
     "maxdate": "Date is too late!",
-    "connect": "Please check connect to server. Check network again!!!"
+    "connect": "Please check connect to server. Check network again!!!",
+    "confirmLogout": "Are you sure to logout?"
   },
   "errors":{
     "ER001": "Wrong username or password!!!"
