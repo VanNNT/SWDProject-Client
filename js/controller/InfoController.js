@@ -1,4 +1,4 @@
-SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce) {
+SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce,BaseService) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -13,8 +13,30 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
 
     }
 
+    function getScheduleSuccess(response){
+        $scope.listGalaxy = [];
+         if(response.data){
+             _.each(response.data, function(item){
+                 if(item.theatre == "3")
+                     $scope.listGalaxy.push(item);
+             });
+         }
+         if($scope.listGalaxy){
+             $scope.nameGalaxy = "Galaxy";
+         }
+    }
+
+    function getScheduleFail(){
+
+    }
+
     function initData() {
         $scope.item = MovieService.getItem();
+        var data={
+            'movieID': $scope.item.movieId
+        };
+        BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
+
     }
 
     $scope.showTrailer = function(trailer,name,ev){

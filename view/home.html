@@ -78,7 +78,7 @@
                     <md-tab label="{{ 'label.soon' | translate }}">
                         <md-content class="md-padding film-content"flex layout="column" layout-align="center center">
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
-                                <div class="film-item" layout="column" ng-repeat="film in listFilmSoon |limitTo:4">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilmNow |limitTo:4">
                                     <div  class="film-intro">
                                         <a href="#!/about" ng-click="setData(film)"> <img src="{{film.picture}}"/> </a>
                                     </div>

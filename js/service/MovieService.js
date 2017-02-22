@@ -3,15 +3,6 @@
  */
 SWDApp.service('MovieService', function(BaseService) {
     var movie = [];
-        this.getListFilm= function (data) {
-            BaseService.postAPI(url, data, success, fail);
-            //success
-            success = function () {
-            };
-            //fail
-            fail = function () {
-            };
-        };
 
         this.setItem = function(data){
             movie = data;

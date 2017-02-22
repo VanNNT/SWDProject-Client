@@ -68,5 +68,8 @@
     "mindate": "Ngày này quá sớm",
     "maxdate": "Ngày này quá trễ",
     "connect": "Vui lòng kiểm tra kết nối tới server."
+  },
+  "errors":{
+    "ER001": "Sai username hoặc password!!!"
   }
 }

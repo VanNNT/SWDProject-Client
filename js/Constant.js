@@ -1,11 +1,13 @@
 var HTTP = 'http://';
-var SERVER_IP = '10.82.131.189';
+var SERVER_IP = '192.168.11.92';
 var SERVER_PORT = ':8080';
 var SERVER_PATH= '/cm';
 
 // API
 var URL_LOGIN = HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/account/login";
-var URL_MOVIE= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/comingSoon";
+var URL_MOVIE_SOON= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/comingSoon";
+var URL_MOVIE_NOW= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/moviePresenting";
+var URL_GET_SHOWTIME= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/schedule/getShowtime";
 
 
 var LANG_EN = 1;
