@@ -1,7 +1,7 @@
 /**
  * Created by Van on 02/02/2017.
  */
-SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootScope,$controller) {
+SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootScope,$controller,$location) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -105,17 +105,8 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         ];
     }
 
-
-    $scope.popupInfo = function (ev) {
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $mdDialog.show({
-            controller: 'updateInfoController',
-            templateUrl: 'view/admin/updateInfo.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        }).then();
+    $scope.showPageInfo = function(){
+        $location.path('/add-movie');
     };
     $scope.showTime = function (ev) {
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');

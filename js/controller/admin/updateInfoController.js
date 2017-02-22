@@ -16,19 +16,7 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     }
 
     function initView(){
-        if(!$scope.posterMovie){
-            $scope.poster= 'img/cinema.png';
-        }else{
-            $scope.poster = $scope.posterMovie;
-        }
-
-        if(!$scope.movieTrailer){
-            $scope.trailer = $sce.trustAsResourceUrl('https://www.youtube.com/embed/bE4835fXxb8');
-        }else{
-            $scope.trailer = $sce.trustAsResourceUrl($scope.movieTrailer);
-        }
-        var a = '2017/2/11';
-        $scope.startDate = new Date(a);
+        $scope.startDate = new Date();
         $scope.endDate = new Date();
         $scope.startMinDate = new Date(
             $scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()
@@ -43,19 +31,15 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     $scope.close = function () {
         $mdDialog.cancel();
     };
-    $scope.setPoster = function () {
-        if(!$scope.posterMovie){
-            $scope.poster= 'img/cinema.png';
-        }else{
-            $scope.poster = $scope.posterMovie;
-        }
-    };
     $scope.clear = function (boolean) {
         if(boolean == true){
             $scope.posterMovie = '';
         }else{
             $scope.movieTrailer = '';
         }
+    };
+    $scope.setTrailer = function(){
+            $scope.trailer = $sce.trustAsResourceUrl($scope.movieTrailer);
     };
     $scope.checkEndDate = function () {
         console.log($scope.startDate);
@@ -69,4 +53,6 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
             $scope.endDate.getFullYear(), $scope.endDate.getMonth(), $scope.endDate.getDate()-1
         );
     };
+
+
 });

@@ -1,4 +1,4 @@
-SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce) {
+SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce,BaseService) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -10,11 +10,65 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
     }
 
     function initView() {
+        $rootScope.view = '';
+    }
+
+    function getScheduleSuccess(response) {
+        $scope.listGalaxy = [];
+        $scope.listCGV = [];
+        $scope.listLotte = [];
+        $scope.listCinebox = [];
+        $scope.listBHD = [];
+        $scope.nameGalaxy = '';
+        $scope.nameCGV = '';
+        $scope.nameLotte = '';
+        $scope.nameCinebox = '';
+        $scope.nameBHD = '';
+        if (response.data) {
+            _.each(response.data, function (item) {
+                if (item.theatre == GALAXY) {
+                    $scope.listGalaxy.push(item);
+                } else if (item.theater == CGV) {
+                    $scope.listCGV.push(item);
+                } else if (item.theater == LOTTE) {
+                    $scope.listLotte.push(item);
+                } else if (item.theater == CINEBOX) {
+                    $scope.listCinebox.push(item);
+                } else if (item.theater == BHD) {
+                    $scope.listBHD.push(item);
+                }
+            });
+        }
+        if ($scope.listGalaxy.length != 0) {
+            $scope.nameGalaxy = "Galaxy";
+        }
+        if ($scope.listCGV.length != 0) {
+            $scope.nameCGV = "CGV";
+        }
+        if ($scope.listLotte.length != 0) {
+            $scope.nameLotte = "Lotte";
+        }
+        if ($scope.listCinebox.length != 0) {
+            $scope.nameCinebox = "Cinebox";
+        }
+        if ($scope.listBHD.length != 0) {
+            $scope.nameBHD = "BHD";
+        }
+    }
+
+    function getScheduleFail(){
 
     }
 
     function initData() {
         $scope.item = MovieService.getItem();
+        var data={
+            'movieID': $scope.item.movieId
+        };
+        $scope.index = JSON.parse(localStorage.getItem(LOCAL_SELECT_INDEX));
+        if($scope.index == NOW_SHOWING){
+            BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
+        }
     }
 
     $scope.showTrailer = function(trailer,name,ev){
@@ -31,18 +85,6 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
         }).then();
     };
 
-    $scope.showPopup = function (name,ev) {
-        $rootScope.titleMovie = name;
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $mdDialog.show({
-            controller: 'bookTicketController',
-            templateUrl: 'view/bookTicket.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        }).then();
-    };
     $rootScope.closePopUp = function () {
         $mdDialog.cancel();
     };
