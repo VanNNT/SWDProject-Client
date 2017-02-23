@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce) {
+SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -12,7 +12,8 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     }
 
     function initData() {
-
+        $rootScope.prePage = $rootScope.currentPage;
+        $rootScope.currentPage = ADD_MOVIE_PAGE;
     }
 
     function initView(){

@@ -1,5 +1,5 @@
 var HTTP = 'http://';
-var SERVER_IP = '192.168.1.4';
+var SERVER_IP = 'localhost';
 var SERVER_PORT = ':8080';
 var SERVER_PATH= '/cm';
 
@@ -34,6 +34,7 @@ var LOCAL_SELECT_INDEX = 'SELECT_INDEX';
 
 // Page
 var ADMIN_PAGE = 'adminPage';
+var ADD_MOVIE_PAGE = 'addMovie';
 var HOME_PAGE = 'homePage';
 
 

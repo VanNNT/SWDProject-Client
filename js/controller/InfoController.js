@@ -28,13 +28,13 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
             _.each(response.data, function (item) {
                 if (item.theatre == GALAXY) {
                     $scope.listGalaxy.push(item);
-                } else if (item.theater == CGV) {
+                } else if (item.theatre == CGV) {
                     $scope.listCGV.push(item);
-                } else if (item.theater == LOTTE) {
+                } else if (item.theatre == LOTTE) {
                     $scope.listLotte.push(item);
-                } else if (item.theater == CINEBOX) {
+                } else if (item.theatre == CINEBOX) {
                     $scope.listCinebox.push(item);
-                } else if (item.theater == BHD) {
+                } else if (item.theatre == BHD) {
                     $scope.listBHD.push(item);
                 }
             });
