@@ -19,6 +19,13 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
         $rootScope.selectIndex=0;
     }
 
+    function initData() {
+        $scope.listFilmNow = localStorage.getItem(LOCAL_MOVIE_NOW);
+        $scope.listFilmSoon = localStorage.getItem(LOCAL_MOVIE_SOON);
+        BaseService.getAPI(URL_MOVIE_SOON,'',getSoonSuccess, getSoonFail);
+        BaseService.getAPI(URL_MOVIE_NOW,'',getNowSuccess, getSoonFail);
+    }
+
     function getNowSuccess(response){
         $scope.listFilmNow = response.data;
         localStorage.setItem(LOCAL_MOVIE_NOW,JSON.stringify($scope.listFilmNow));
@@ -30,14 +37,9 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
     function getSoonFail(){
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
-    function initData() {
-        BaseService.getAPI(URL_MOVIE_SOON,'',getSoonSuccess, getSoonFail);
-        BaseService.getAPI(URL_MOVIE_NOW,'',getNowSuccess, getSoonFail);
-    }
-
 
     $scope.go = function (value) {
-        if(value ==1){
+        if(value == NOW_SHOWING){
             $rootScope.selectIndex= NOW_SHOWING;
             localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }else{
@@ -51,7 +53,7 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
         MovieService.setItem(value);
         if(boolean == false){
             $rootScope.selectIndex = COMING_SOON;
-            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }
+        localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
     };
 });

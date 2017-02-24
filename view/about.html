@@ -6,12 +6,11 @@
                     <md-tab label="{{ 'label.info' | translate }}">
                         <md-content class="md-padding info-content" flex >
                             <div layout="row" layout-wrap="" layout-align-xs="center center" class="info-group">
-                                <img src="{{item.picture}}"/>
+                                <img ng-src="{{item.picture}}"/>
                                 <div layout="column" class="info" flex>
                                     <div class="movie-title">{{item.movieName}}</div>
                                     <div layout="row">
                                         <md-button class="md-primary md-raised movie-btn" ng-click="showTrailer(item.trailer,item.movieName)" translate="infoMovie.movieTrailer"></md-button>
-                                        <md-button class="md-primary md-raised movie-btn" ng-click="showPopup(item.movieName)">mua vé</md-button>
                                     </div>
 
                                     <div layout="column">
@@ -45,11 +44,27 @@
                 <md-tabs md-dynamic-height md-border-bottom>
                     <md-tab ng-if="index == 0" label="{{ 'toolbar.showtime' | translate }}">
                         <md-content class="md-padding info-content" flex >
-                            <div ng-if="nameCGV" layout="column">
+                            <div ng-if="nameCGV">
                                 <div class="info-group rap-title">{{nameCGV}}</div>
+                                <div class="showtime" ng-repeat="(startDate,value) in listCGV | groupBy: 'startDate'" layout="column">
+                                    <div class="showtime-date">{{startDate}}</div>
+                                    <div layout="row">
+                                        <div ng-repeat="item in value">
+                                            <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div ng-if="nameLotte">
                                 <div class="info-group rap-title">{{nameLotte}}</div>
+                                <div class="showtime" ng-repeat="(startDate,value) in listLotte | groupBy: 'startDate'" layout="column">
+                                    <div class="showtime-date">{{startDate}}</div>
+                                    <div layout="row">
+                                        <div ng-repeat="item in value">
+                                            <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                           <div ng-if="nameGalaxy">
                               <div class="info-group rap-title">{{nameGalaxy}}</div>
@@ -64,9 +79,25 @@
                           </div>
                            <div ng-if="nameCinebox">
                                <div class="info-group rap-title">{{nameCinebox}}</div>
+                               <div class="showtime" ng-repeat="(startDate,value) in listCinebox | groupBy: 'startDate'" layout="column">
+                                   <div class="showtime-date">{{startDate}}</div>
+                                   <div layout="row">
+                                       <div ng-repeat="item in value">
+                                           <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                       </div>
+                                   </div>
+                               </div>
                            </div>
                            <div ng-if="nameBHD">
                                <div class="info-group rap-title">{{nameBHD}}</div>
+                               <div class="showtime" ng-repeat="(startDate,value) in listBHD | groupBy: 'startDate'" layout="column">
+                                   <div class="showtime-date">{{startDate}}</div>
+                                   <div layout="row">
+                                       <div ng-repeat="item in value">
+                                           <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                       </div>
+                                   </div>
+                               </div>
                            </div>
                         </md-content>
                     </md-tab>

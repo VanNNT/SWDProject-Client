@@ -1,4 +1,4 @@
-<div class="home-wrapper movie-wrapper" style="min-height: 540px;">
+<div class="home-wrapper movie-wrapper" style="min-height: 525px;">
     <div ng-cloak  class="background-primary" layout="row" layout-align="center center">
         <div class="tab-width">
             <md-content>
@@ -6,9 +6,9 @@
                     <md-tab label="{{ 'label.now' | translate }}">
                         <md-content class="md-padding film-content"flex>
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
-                                <div class="film-item" layout="column" ng-repeat="film in listFilmSoon">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilmNow">
                                     <div  class="film-intro">
-                                        <a href="#!/about" ng-click="setData(film,true)"> <img src="{{film.picture}}"/></a>
+                                        <a href="#!/about" ng-click="setData(film,true)"> <img ng-src="{{film.picture}}"/></a>
                                         <a class="buy cursor-pointer" href="#!/about" ng-click="setData(film)" translate="button.buy"></a>
                                     </div>
                                     <div class="film-title">{{film.movieName}}</div>
@@ -19,9 +19,9 @@
                     <md-tab label="{{ 'label.soon' | translate }}">
                         <md-content class="md-padding film-content"flex>
                             <div class="film-group" layout-wrap layout="row" layout-align="center center">
-                                <div class="film-item" layout="column" ng-repeat="film in listFilmNow">
+                                <div class="film-item" layout="column" ng-repeat="film in listFilmSoon">
                                     <div  class="film-intro">
-                                        <a href="#!/about" ng-click="setData(film,false)">  <img src="{{film.picture}}"/> </a>
+                                        <a href="#!/about" ng-click="setData(film,false)">  <img ng-src="{{film.picture}}"/> </a>
                                     </div>
                                     <div class="film-title">{{film.movieName}}</div>
                                 </div>

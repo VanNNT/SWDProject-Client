@@ -2,7 +2,7 @@
  * Created by VanNNT on 2/21/2017.
  */
 SWDApp.controller('IndexController', function($scope, $mdDialog, $mdMedia,$location,
-                                             $translate,$rootScope, MovieService,$controller,LoginService) {
+                                             $translate,$rootScope,$controller,LoginService) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -34,7 +34,7 @@ SWDApp.controller('IndexController', function($scope, $mdDialog, $mdMedia,$locat
             $rootScope.logged = false;
             LoginService.ClearCredentials();
             localStorage.removeItem(LOCAL_USER_INFO);
-            if($location.path() == '/admin') {
+            if($location.path() == '/admin' || $location.path() == '/add-movie') {
                 $location.path('/');
             }
         },'')

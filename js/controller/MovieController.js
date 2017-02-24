@@ -28,8 +28,8 @@ SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieS
         MovieService.setItem(value);
         if(boolean == false){
             $rootScope.selectIndex = COMING_SOON;
-            localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
         }
+        localStorage.setItem(LOCAL_SELECT_INDEX,JSON.stringify($rootScope.selectIndex));
     };
 
 });
