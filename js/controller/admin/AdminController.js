@@ -12,10 +12,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
     }
 
     function initView() {
-        $rootScope.view = SCREEN_MOVIE;
-        if (!$rootScope.selectIndex) {
-            $rootScope.selectIndex = 0;
-        }
+        $rootScope.view = SCREEN_ADMIN;
     }
 
     function initData() {
@@ -137,20 +134,6 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         }
         return '';
     };
-
-    // Button AddFilm
-
-    var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
-
-    // Tab
-
 
 
 });

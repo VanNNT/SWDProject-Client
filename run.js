@@ -8,10 +8,8 @@ SWDApp.run(function($rootScope, $location, $cookies, $http){
     }
 
     $rootScope.$on('$locationChangeStart', function(){
-        if($rootScope.prePage == ADMIN_PAGE && !$rootScope.logged){
+        if(!$rootScope.logged && ($location.path() == '/admin' || $location.path() == '/add-movie')){
             $location.path('/');
-        }else if($rootScope.prePage == HOME_PAGE && $rootScope.currentPage != HOME_PAGE && !$rootScope.logged){
-             $location.path('/')
         }
     });
 });

@@ -1,7 +1,6 @@
-SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce,BaseService) {
+SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce,BaseService,$translate) {
 
     $controller('BaseController', {$scope: $scope});
-
 
     initController();
     function initController() {
@@ -11,6 +10,17 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
 
     function initView() {
         $rootScope.view = '';
+    }
+
+    function initData() {
+        $scope.item = MovieService.getItem();
+        var data={
+            'movieID': $scope.item.movieId
+        };
+        $scope.index = JSON.parse(localStorage.getItem(LOCAL_SELECT_INDEX));
+        if($scope.index == NOW_SHOWING){
+            BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
+        }
     }
 
     function getScheduleSuccess(response) {
@@ -57,18 +67,7 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
     }
 
     function getScheduleFail(){
-
-    }
-
-    function initData() {
-        $scope.item = MovieService.getItem();
-        var data={
-            'movieID': $scope.item.movieId
-        };
-        $scope.index = JSON.parse(localStorage.getItem(LOCAL_SELECT_INDEX));
-        if($scope.index == NOW_SHOWING){
-            BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
-        }
+        scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
 
     $scope.showTrailer = function(trailer,name,ev){
@@ -88,12 +87,11 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
     $rootScope.closePopUp = function () {
         $mdDialog.cancel();
     };
+
     $scope.$on("$destroy", function() {
         delete $rootScope.titleTrailer;
         delete $rootScope.videoTrailer;
         delete  $rootScope.titleMovie;
         delete $rootScope.closePopUp;
     });
-
-
 });

@@ -15,7 +15,7 @@ var LANG_VI= 0;
 var SCREEN_MOVIE = 1;
 var SCREEN_SHOWTIME = 2;
 var SCREEN_SALE= 3;
-var SCREEN_CONTACT = 4;
+var SCREEN_ADMIN = 4;
 var SCREEN_THEATER = 5;
 
 var GALAXY = "3";

@@ -54,6 +54,13 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
             $scope.endDate.getFullYear(), $scope.endDate.getMonth(), $scope.endDate.getDate()-1
         );
     };
-
+    $scope.showPopup = function (ev) {
+        $mdDialog.show({
+            templateUrl: 'view/admin/toastImage.html',
+            targetEvent: ev,
+            clickOutsideToClose: true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        }).then();
+    }
 
 });

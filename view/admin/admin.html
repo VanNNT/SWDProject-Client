@@ -1,18 +1,4 @@
 <div class="admin-wappper background-white" style="height: 550px" flex>
-    <!--Nav Bar-->
-    <!--<md-content class="">-->
-        <!--<md-nav-bar>-->
-            <!--<md-nav-item md-nav-click="" class="tablink" onclick="openMenu(event, 'showFilm');">-->
-                <!--Phim-->
-            <!--</md-nav-item>-->
-            <!--<md-nav-item md-nav-click="" class="tablink" onclick="openMenu(event, 'showLich');">-->
-                <!--Lịch Chiếu-->
-            <!--</md-nav-item>-->
-            <!--<md-nav-item md-nav-click="" class="tablink" onclick="openMenu(event, 'showRap');">-->
-                <!--Rạp Phim-->
-            <!--</md-nav-item>-->
-        <!--</md-nav-bar>-->
-    <!--</md-content>-->
         <div id="showFilm" class="choice">
             <div layout="row" flex>
                 <h2 translate="admin.list"></h2>
@@ -21,41 +7,6 @@
                     <md-button class="md-raised md-primary" ng-click="showPageInfo()" style="width:auto;"
                             translate="admin.add">
                     </md-button>
-                    <!--<div id="id01" class="modal">-->
-                        <!--<form class="modal-content animate" action="????">-->
-                            <!--<div class="imgcontainer">-->
-                                <!--<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>-->
-                                <!--<img src="http://hkd.com.vn/ckfinder/userfiles/images/DU%20AN/26-3.png" alt="Avatar" class="avatar">-->
-                            <!--</div>-->
-                            <!--<div class="container" >-->
-                                <!--<label><b>Name: </b></label>-->
-                                <!--<input type="text" placeholder="Enter name of film" name="name" required><br>-->
-
-                                <!--<label><b>Actor: </b></label>-->
-                                <!--<input type="text" placeholder="Enter actor of film" name="" required><br>-->
-
-                                <!--<label><b>Type: </b></label>-->
-                                <!--<input type="text" placeholder="Enter type of film" name="" required><br>-->
-
-                                <!--<label><b>Begin: </b></label>-->
-                                <!--<input type="date" name=""  required/><br>-->
-                                <!--<label><b>End: </b></label>-->
-                                <!--<input type="date" name="" required/><br>-->
-
-                                <!--<label><b>Time: </b></label>-->
-                                <!--<input type="number" name="" required/><br>-->
-
-                                <!--<label><b>Trailer: </b></label>-->
-                                <!--<input type="text" placeholder="Link trailer of film" name="" required><br>-->
-
-                                <!--<label><b>Des: </b></label>-->
-                                <!--<input type="text" placeholder="Information about film" name="" required><br>-->
-
-                                <!--<md-button class="md-raised md-primary" type="submit">Save</md-button>-->
-                            <!--</div>-->
-
-                        <!--</form>-->
-                    <!--</div>-->
                 </div>
             </div>
             <!--Show film in list-->
@@ -78,39 +29,12 @@
                     <td class="text-center">{{film.date}}</td>
                     <td class="text-center">{{film.time}}</td>
                     <td layout-align="center center" layout="row">
-                        <i class="fa fa-trash w3-xxlarge" ng-click=""></i>
-                        <i ng-click="showTime()" class="fa fa-calendar" aria-hidden="true"></i>
+                        <i class="fa fa-trash w3-xxlarge none-outline" ng-click=""></i>
+                        <i ng-click="showTime()" class="fa fa-calendar none-outline" aria-hidden="true"></i>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-
-        <div id="showLich" class="choice" style="display:none">
-            <h2>Đang hoàng thiện lịch chiếu</h2>
-            <p>.......</p>
-        </div>
-
-        <div id="showRap" class="choice" style="display:none">
-            <h2>Đang hoàng thiện rạp phim</h2>
-            <p>.......</p>
-        </div>
-
-    <!--<script>-->
-        <!--function openMenu(evt, choiceName) {-->
-            <!--var i, x, tablinks;-->
-            <!--x = document.getElementsByClassName("choice");-->
-            <!--for (i = 0; i < x.length; i++) {-->
-                <!--x[i].style.display = "none";-->
-            <!--}-->
-            <!--tablinks = document.getElementsByClassName("tablink");-->
-            <!--for (i = 0; i < x.length; i++) {-->
-                <!--tablinks[i].className = tablinks[i].className.replace(" w3-red", "");-->
-            <!--}-->
-            <!--document.getElementById(choiceName).style.display = "block";-->
-            <!--evt.currentTarget.className += " w3-red";-->
-        <!--}-->
-    <!--</script>-->
-
 </div>
 

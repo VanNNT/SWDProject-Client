@@ -2,7 +2,7 @@
  * Created by VanNNT on 2/21/2017.
  */
 SWDApp.controller('IndexController', function($scope, $mdDialog, $mdMedia,$location,
-                                             $translate,$rootScope, MovieService,$controller,LoginService) {
+                                             $translate,$rootScope,$controller,LoginService) {
 
     $controller('BaseController', {$scope: $scope});
 

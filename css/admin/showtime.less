@@ -3,7 +3,6 @@
   height: 1500px;
   .info-header{
     width: 100%;
-    height: 148px;
     position: relative;
     text-align: center;
     border-bottom: 1px solid #ff8000;
@@ -11,12 +10,10 @@
       line-height: 39px;
       padding: 14px 0;
       margin: 0 2rem;
-      color: #ff5c00;
+      color: @color_primary;
       font-size: 1.7rem;
       text-transform: uppercase;
       font-weight: bold;
-      text-align: center;
-      margin-left: -14%;
     }
     .close-btn{
       height: 24px;
@@ -26,49 +23,30 @@
     width:100%;
     padding: 15px;
     height: 100%;
-    .info-img{
-      width: 100px;
-      height: 150px;
-    }
-    .content-x{
-      cursor: pointer;
-      outline: none;
-      &:after{
-        content: 'x';
-        font-size: 13px;
-        vertical-align: top;
-      }
-    }
     .input-wide{
       width: 221px;
     }
-    md-input-container textarea{
-      max-height: 135px;
-      overflow: auto;
+    .div-scroll{
+      padding: 15px;
+      width: 100%;
+      overflow-y: scroll;
+    }
+    .rap-title{
+      border: 1px solid #f8f8f8;
+      border-bottom: 0;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      color: #ff8000;
+      line-height: 3rem;
+      font-weight: bold;
+      background-size: 1.7%;
+      background-position: 12px center;
+      padding-left: 35px;
+      background: #ebebeb url(../img/arrow-title.png) 10px center no-repeat;
     }
   }
 }
 
-#save-btn{
-  position: relative;;
-  width: 100px;
-  height: 40px;
-  background-color: #ff8000;
-  border: 1px solid #ff8000;
-  bottom: 100px;
-  left: 44%;
-  transform: tranlateX(-50%);
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
-}
-#save-btn:hover{
-  background-color: #a6e1ec;
-
-}
-#update-wrapper{
-  height: 600px;
-}
 .avatar{
   width: 35%;
   border-radius: 50%;
