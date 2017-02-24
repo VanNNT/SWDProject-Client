@@ -10,7 +10,8 @@
   "button":{
     "login": " Login",
     "logout": " Logout",
-    "buy": "Buy Ticket"
+    "buy": "Buy Ticket",
+    "save": "Save"
   },
   "label":{
     "now": "Now Showing",
@@ -52,7 +53,10 @@
     "movieActor": "Actor:",
     "movieTrailer": "Trailer",
     "start" : "Start Date:",
-    "end": "End Date:"
+    "end": "End Date:",
+    "date": "Date",
+    "room": "Room",
+    "theatre": "Theatre"
   },
   "admin":{
     "genre": "Genre",

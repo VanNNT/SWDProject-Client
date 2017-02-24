@@ -2,8 +2,7 @@
  * Created by Van on 19/01/2017.
  */
 SWDApp.service('MovieService', function(BaseService) {
-    var movie = [];
-
+        var movie = [];
         this.setItem = function(data){
             movie = data;
             localStorage.setItem('MOVIE_INFO',JSON.stringify(movie));
@@ -15,7 +14,6 @@ SWDApp.service('MovieService', function(BaseService) {
             }else{
                 return movie;
             }
-
         };
 
 });

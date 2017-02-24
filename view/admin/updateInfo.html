@@ -21,7 +21,7 @@
                             </div>
                         </md-input-container>
                         <div layout="row">
-                            <md-input-container class="mag-b-0" flex="95">
+                            <md-input-container class="mag-b-0" flex="85">
                                 <label translate="infoMovie.poster"></label>
                                 <input type="text"
                                        ng-model="posterMovie"
@@ -32,13 +32,13 @@
                                     <div ng-message="required" translate="message.required"></div>
                                 </div>
                             </md-input-container>
-                            <div flex="10" layout="row" layout-align="center center" ng-click="showPopUp()">
+                            <div flex="15" layout="row" class="none-outline" layout-align="center center" ng-click="showPopup()">
                                 <img class="icon-image" src="img/no-image-icon-13.png"/>
                             </div>
                             <div class="content-x" ng-click="clear(true)"></div>
                         </div>
                         <md-input-container class="mag-b-0">
-                            <label translate="infoMovie.movieGenre"></label>
+                            <label translate="admin.genre"></label>
                             <input type="text"
                                    ng-model="movieGenre"
                                    name="genre"
@@ -66,7 +66,7 @@
             <div flex layout="column">
                 <div layout="row">
                     <md-input-container flex="50" class="mag-b-0">
-                        <label translate="infoMovie.start"></label>
+                        <label translate="admin.start"></label>
                         <md-datepicker ng-model="startDate" required name="start" id="start" md-min-date="startMinDate"
                                        md-max-date="startMaxDate" ng-change="checkEndDate()" flex></md-datepicker>
 
@@ -78,7 +78,7 @@
                         </div>
                     </md-input-container>
                     <md-input-container class="mag-b-0" flex="50" >
-                        <label translate="infoMovie.end"></label>
+                        <label translate="admin.end"></label>
                         <md-datepicker ng-model="endDate" required name="end" md-min-date="endMinDate"
                                        ng-blur="checkStartDate()" flex></md-datepicker>
 
@@ -91,7 +91,7 @@
                     </md-input-container>
                 </div>
                 <md-input-container class="mag-b-0">
-                    <label translate="infoMovie.movieActor"></label>
+                    <label translate="admin.actor"></label>
                     <input type="text"
                            ng-model="movieActor"
                            name="actor"
@@ -122,8 +122,10 @@
                 </div>
             </div>
         </div>
-        <md-button class="md-raised md-primary" ng-click="showPageInfo()" style="width:auto;"
-                   translate="admin.add">
-        </md-button>
+        <div layout="row" layout-align="center center">
+            <md-button class="md-raised md-primary" ng-disabled="infoForm.$invalid" ng-click="showPageInfo()" style="width:auto;"
+                       translate="admin.add">
+            </md-button>
+        </div>
     </form>
 </div>

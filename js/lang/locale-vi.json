@@ -10,7 +10,8 @@
   "button":{
     "login": " ĐăngNhập",
     "logout": " ĐăngXuất",
-    "buy": "Mua vé"
+    "buy": "Mua vé",
+    "save": "Save"
   },
   "label":{
     "now": "Phim Đang Chiếu",
@@ -52,7 +53,10 @@
     "movieActor": "Diễn viên:",
     "movieTrailer": "Trailer",
     "start" : "Ngày bắt đầu:",
-    "end": "Ngày kết thúc:"
+    "end": "Ngày kết thúc:",
+    "date": "Ngày",
+    "room": "Phòng",
+    "theatre": "Rạp"
   },
   "admin":{
     "genre": "Thể loại",

@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce) {
+SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -12,7 +12,8 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     }
 
     function initData() {
-
+        $rootScope.prePage = $rootScope.currentPage;
+        $rootScope.currentPage = ADD_MOVIE_PAGE;
     }
 
     function initView(){
@@ -53,6 +54,13 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
             $scope.endDate.getFullYear(), $scope.endDate.getMonth(), $scope.endDate.getDate()-1
         );
     };
-
+    $scope.showPopup = function (ev) {
+        $mdDialog.show({
+            templateUrl: 'view/admin/toastImage.html',
+            targetEvent: ev,
+            clickOutsideToClose: true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        }).then();
+    }
 
 });
