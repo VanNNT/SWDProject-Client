@@ -1,3 +1,76 @@
-<div class="ticket-wrapper" layout="column" layout-align="center center" flex>
+<div class="ticket-wrapper" layout="row" flex>
+<div flex="70" class="seat-ticket" layout="column">
+    <div class="movie-info" layout="row" flex="20">
+            <div class="movie-title" flex="75">
+                PERSONAL SHOPPER / TRỢ LÝ THỜI TRANG
+            </div>
+        <div class="showtime-movie" layout="column" flex="25">
+            <div class="theatre-name">CGV</div>
+            <div layout="row" style="padding-top: 10px;">
+                <div class="date"> 2017-02-26</div>
+                <div class="time">05:00:00</div>
+            </div>
+        </div>
+    </div>
+    <div flex="80">
+        <div class="screen">Màn hình</div>
+        <div layout="row" layout-align="center center">
+            <div layout="column" class="row-group">
+                <div class="seat-row" ng-repeat="s in seatRow">{{s.id}}</div>
+            </div>
+            <div layout="row" layout-wrap class="seat-group" layout-align="center center">
+                <div class="seat-item"  ng-repeat="seat in listSeat">
+                    <div>{{($index%10)+1}}</div>
+                </div>
+            </div>
+            <div layout="column" class="row-group">
+                <div class="seat-row" ng-repeat="s in seatRow">{{s.id}}</div>
+            </div>
+        </div>
+        <div layout="row" style="padding-top: 15px" layout-align="center center">
+            <div class="pad-l-r-15" translate="seat.seatChose"></div>
+            <div class="seat-choose"></div>
+            <div class="pad-l-r-15" translate="seat.seatSold"></div>
+            <div class="seat-choose sold"></div>
+        </div>
+        <div layout-align="center center" layout="row" class="condition">
+            Quý khách vui lòng đến quầy nhận vé 30 phút. Sau thời gian đó chúng tôi sẽ hủy vé.
+        </div>
+    </div>
+</div>
+    <div flex="30" class="user-info" layout-align="center center" layout="column">
+        <form name="seatForm" layout="column" flex>
+            <md-input-container class="mag-b-0">
+                <label translate="seat.name"></label>
+                <input type="text"
+                       ng-model="nameOfUser"
+                       name="name"
+                       required/>
+                <div ng-messages="seatForm.name.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="mag-b-0">
+                <label translate="seat.phone"></label>
+                <input type="text"
+                       ng-model="phoneOfUser"
+                       name="phone"
+                       required/>
+                <div ng-messages="seatForm.phone.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="mag-b-0">
+                <label translate="infoMovie.movieTrailer"></label>
+                <input type="text"
+                       ng-model="nameOfUser"
+                       name="name"
+                       required/>
+                <div ng-messages="seatForm.name.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+        </form>
 
+    </div>
 </div>

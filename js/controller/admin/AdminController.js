@@ -117,6 +117,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         }).then();
     };
+
     // SortData
 
     $scope.sortColumn = 'name';
@@ -135,6 +136,5 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         }
         return '';
     };
-
 
 });

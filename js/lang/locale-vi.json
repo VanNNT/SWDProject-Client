@@ -66,6 +66,12 @@
     "list": "Danh sách phim",
     "add": "Thêm một phim"
   },
+  "seat": {
+    "seatChose": "Đang chọn",
+    "seatSold": "Đã bán",
+    "name": "Your name",
+    "phone": "Your phone"
+  },
   "message":{
     "required": "Trường bắt buộc.",
     "valid":"Giá trị không phải ngày",

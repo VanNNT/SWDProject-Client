@@ -66,6 +66,12 @@
     "list": "List Of Movie",
     "add": "Add a Movie"
   },
+  "seat": {
+    "seatChose": "Choosing",
+    "seatSold": "Sold",
+    "name": "Your name",
+    "phone": "Your phone"
+  },
   "message":{
     "error": "Error!!!",
     "required": "This is required.",
