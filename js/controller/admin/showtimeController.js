@@ -1,4 +1,4 @@
-SWDApp.controller('showtimeController', function($scope,$controller,$mdDialog,$translate,BaseService) {
+SWDApp.controller('showtimeController', function($scope,$controller,$mdDialog,$translate,BaseService,$rootScope) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -7,6 +7,43 @@ SWDApp.controller('showtimeController', function($scope,$controller,$mdDialog,$t
         initData();
         initView();
     }
+
+    function initData() {
+        console.log($rootScope.itemTime);
+        var data={
+            'movieID': '3'
+        };
+        BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
+
+        $scope.theatres = [
+            { id: 1, name: 'CGV' },
+            { id: 2, name: 'LOTTE' },
+            { id: 3, name: 'GALAXY' },
+            { id: 4, name: 'CINEBOX' },
+            { id: 5, name: 'BHD' }
+        ];
+
+        $scope.rooms = [
+            { id: 1, name: 'ROOM 1' },
+            { id: 2, name: 'ROOM 2' },
+            { id: 3, name: 'ROOM 3' },
+            { id: 4, name: 'ROOM 4' },
+            { id: 5, name: 'ROOM 5' }
+        ];
+    }
+
+    function initView(){
+        var chieu = new Date('2017-02-24');
+        var het = new Date('2017-03-24');
+        $scope.startDate = new Date();
+        $scope.startMaxDate = new Date(
+            $scope.startDate.getFullYear(), het.getMonth(), het.getDate()
+        );
+        $scope.startMinDate = new Date(
+            $scope.startDate.getFullYear(), $scope.startDate.getMonth(), chieu.getDate()+1
+        );
+    }
+
 
     function getScheduleSuccess(response) {
         $scope.listGalaxy = [];
@@ -55,43 +92,29 @@ SWDApp.controller('showtimeController', function($scope,$controller,$mdDialog,$t
         scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
 
-    function initData() {
-        var data={
-            'movieID': '3'
-        };
-        BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
-
-        $scope.theatres = [
-            { id: 1, name: 'CGV' },
-            { id: 2, name: 'LOTTE' },
-            { id: 3, name: 'GALAXY' },
-            { id: 4, name: 'CINEBOX' },
-            { id: 5, name: 'BHD' }
-        ];
-
-        $scope.rooms = [
-            { id: 1, name: 'ROOM 1' },
-            { id: 2, name: 'ROOM 2' },
-            { id: 3, name: 'ROOM 3' },
-            { id: 4, name: 'ROOM 4' },
-            { id: 5, name: 'ROOM 5' }
-        ];
-    }
-
-    function initView(){
-        var chieu = new Date('2017-02-24');
-        var het = new Date('2017-03-24');
-        $scope.startDate = new Date();
-        $scope.startMaxDate = new Date(
-            $scope.startDate.getFullYear(), het.getMonth(), het.getDate()
-        );
-        $scope.startMinDate = new Date(
-            $scope.startDate.getFullYear(), $scope.startDate.getMonth(), chieu.getDate()+1
-        );
-    }
 
     $scope.close = function () {
         $mdDialog.cancel();
     };
+
+    $scope.saveSuccess = function () {
+    };
+
+    $scope.saveFail = function () {
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
+    };
+    $scope.saveSchedule = function () {
+        console.log( $scope.startDate.toISOString().substr(0, 10));
+        var data= {
+           'roomID': $scope.movieRoom,
+            'theaterID': $scope.movieTheatre,
+            'date': $scope.startDate
+        };
+       // BaseService.postAPI(api,data,saveSuccess,saveFail);
+    }
+
+    $scope.$on("$destroy", function() {
+        delete $rootScope.itemTime;
+    });
 
 });

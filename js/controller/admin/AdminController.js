@@ -105,7 +105,8 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
     $scope.showPageInfo = function(){
         $location.path('/add-movie');
     };
-    $scope.showTime = function (ev) {
+    $scope.showTime = function (ev,item) {
+        $rootScope.itemTime = item;
         $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
         $mdDialog.show({
             controller: 'showtimeController',

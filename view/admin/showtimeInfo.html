@@ -31,7 +31,7 @@
                     <md-input-container class="mag-b-0" flex>
                         <label translate="infoMovie.room"></label>
                         <md-select ng-model="movieRoom" name="room1" required style="width: 200px">
-                            <md-option ng-repeat="room in rooms" ng-value="room.name">
+                            <md-option ng-repeat="room in rooms" ng-value="room.id">
                                 {{room.name}}
                             </md-option>
                         </md-select>
@@ -42,7 +42,7 @@
                     <md-input-container class="mag-b-0" flex>
                         <label translate="infoMovie.theatre"></label>
                         <md-select ng-model="movieTheatre" name="theatre1" required style="width: 200px">
-                            <md-option ng-repeat="theatre in theatres" ng-value="theatre.name">
+                            <md-option ng-repeat="theatre in theatres" ng-value="theatre.id">
                                 {{theatre.name}}
                             </md-option>
                         </md-select>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div flex="10" layout="row" layout-align="center center">
-                    <md-button ng-disabled="infoForm.$invalid" class="md-raised md-primary" translate="button.save"></md-button>
+                    <md-button ng-disabled="infoForm.$invalid" ng-click="saveSchedule()" class="md-raised md-primary" translate="button.save"></md-button>
                 </div>
             </div>
         </div>

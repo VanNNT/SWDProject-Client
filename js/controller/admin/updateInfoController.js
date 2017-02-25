@@ -56,7 +56,7 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     };
     $scope.showPopup = function (ev) {
         $mdDialog.show({
-            templateUrl: 'view/admin/toastImage.html',
+            templateUrl: 'view/admin/popupWeb.html',
             targetEvent: ev,
             clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
