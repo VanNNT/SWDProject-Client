@@ -8,7 +8,8 @@ SWDApp.run(function($rootScope, $location, $cookies, $http){
     }
 
     $rootScope.$on('$locationChangeStart', function(){
-        if(!$rootScope.logged && ($location.path() == '/admin' || $location.path() == '/add-movie')){
+        if(!$rootScope.logged && ($location.path() == '/admin'
+            || $location.path() == '/add-movie' || $location.path() == '/add-showtime' || $location.path() =='/book-ticket')){
             $location.path('/');
         }
     });

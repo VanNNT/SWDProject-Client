@@ -13,104 +13,112 @@
         </div>
         <div flex="20"></div>
     </div>
-    <form name="infoForm" flex style="width: 100%">
-        <div class="info-body" flex layout="cloumn">
-            <div layout="column" flex layout-align="center center">
-                <div flex="20" layout="row" layout-align="center start" style="width: 100%">
-                    <md-input-container class="input-wide mag-b-0" flex>
-                        <label translate="infoMovie.date"></label>
-                        <md-datepicker ng-model="startDate" required name="start" id="start" md-min-date="startMinDate"
-                                       md-max-date="startMaxDate" ng-change="checkEndDate()" flex></md-datepicker>
-                        <div ng-messages="infoForm.start.$error">
-                            <div ng-message="valid" class="pad-t-0" translate="message.valid"></div>
-                            <div ng-message="required" class="pad-t-0" translate="message.required"></div>
-                            <div ng-message="mindate" class="pad-t-0" translate="message.mindate"></div>
-                            <div ng-message="maxdate" class="pad-t-0" translate="message.maxdate"></div>
-                        </div>
-                    </md-input-container>
-                    <md-input-container class="mag-b-0" flex>
-                        <label translate="infoMovie.room"></label>
-                        <md-select ng-model="movieRoom" name="room1" required style="width: 200px">
-                            <md-option ng-repeat="room in rooms" ng-value="room.id">
-                                {{room.name}}
-                            </md-option>
-                        </md-select>
-                        <div ng-messages="infoForm.room1.$error">
-                            <div ng-message="required" translate="message.required"></div>
-                        </div>
-                    </md-input-container>
-                    <md-input-container class="mag-b-0" flex>
-                        <label translate="infoMovie.theatre"></label>
-                        <md-select ng-model="movieTheatre" name="theatre1" required style="width: 200px">
-                            <md-option ng-repeat="theatre in theatres" ng-value="theatre.id">
-                                {{theatre.name}}
-                            </md-option>
-                        </md-select>
-                        <div ng-messages="infoForm.theatre1.$error">
-                            <div ng-message="required" translate="message.required"></div>
-                        </div>
-                    </md-input-container>
-                </div>
-                <div flex="70" class="div-scroll" layout="column" id="#style-3">
-                    <div ng-if="nameCGV">
-                        <div class="rap-title">{{nameCGV}}</div>
-                        <div class="showtime" ng-repeat="(startDate,value) in listCGV | groupBy: 'startDate'" layout="column">
-                            <div class="showtime-date">{{startDate}}</div>
-                            <div layout="row">
-                                <div ng-repeat="item in value">
-                                    <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
-                                </div>
-                            </div>
-                        </div>
+    <form name="infoForm" class="info-body" style="width: 100%">
+        <div layout="column" flex style="height: 100%">
+            <div flex="15" layout="row" layout-align="center start" style="width: 100%">
+                <md-input-container class="input-wide mag-b-0" flex>
+                    <label translate="infoMovie.date"></label>
+                    <md-datepicker ng-model="startDate" required name="start" id="start" md-min-date="startMinDate"
+                                   md-max-date="startMaxDate" ng-change="checkEndDate()" flex></md-datepicker>
+                    <div ng-messages="infoForm.start.$error">
+                        <div ng-message="valid" class="pad-t-0" translate="message.valid"></div>
+                        <div ng-message="required" class="pad-t-0" translate="message.required"></div>
+                        <div ng-message="mindate" class="pad-t-0" translate="message.mindate"></div>
+                        <div ng-message="maxdate" class="pad-t-0" translate="message.maxdate"></div>
                     </div>
-                    <div ng-if="nameLotte">
-                        <div class="rap-title">{{nameLotte}}</div>
-                        <div class="showtime" ng-repeat="(startDate,value) in listLotte | groupBy: 'startDate'" layout="column">
-                            <div class="showtime-date">{{startDate}}</div>
-                            <div layout="row">
-                                <div ng-repeat="item in value">
-                                    <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
-                                </div>
-                            </div>
-                        </div>
+                </md-input-container>
+                <md-input-container class="mag-b-0" flex>
+                    <label translate="infoMovie.time"></label>
+                    <input ng-model="movieTime" type="text" name="time"
+                           required
+                           pattern="(?:[01]|2(?![4-9])){1}\d{1}:[0-5]{1}\d{1}" style="width: 200px"/>
+                    <div ng-messages="infoForm.time.$error">
+                        <div ng-message="required" translate="message.required"></div>
+                        <div ng-message="pattern" translate="message.formatTime"></div>
                     </div>
-                    <div ng-if="nameGalaxy">
-                        <div class="rap-title">{{nameGalaxy}}</div>
-                        <div class="showtime" ng-repeat="(startDate,value) in listGalaxy | groupBy: 'startDate'" layout="column">
-                            <div class="showtime-date">{{startDate}}</div>
-                            <div layout="row">
-                                <div ng-repeat="item in value">
-                                    <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
-                                </div>
-                            </div>
-                        </div>
+                </md-input-container>
+                <md-input-container class="mag-b-0" flex>
+                    <label translate="infoMovie.room"></label>
+                    <md-select ng-model="movieRoom" name="room1" required style="width: 200px">
+                        <md-option ng-repeat="room in rooms" ng-value="room.id">
+                            {{room.name}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="infoForm.room1.$error">
+                        <div ng-message="required" translate="message.required"></div>
                     </div>
-                    <div ng-if="nameCinebox">
-                        <div class="rap-title">{{nameCinebox}}</div>
-                        <div class="showtime" ng-repeat="(startDate,value) in listCinebox | groupBy: 'startDate'" layout="column">
-                            <div class="showtime-date">{{startDate}}</div>
-                            <div layout="row">
-                                <div ng-repeat="item in value">
-                                    <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
-                                </div>
-                            </div>
-                        </div>
+                </md-input-container>
+                <md-input-container class="mag-b-0" flex>
+                    <label translate="infoMovie.theatre"></label>
+                    <md-select ng-model="movieTheatre" name="theatre1" required style="width: 200px">
+                        <md-option ng-repeat="theatre in theatres" ng-value="theatre.id">
+                            {{theatre.name}}
+                        </md-option>
+                    </md-select>
+                    <div ng-messages="infoForm.theatre1.$error">
+                        <div ng-message="required" translate="message.required"></div>
                     </div>
-                    <div ng-if="nameBHD">
-                        <div class="rap-title">{{nameBHD}}</div>
-                        <div class="showtime" ng-repeat="(startDate,value) in listBHD | groupBy: 'startDate'" layout="column">
-                            <div class="showtime-date">{{startDate}}</div>
-                            <div layout="row">
-                                <div ng-repeat="item in value">
-                                    <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
-                                </div>
+                </md-input-container>
+            </div>
+            <div class="div-scroll" layout="column">
+                <div  ng-if="nameCGV">
+                    <div class="rap-title">{{nameCGV}}</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listCGV | groupBy: 'startDate'" layout="column">
+                        <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
+                        <div layout="row">
+                            <div ng-repeat="item in value">
+                                <div ng-click="delete(item)"  class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div flex="10" layout="row" layout-align="center center">
-                    <md-button ng-disabled="infoForm.$invalid" ng-click="saveSchedule()" class="md-raised md-primary" translate="button.save"></md-button>
+                <div  ng-if="nameLotte">
+                    <div class="rap-title">{{nameLotte}}</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listLotte | groupBy: 'startDate'" layout="column">
+                        <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
+                        <div layout="row">
+                            <div ng-repeat="item in value">
+                                <div ng-click="delete(item)"  class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div  ng-if="nameGalaxy">
+                    <div class="rap-title">{{nameGalaxy}}</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listGalaxy | groupBy: 'startDate'" layout="column">
+                        <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
+                        <div layout="row">
+                            <div ng-repeat="item in value">
+                                <div ng-click="delete(item)"  class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if="nameCinebox">
+                    <div class="rap-title">{{nameCinebox}}</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listCinebox | groupBy: 'startDate'" layout="column">
+                        <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
+                        <div layout="row">
+                            <div ng-repeat="item in value">
+                                <div ng-click="delete(item)"  class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div  ng-if="nameBHD">
+                    <div class="rap-title">{{nameBHD}}</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listBHD | groupBy: 'startDate'" layout="column">
+                        <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
+                        <div layout="row">
+                            <div ng-repeat="item in value">
+                                <div ng-click="delete(item)"  class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div flex="10" layout="row" layout-align="center center">
+                <md-button ng-disabled="infoForm.$invalid" ng-click="saveSchedule()" class="md-raised md-primary" translate="button.save"></md-button>
             </div>
         </div>
     </form>

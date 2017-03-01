@@ -31,12 +31,14 @@ SWDApp.controller('IndexController', function($scope, $mdDialog, $mdMedia,$locat
 
     $scope.logoutConfirm = function(){
         $scope.showConfirm('','Logout', "Are you sure to logout?",function () {
-            $rootScope.logged = false;
             LoginService.ClearCredentials();
             localStorage.removeItem(LOCAL_USER_INFO);
-            if($location.path() == '/admin' || $location.path() == '/add-movie') {
+            if($location.path() == '/admin' || $location.path() == '/add-movie'
+                || $location.path() == '/add-showtime' || $location.path() =='/book-ticket') {
                 $location.path('/');
             }
+            delete $rootScope.logged;
+            delete $rootScope.role;
         },'')
     }
 });

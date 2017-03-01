@@ -107,15 +107,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
     };
     $scope.showTime = function (ev,item) {
         $rootScope.itemTime = item;
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $mdDialog.show({
-            controller: 'showtimeController',
-            templateUrl: 'view/admin/showtimeInfo.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        }).then();
+        $location.path('/add-showtime');
     };
 
     // SortData

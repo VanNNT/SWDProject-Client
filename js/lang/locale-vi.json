@@ -56,7 +56,8 @@
     "end": "Ngày kết thúc:",
     "date": "Ngày",
     "room": "Phòng",
-    "theatre": "Rạp"
+    "theatre": "Rạp",
+    "time": "Giờ chiếu"
   },
   "admin":{
     "genre": "Thể loại",
@@ -73,12 +74,21 @@
     "phone": "Your phone"
   },
   "message":{
+    "request": "Yêu cầu",
+    "error": "Lỗi!!!",
+    "success": "Thành công",
     "required": "Trường bắt buộc.",
     "valid":"Giá trị không phải ngày",
     "mindate": "Ngày này quá sớm",
     "maxdate": "Ngày này quá trễ",
     "connect": "Vui lòng kiểm tra kết nối tới server.",
-    "confirmLogout": "Xác nhận đăng xuất?"
+    "confirmLogout": "Xác nhận đăng xuất?",
+    "formatTime": "Giờ chiếu sai!!!",
+    "createSchedule": "Đã tạo thành công một lịch chiếu.",
+    "confirmDelete": "Bạn chắc chắn xóa?",
+    "confirm": "Xác nhận!!!",
+    "requestLogin": "Vui lòng đăng nhập để đặt vé",
+    "loginAdmin": "Admin khổng thể đặt vé"
   },
   "errors":{
     "ER001": "Sai username hoặc password!!!"

@@ -56,7 +56,8 @@
     "end": "End Date:",
     "date": "Date",
     "room": "Room",
-    "theatre": "Theatre"
+    "theatre": "Theatre",
+    "time": "Time"
   },
   "admin":{
     "genre": "Genre",
@@ -70,16 +71,26 @@
     "seatChose": "Choosing",
     "seatSold": "Sold",
     "name": "Your name",
-    "phone": "Your phone"
+    "phone": "Your phone",
+    "amount": "Total selected seats",
+    "price": "Total price"
   },
   "message":{
+    "request": "Request",
     "error": "Error!!!",
+    "success": "Success",
     "required": "This is required.",
     "valid":"The entered value is not a date!",
     "mindate": "Date is too early!",
     "maxdate": "Date is too late!",
     "connect": "Please check connect to server. Check network again!!!",
-    "confirmLogout": "Are you sure to logout?"
+    "confirmLogout": "Are you sure to logout?",
+    "formatTime": "Time is wrong format!!!",
+    "createSchedule": "Creating schedule is successful.",
+    "confirmDelete": "Are you sure delete?",
+    "confirm": "Confirm!!!",
+    "requestLogin": "Please login to book ticket",
+    "loginAdmin": "Admin can not book ticket"
   },
   "errors":{
     "ER001": "Wrong username or password!!!"
