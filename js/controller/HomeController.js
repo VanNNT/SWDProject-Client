@@ -22,8 +22,11 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
     function initData() {
         $scope.listFilmNow = localStorage.getItem(LOCAL_MOVIE_NOW);
         $scope.listFilmSoon = localStorage.getItem(LOCAL_MOVIE_SOON);
+        $scope.listFilm = localStorage.getItem(LOCAL_ALL_MOVIES);
+
         BaseService.getAPI(URL_MOVIE_SOON,'',getSoonSuccess, getSoonFail);
         BaseService.getAPI(URL_MOVIE_NOW,'',getNowSuccess, getSoonFail);
+        BaseService.getAPI(URL_GET_ALL_MOVIE,'',getAllSuccess, getSoonFail);
     }
 
     function getNowSuccess(response){
@@ -33,6 +36,10 @@ SWDApp.controller('HomeController', function($scope, $mdDialog, $mdMedia,$locati
     function getSoonSuccess(response){
         $scope.listFilmSoon = response.data;
         localStorage.setItem(LOCAL_MOVIE_SOON,JSON.stringify($scope.listFilmSoon));
+    }
+    function getAllSuccess(response){
+        $scope.listFilm = response.data;
+        localStorage.setItem(LOCAL_ALL_MOVIES,JSON.stringify($scope.listFilm));
     }
     function getSoonFail(){
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));

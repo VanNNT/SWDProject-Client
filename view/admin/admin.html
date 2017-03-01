@@ -23,11 +23,11 @@
                 </thead>
                 <tbody>
                 <tr  ng-repeat="film in listFilm | orderBy:sortColumn:reverse">
-                    <td class="text-center">{{film.title}}</td>
+                    <td class="text-center">{{film.movieName}}</td>
                     <td class="text-center">{{film.actor}}</td>
-                    <td class="text-center">{{film.type}}</td>
-                    <td class="text-center">{{film.date}}</td>
-                    <td class="text-center">{{film.time}}</td>
+                    <td class="text-center">{{film.genre}}</td>
+                    <td class="text-center">{{film.startDate}}</td>
+                    <td class="text-center">{{film.endDate}}</td>
                     <td layout-align="center center" layout="row">
                         <i class="fa fa-trash w3-xxlarge none-outline" ng-click=""></i>
                         <i ng-click="showTime()" class="fa fa-calendar none-outline" aria-hidden="true"></i>
