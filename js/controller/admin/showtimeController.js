@@ -1,4 +1,4 @@
-SWDApp.controller('showtimeController', function($scope,$controller,$translate,BaseService,$rootScope,$location) {
+SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,BaseService,$rootScope,$location) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -9,7 +9,8 @@ SWDApp.controller('showtimeController', function($scope,$controller,$translate,B
     }
 
     function initData() {
-        console.log($rootScope.itemTime);
+        console.log($scope.itemTime);
+        $scope.movieTitle = $scope.itemTime.movieName;
         var data={
             'movieID': '3'
         };
@@ -94,19 +95,20 @@ SWDApp.controller('showtimeController', function($scope,$controller,$translate,B
 
 
     $scope.close = function () {
-        $location.path('/admin');
+        $rootScope.isShow = false;
     };
 
     function saveSuccess(response) {
-        if(!response.error){
+        if(!response.error) {
             $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createSchedule'));
-           // getScheduleSuccess(response);
+            $rootScope.isShow = false;
+            // getScheduleSuccess(response);
         }
-    };
+    }
 
     function saveFail() {
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
-    };
+    }
     $scope.saveSchedule = function () {
         var data = {
             'movieId': '3',
@@ -128,6 +130,7 @@ SWDApp.controller('showtimeController', function($scope,$controller,$translate,B
 
     $scope.$on("$destroy", function() {
         delete $rootScope.itemTime;
+        delete $rootScope.isShow;
     });
 
 });

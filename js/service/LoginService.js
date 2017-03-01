@@ -7,12 +7,13 @@ SWDApp.service('LoginService',  function ($http,$cookies,$rootScope) {
 
     return service;
 
-    function SetCredentials(username, password) {
+    function SetCredentials(username,role, password) {
         var authdata = Base64.encode(password);
 
         $rootScope.globals = {
             currentUser: {
                 username: username,
+                role: role,
                 authdata: authdata
             }
         };

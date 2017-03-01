@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$location) {
+SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$location) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -12,8 +12,15 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     }
 
     function initData() {
-        $rootScope.prePage = $rootScope.currentPage;
-        $rootScope.currentPage = ADD_MOVIE_PAGE;
+         if($scope.itemMovie == ''){
+             $scope.readonly = false;
+             $scope.title = $translate.instant('admin.add');
+         }else{
+             $scope.readonly = true;
+             $scope.title = $scope.itemMovie.movieName;
+             $scope.posterMovie = $scope.itemMovie.picture;
+
+         }
     }
 
     function initView(){
@@ -30,7 +37,7 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
         );
     }
     $scope.close = function () {
-        $location.path('/admin');
+        $rootScope.isShowInfo = false;
     };
     $scope.clear = function (boolean) {
         if(boolean == true){
@@ -62,5 +69,9 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         }).then();
     }
+
+    $scope.$on("$destroy", function() {
+        delete  $rootScope.isShowInfo;
+    });
 
 });

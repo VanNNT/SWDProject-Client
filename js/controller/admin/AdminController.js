@@ -102,12 +102,13 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         ];
     }
 
-    $scope.showPageInfo = function(){
-        $location.path('/add-movie');
+    $scope.showPageInfo = function(item){
+        $scope.itemMovie = item;
+        $rootScope.isShowInfo = true;
     };
     $scope.showTime = function (ev,item) {
-        $rootScope.itemTime = item;
-        $location.path('/add-showtime');
+        $scope.itemTime = item;
+        $rootScope.isShow = true;
     };
 
     // SortData

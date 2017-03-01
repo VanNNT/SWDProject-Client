@@ -1,5 +1,5 @@
 <div class="admin-wappper background-white" style="height: 550px" flex>
-        <div id="showFilm" class="choice">
+    <div ng-show="!$root.isShow && !$root.isShowInfo" id="showFilm" class="choice">
             <div layout="row" flex>
                 <h2 translate="admin.list"></h2>
                 <!-- Button Add Film To List -->
@@ -23,7 +23,7 @@
                 </thead>
                 <tbody>
                 <tr  ng-repeat="film in listFilm | orderBy:sortColumn:reverse">
-                    <td class="text-center">{{film.title}}</td>
+                    <td ng-click="showPageInfo(item)" class="text-center cursor-pointer none-outline">{{film.title}}</td>
                     <td class="text-center">{{film.actor}}</td>
                     <td class="text-center">{{film.type}}</td>
                     <td class="text-center">{{film.date}}</td>
@@ -36,5 +36,7 @@
                 </tbody>
             </table>
         </div>
+    <div ng-include="'view/admin/showtimeInfo.html'" ng-if="$root.isShow"></div>
+    <div ng-include="'view/admin/updateInfo.html'" ng-if="$root.isShowInfo"></div>
 </div>
 
