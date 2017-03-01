@@ -8,6 +8,7 @@ var URL_LOGIN = HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/account/login";
 var URL_MOVIE_SOON= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/comingSoon";
 var URL_MOVIE_NOW= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/moviePresenting";
 var URL_GET_SHOWTIME= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/schedule/getShowtime";
+var URL_CREATE_SHOWTIME= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/schedule/create-schedule";
 
 
 var LANG_EN = 1;
@@ -31,10 +32,15 @@ var LOCAL_USER_INFO = 'USER_INFO';
 var LOCAL_MOVIE_SOON = 'MOVIE_SOON_LIST';
 var LOCAL_MOVIE_NOW = 'MOVIE_NOW_LIST';
 var LOCAL_SELECT_INDEX = 'SELECT_INDEX';
+var LOCAL_MOVIE_SHEDULE = 'MOVIE_SHEDULE';
+var LOCAL_MOVIE_NAME = 'MOVIE_NAME';
 
 // Page
 var ADMIN_PAGE = 'adminPage';
 var ADD_MOVIE_PAGE = 'addMovie';
 var HOME_PAGE = 'homePage';
+
+var ROLE_ADMIN = 'admin';
+var ROLE_USER = 'user';
 
 

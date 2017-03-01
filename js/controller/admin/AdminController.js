@@ -105,17 +105,11 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
     $scope.showPageInfo = function(){
         $location.path('/add-movie');
     };
-    $scope.showTime = function (ev) {
-        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
-        $mdDialog.show({
-            controller: 'showtimeController',
-            templateUrl: 'view/admin/showtimeInfo.html',
-            parent: angular.element(document.body),
-            targetEvent: ev,
-            clickOutsideToClose: true,
-            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
-        }).then();
+    $scope.showTime = function (ev,item) {
+        $rootScope.itemTime = item;
+        $location.path('/add-showtime');
     };
+
     // SortData
 
     $scope.sortColumn = 'name';
@@ -134,6 +128,5 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         }
         return '';
     };
-
 
 });

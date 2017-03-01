@@ -8,6 +8,7 @@ SWDApp.controller('LoginController', function ($scope,$rootScope, $mdDialog, $co
         if(!response.data.errorCode){
             LoginService.SetCredentials(response.data.nameOfCustomer, $scope.password);
             $rootScope.logged = true;
+            $rootScope.role = response.data.role;
             $rootScope.nameUser = response.data.nameOfCustomer;
             $mdDialog.hide();
             localStorage.setItem(LOCAL_USER_INFO,JSON.stringify(response.data));

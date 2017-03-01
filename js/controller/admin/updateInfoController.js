@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope) {
+SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$location) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -30,7 +30,7 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
         );
     }
     $scope.close = function () {
-        $mdDialog.cancel();
+        $location.path('/admin');
     };
     $scope.clear = function (boolean) {
         if(boolean == true){
@@ -56,7 +56,7 @@ SWDApp.controller('updateInfoController', function($scope,$mdDialog,$controller,
     };
     $scope.showPopup = function (ev) {
         $mdDialog.show({
-            templateUrl: 'view/admin/toastImage.html',
+            templateUrl: 'view/admin/popupWeb.html',
             targetEvent: ev,
             clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
