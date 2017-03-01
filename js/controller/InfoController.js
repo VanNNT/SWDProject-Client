@@ -1,4 +1,4 @@
-SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce,BaseService,$translate) {
+SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$controller,$mdDialog,$mdMedia,$sce,BaseService,$translate,$location) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -88,6 +88,18 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
         $mdDialog.cancel();
     };
 
+    $scope.bookTicket = function (item) {
+        if(!$rootScope.logged){
+            $scope.showAlert('', $translate.instant('message.request'), $translate.instant('message.requestLogin'));
+        }else if($rootScope.role == ROLE_ADMIN){
+            $scope.showAlert('', $translate.instant('message.request'), $translate.instant('message.loginAdmin'));
+        }
+        else{
+            $rootScope.titleMovieB = $scope.item.movieName;
+            $rootScope.bookTicketOfMovie = item;
+            $location.path('/book-ticket');
+        }
+    };
     $scope.$on("$destroy", function() {
         delete $rootScope.titleTrailer;
         delete $rootScope.videoTrailer;

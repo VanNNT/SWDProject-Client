@@ -1,3 +1,106 @@
 .ticket-wrapper{
-  min-height: 525px;
+  min-height: 535px;
+  background-color: @color_white;
+  .seat-ticket{
+    padding: 15px;
+    .movie-info{
+      line-height: 30px;
+      color: #680f10;
+      .movie-title{
+        font-size: 30px;
+        word-break: break-all;
+        width: 100%;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      .showtime-movie{
+        .theatre-name{
+          color: @color_primary;
+          font-size: 30px;
+          font-weight: 600;
+        }
+        .date{
+          border-right: 1px solid;
+          padding-right: 10px;
+          padding-left: 10px;
+          font-size: 20px;
+        }
+        .time{
+          padding-right: 10px;
+          padding-left: 10px;
+          font-size: 20px;
+        }
+      }
+    }
+    .screen{
+      height: 40px;
+      font-size: 20px;
+      border-radius: 10px;
+      line-height: 35px;
+      background: url(https://www.cgv.vn/skin/frontend/cgv/default/images/screen_bg.png) repeat scroll 0 0 transparent;
+      width: 100%;
+      text-align: center;
+      font-weight: 700;
+    }
+    .seat-group{
+      width: 450px;
+      padding-top: 30px;
+      .seat-item{
+        width: 45px;
+        height: 45px;
+        background-color: @color_white;
+        padding: 12px;
+        border: 1px solid;
+        color: @color_primary;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        text-align: center;
+        &:hover{
+           background-color: hotpink;
+          color: deepskyblue;
+        }
+      }
+      .active{
+        background-color: @color_primary;
+        color: @color_white;
+      }
+      .sold{
+        background-color: #5e5e5e !important;
+        color: @color_white !important;
+      }
+    }
+    .row-group{
+      padding-top: 33px;
+      width: 200px;
+      .seat-row{
+        font-size: 20px;
+        height: 45px;
+        padding-top: 10px;
+        text-align: center;
+      }
+    }
+
+    .seat-choose-des{
+       width: 25px;
+       height: 25px;
+       padding: 12px;
+       border: 1px solid;
+       text-align: center;
+       background-color: #ff7727;
+       color: white;
+       margin-right: 15px;
+     }
+    .seat-sold-des{
+      background-color: #5e5e5e !important;
+      color: @color_white !important;
+    }
+    .condition{
+      padding-top: 20px;
+      font-weight: 700;
+    }
+  }
+  .user-info{
+    border-left: 1px solid @color_primary;
+  }
 }
+

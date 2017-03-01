@@ -47,10 +47,10 @@
                             <div ng-if="nameCGV">
                                 <div class="info-group rap-title">{{nameCGV}}</div>
                                 <div class="showtime" ng-repeat="(startDate,value) in listCGV | groupBy: 'startDate'" layout="column">
-                                    <div class="showtime-date">{{startDate}}</div>
+                                    <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                                     <div layout="row">
                                         <div ng-repeat="item in value">
-                                            <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                            <div ng-click="bookTicket(item)" class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -58,10 +58,10 @@
                             <div ng-if="nameLotte">
                                 <div class="info-group rap-title">{{nameLotte}}</div>
                                 <div class="showtime" ng-repeat="(startDate,value) in listLotte | groupBy: 'startDate'" layout="column">
-                                    <div class="showtime-date">{{startDate}}</div>
+                                    <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                                     <div layout="row">
                                         <div ng-repeat="item in value">
-                                            <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                            <div ng-click="bookTicket(item)" class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -69,10 +69,10 @@
                           <div ng-if="nameGalaxy">
                               <div class="info-group rap-title">{{nameGalaxy}}</div>
                               <div class="showtime" ng-repeat="(startDate,value) in listGalaxy | groupBy: 'startDate'" layout="column">
-                                  <div class="showtime-date">{{startDate}}</div>
+                                  <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                                   <div layout="row">
                                       <div ng-repeat="item in value">
-                                          <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                          <div ng-click="bookTicket(item)" class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
                                       </div>
                                   </div>
                               </div>
@@ -80,10 +80,10 @@
                            <div ng-if="nameCinebox">
                                <div class="info-group rap-title">{{nameCinebox}}</div>
                                <div class="showtime" ng-repeat="(startDate,value) in listCinebox | groupBy: 'startDate'" layout="column">
-                                   <div class="showtime-date">{{startDate}}</div>
+                                   <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                                    <div layout="row">
                                        <div ng-repeat="item in value">
-                                           <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                           <div ng-click="bookTicket(item)" class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
                                        </div>
                                    </div>
                                </div>
@@ -91,10 +91,10 @@
                            <div ng-if="nameBHD">
                                <div class="info-group rap-title">{{nameBHD}}</div>
                                <div class="showtime" ng-repeat="(startDate,value) in listBHD | groupBy: 'startDate'" layout="column">
-                                   <div class="showtime-date">{{startDate}}</div>
+                                   <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                                    <div layout="row">
                                        <div ng-repeat="item in value">
-                                           <a href="#!/book-ticket" class="showtime-item">{{item.startTime}}</a>
+                                           <div ng-click="bookTicket(item)" class="showtime-item cursor-pointer none-outline">{{item.startTime | formatTime}}</div>
                                        </div>
                                    </div>
                                </div>

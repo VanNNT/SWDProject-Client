@@ -3,11 +3,11 @@
  */
 'use strict';
 var SWDApp = angular.module('SWDApp', [
-        'ngRoute',
-        'ngMaterial',
-        'ngMessages',
-        'angular.filter',
-        'pascalprecht.translate',
-        'ngCookies'
-    ]);
+    'ngRoute',
+    'ngMaterial',
+    'ngMessages',
+    'angular.filter',
+    'pascalprecht.translate',
+    'ngCookies'
+]);
 

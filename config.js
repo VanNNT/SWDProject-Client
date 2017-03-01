@@ -32,6 +32,10 @@ SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDat
             templateUrl : 'view/admin/updateInfo.html',
             controller  : 'updateInfoController'
         })
+        .when('/add-showtime',{
+            templateUrl : 'view/admin/showtimeInfo.html',
+            controller  : 'showtimeController'
+        })
         .otherwise({
             redirectTo: '/'
         });
