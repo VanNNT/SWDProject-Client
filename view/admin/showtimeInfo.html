@@ -1,4 +1,4 @@
-<div class="showtime-wrapper" id="showtime-wrapper" layout="column" layout-align="center center" flex>
+<div class="showtime-wrapper" id="showtime-wrapper" layout="column" layout-align="center center" ng-controller="ShowtimeController" flex>
     <div class="info-header" layout="row">
         <div flex="20" layout="row" layout-align="start center">
             <md-button class="md-icon-button" aria-label="More" ng-click="close()">
@@ -7,7 +7,7 @@
         </div>
         <div flex layout="row" layout-align="center center">
             <div class="info-title">
-                Add Schedule
+                {{movieTitle}}
             </div>
             <!--<img src="http://hkd.com.vn/ckfinder/userfiles/images/DU%20AN/26-3.png" alt="Avatar" class="avatar">-->
         </div>
@@ -61,9 +61,9 @@
                 </md-input-container>
             </div>
             <div class="div-scroll" layout="column">
-                <div  ng-if="nameCGV">
-                    <div class="rap-title">{{nameCGV}}</div>
-                    <div class="showtime" ng-repeat="(startDate,value) in listCGV | groupBy: 'startDate'" layout="column">
+                <div>
+                    <div class="rap-title">CGV</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listCGV | groupBy: 'startDate' track by $index" layout="column">
                         <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                         <div layout="row">
                             <div ng-repeat="item in value">
@@ -72,9 +72,9 @@
                         </div>
                     </div>
                 </div>
-                <div  ng-if="nameLotte">
-                    <div class="rap-title">{{nameLotte}}</div>
-                    <div class="showtime" ng-repeat="(startDate,value) in listLotte | groupBy: 'startDate'" layout="column">
+                <div>
+                    <div class="rap-title">LOTTE</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listLotte | groupBy: 'startDate' track by $index" layout="column">
                         <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                         <div layout="row">
                             <div ng-repeat="item in value">
@@ -83,9 +83,9 @@
                         </div>
                     </div>
                 </div>
-                <div  ng-if="nameGalaxy">
-                    <div class="rap-title">{{nameGalaxy}}</div>
-                    <div class="showtime" ng-repeat="(startDate,value) in listGalaxy | groupBy: 'startDate'" layout="column">
+                <div>
+                    <div class="rap-title">GALAXY</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listGalaxy | groupBy: 'startDate' track by $index" layout="column">
                         <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                         <div layout="row">
                             <div ng-repeat="item in value">
@@ -94,9 +94,9 @@
                         </div>
                     </div>
                 </div>
-                <div  ng-if="nameCinebox">
-                    <div class="rap-title">{{nameCinebox}}</div>
-                    <div class="showtime" ng-repeat="(startDate,value) in listCinebox | groupBy: 'startDate'" layout="column">
+                <div>
+                    <div class="rap-title">CINEBOX</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listCinebox | groupBy: 'startDate' track by $index" layout="column">
                         <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                         <div layout="row">
                             <div ng-repeat="item in value">
@@ -105,9 +105,9 @@
                         </div>
                     </div>
                 </div>
-                <div  ng-if="nameBHD">
-                    <div class="rap-title">{{nameBHD}}</div>
-                    <div class="showtime" ng-repeat="(startDate,value) in listBHD | groupBy: 'startDate'" layout="column">
+                <div>
+                    <div class="rap-title">BHD</div>
+                    <div class="showtime" ng-repeat="(startDate,value) in listBHD | groupBy: 'startDate' track by $index" layout="column">
                         <div class="showtime-date">{{startDate | date:'dd-MM-yyyy'}}</div>
                         <div layout="row">
                             <div ng-repeat="item in value">
