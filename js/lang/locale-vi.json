@@ -70,14 +70,20 @@
   "seat": {
     "seatChose": "Đang chọn",
     "seatSold": "Đã bán",
-    "name": "Your name",
-    "phone": "Your phone"
+    "name": "Tên",
+    "phone": "Số điện thoại",
+    "amount": "Số ghế đã chọn",
+    "bookTicket": "Đặt vé",
+    "price": "Số tiền",
+    "ticketGet": "Quý khách vui lòng đến nhận vé trước 30 phút. Sau thời gian đó chúng tôi sẽ hủy vé.",
+    "confirm": "Vui lòng xác nhận thông tin phim là chính xác."
   },
   "message":{
     "request": "Yêu cầu",
     "error": "Lỗi!!!",
     "success": "Thành công",
     "required": "Trường bắt buộc.",
+    "number": "Điện thoại chỉ được là số",
     "valid":"Giá trị không phải ngày",
     "mindate": "Ngày này quá sớm",
     "maxdate": "Ngày này quá trễ",
@@ -88,9 +94,13 @@
     "confirmDelete": "Bạn chắc chắn xóa?",
     "confirm": "Xác nhận!!!",
     "requestLogin": "Vui lòng đăng nhập để đặt vé",
-    "loginAdmin": "Admin khổng thể đặt vé"
+    "loginAdmin": "Admin khổng thể đặt vé",
+    "bookTicket": "Bạn đã hoàn thành việc đặt vé. Xin cảm ơn.",
+    "deleteSuccess": "Đã xóa lịch chiếu này"
   },
   "errors":{
-    "ER001": "Sai username hoặc password!!!"
+    "ER001": "Sai username hoặc password!!!",
+    "ER004": "Lịch chiếu đã tồn tại. Vui lòng kiểm tra lại thông tin đã nhập.",
+    "ER002": "Ghế chọn đã được bán. Vui lòng chọn lại."
   }
 }

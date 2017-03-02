@@ -1,5 +1,5 @@
-<div class="admin-wappper background-white" style="height: 550px" flex>
-        <div id="showFilm" class="choice">
+<div class="admin-wappper background-white" style="height: 535px" flex>
+    <div ng-show="!$root.isShow && !$root.isShowInfo" id="showFilm" class="choice">
             <div layout="row" flex>
                 <h2 translate="admin.list"></h2>
                 <!-- Button Add Film To List -->
@@ -10,6 +10,7 @@
                 </div>
             </div>
             <!--Show film in list-->
+        <div style="height: 470px; overflow: auto;">
             <table>
                 <thead style="text-align: center;">
                 <tr>
@@ -23,11 +24,11 @@
                 </thead>
                 <tbody>
                 <tr  ng-repeat="film in listFilm | orderBy:sortColumn:reverse">
-                    <td class="text-center">{{film.title}}</td>
+                    <td ng-click="showPageInfo(film)" class="text-center cursor-pointer none-outline">{{film.movieName}}</td>
                     <td class="text-center">{{film.actor}}</td>
-                    <td class="text-center">{{film.type}}</td>
-                    <td class="text-center">{{film.date}}</td>
-                    <td class="text-center">{{film.time}}</td>
+                    <td class="text-center">{{film.genre}}</td>
+                    <td class="text-center">{{film.startDate}}</td>
+                    <td class="text-center">{{film.endDate}}</td>
                     <td layout-align="center center" layout="row">
                         <i class="fa fa-trash w3-xxlarge none-outline" ng-click=""></i>
                         <i ng-click="showTime(ev,film)" class="fa fa-calendar none-outline" aria-hidden="true"></i>
@@ -36,5 +37,8 @@
                 </tbody>
             </table>
         </div>
+        </div>
+    <div ng-include="'view/admin/showtimeInfo.html'" ng-if="$root.isShow"></div>
+    <div ng-include="'view/admin/updateInfo.html'" ng-if="$root.isShowInfo"></div>
 </div>
 
