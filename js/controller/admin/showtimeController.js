@@ -1,6 +1,16 @@
-SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,BaseService,$rootScope,$location) {
+SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,BaseService,$rootScope,$filter) {
     $controller('BaseController', {$scope: $scope});
 
+    $scope.listGalaxy = [];
+    $scope.listCGV = [];
+    $scope.listLotte = [];
+    $scope.listCinebox = [];
+    $scope.listBHD = [];
+    $scope.nameGalaxy = '';
+    $scope.nameCGV = '';
+    $scope.nameLotte = '';
+    $scope.nameCinebox = '';
+    $scope.nameBHD = '';
     initController();
 
     function initController(){
@@ -12,7 +22,7 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
         console.log($scope.itemTime);
         $scope.movieTitle = $scope.itemTime.movieName;
         var data={
-            'movieID': '3'
+            'movieID': $scope.itemTime.movieId
         };
         BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
 
@@ -34,29 +44,25 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     }
 
     function initView(){
-        var chieu = new Date('2017-02-24');
-        var het = new Date('2017-03-24');
+        var chieu = new Date($scope.itemTime.startDate);
+        var het = new Date($scope.itemTime.endDate);
         $scope.startDate = new Date();
         $scope.startMaxDate = new Date(
             $scope.startDate.getFullYear(), het.getMonth(), het.getDate()
         );
-        $scope.startMinDate = new Date(
-            $scope.startDate.getFullYear(), $scope.startDate.getMonth(), chieu.getDate()+1
-        );
+        if(chieu > $scope.startDate){
+            $scope.startMinDate = new Date(
+                chieu.getFullYear(), chieu.getMonth(), chieu.getDate()+1
+            );
+        }else{
+            $scope.startMinDate = new Date(
+                $scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+1
+            );
+        }
     }
 
 
     function getScheduleSuccess(response) {
-            $scope.listGalaxy = [];
-            $scope.listCGV = [];
-            $scope.listLotte = [];
-            $scope.listCinebox = [];
-            $scope.listBHD = [];
-            $scope.nameGalaxy = '';
-            $scope.nameCGV = '';
-            $scope.nameLotte = '';
-            $scope.nameCinebox = '';
-            $scope.nameBHD = '';
             if (response.data) {
                 _.each(response.data, function (item) {
                     if (item.theatre == GALAXY) {
@@ -99,10 +105,21 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     };
 
     function saveSuccess(response) {
-        if(!response.error) {
+        if(!response.data.errorCode) {
+            if(response.data.theatre == CGV){
+                $scope.listCGV.push(response.data);
+            }else if (response.data.theatre == LOTTE){
+                $scope.listLotte.push(response.data);
+            }else if(response.data.theatre == GALAXY){
+                $scope.listGalaxy.push(response.data);
+            }else if(response.data.theatre == BHD){
+                $scope.listBHD.push(response.data);
+            }else if(response.data.theatre == CINEBOX){
+                $scope.listCinebox.push(response.data);
+            }
             $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createSchedule'));
-            $rootScope.isShow = false;
-            // getScheduleSuccess(response);
+        }else{
+            $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
         }
     }
 
@@ -111,7 +128,7 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     }
     $scope.saveSchedule = function () {
         var data = {
-            'movieId': '3',
+            'movieId': $scope.itemTime.movieId,
             'theatre': $scope.movieTheatre,
             'startDate': $scope.startDate.toISOString().substr(0, 10),
             'startTime': $scope.movieTime,
@@ -120,14 +137,55 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
        BaseService.postAPI(URL_CREATE_SHOWTIME,data,saveSuccess,saveFail);
     };
 
+    var itemDelete = '';
     $scope.delete = function (item) {
-        $scope.showConfirm('',$translate.instant('message.confirm'),$translate.instant('message.confirmDelete'),function () {
-            console.log(item);
-        },function () {
-
-        })
+        $scope.showConfirm('',$translate.instant('message.confirm'),$translate.instant('message.confirmDelete'),
+            // OK
+            function () {
+                itemDelete = item;
+            var data = {
+                'scheduleId': item.scheduleId
+            };
+            BaseService.postAPI(URL_DELETE_SHOWTIME,data,deleteSuccess,saveFail);
+        }, function () {})
     };
 
+    function deleteSuccess(response){
+        if(response.data.theatre == CGV){
+            _.any($scope.listCGV,function (i) {
+                if(i.scheduleId == response.data.scheduleId){
+                    $scope.listCGV.splice($scope.listCGV.indexOf(i),1);
+                }
+            })
+        }else if (response.data.theatre == LOTTE){
+            _.any($scope.listLotte,function (i) {
+                if(i.scheduleId == response.data.scheduleId){
+                    $scope.listLotte.splice($scope.listLotte.indexOf(i),1);
+                }
+            })
+        }else if(response.data.theatre == GALAXY){
+            $scope.listGalaxy.splice($scope.listGalaxy.indexOf(item),1);
+            _.any($scope.listGalaxy,function (i) {
+                if(i.scheduleId == response.data.scheduleId){
+                    $scope.listGalaxy.splice($scope.listGalaxy.indexOf(i),1);
+                }
+            })
+        }else if(response.data.theatre == BHD){
+            _.any($scope.listBHD,function (i) {
+                if(i.scheduleId == response.data.scheduleId){
+                    $scope.listBHD.splice($scope.listBHD.indexOf(i),1);
+                }
+            })
+        }else if(response.data.theatre == CINEBOX){
+            _.any($scope.listCinebox,function (i) {
+                if(i.scheduleId == response.data.scheduleId){
+                    $scope.listCinebox.splice($scope.listCinebox.indexOf(i),1);
+                }
+            })
+        }
+        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSuccess'));
+
+    }
     $scope.$on("$destroy", function() {
         delete $rootScope.itemTime;
         delete $rootScope.isShow;

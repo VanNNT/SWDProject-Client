@@ -6,7 +6,7 @@ SWDApp.controller('LoginController', function ($scope,$rootScope, $mdDialog, $co
 
     function LoginSuccessful(response) {
         if(!response.data.errorCode){
-            LoginService.SetCredentials(response.data.nameOfCustomer,response.data.role, $scope.password);
+            LoginService.SetCredentials(response.data.nameOfCustomer,response.data.role,response.data.userId, $scope.password);
             $rootScope.logged = true;
             $rootScope.role = response.data.role;
             $rootScope.nameUser = response.data.nameOfCustomer;

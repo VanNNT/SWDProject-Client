@@ -73,13 +73,17 @@
     "name": "Your name",
     "phone": "Your phone",
     "amount": "Total selected seats",
-    "price": "Total price"
+    "price": "Total price",
+    "bookTicket": "Book ticket",
+    "ticketGet": "Please come to the ticket counter 30 minutes ago.After that time, we will cancel the ticket.",
+    "confirm": "Please confirm the movie information is correct"
   },
   "message":{
     "request": "Request",
     "error": "Error!!!",
     "success": "Success",
     "required": "This is required.",
+    "number": "Phone is only number.",
     "valid":"The entered value is not a date!",
     "mindate": "Date is too early!",
     "maxdate": "Date is too late!",
@@ -90,9 +94,13 @@
     "confirmDelete": "Are you sure delete?",
     "confirm": "Confirm!!!",
     "requestLogin": "Please login to book ticket",
-    "loginAdmin": "Admin can not book ticket"
+    "loginAdmin": "Admin can not book ticket",
+    "bookTicket": "You have completed the booking ticket. Thanks",
+    "deleteSuccess": "Deleted this schedule."
   },
   "errors":{
-    "ER001": "Wrong username or password!!!"
+    "ER001": "Wrong username or password!!!",
+    "ER004": "This schedule is existed. Please check the infomation you have entered!",
+    "ER002": "The choosen seat have been sold!. Please choose again."
   }
 }

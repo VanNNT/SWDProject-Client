@@ -1,11 +1,12 @@
 /**
  * Created by Van on 03/02/2017.
  */
-SWDApp.controller('bookTicketController', function($scope,$controller,$rootScope) {
+SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope,BaseService,$translate) {
     $controller('BaseController', {$scope: $scope});
 
 
     var listSeatBook = [];
+    var listSeat =[];
     $scope.amountOfTicket = 0;
     $scope.totalPrice=0;
     initController();
@@ -15,12 +16,16 @@ SWDApp.controller('bookTicketController', function($scope,$controller,$rootScope
     }
 
     function initData() {
-        if($rootScope.bookTicketOfMovie && $rootScope.titleMovieB){
+        if($rootScope.bookTicketOfMovie && $rootScope.bookMovieName){
             localStorage.setItem(LOCAL_MOVIE_SHEDULE,JSON.stringify($rootScope.bookTicketOfMovie));
-            localStorage.setItem(LOCAL_MOVIE_NAME,JSON.stringify($rootScope.titleMovieB));
+            localStorage.setItem(LOCAL_MOVIE_NAME,JSON.stringify($rootScope.bookMovieName));
         }
         var item = JSON.parse(localStorage.getItem(LOCAL_MOVIE_SHEDULE));
-        $scope.movieTitle =JSON.parse(localStorage.getItem(LOCAL_MOVIE_NAME));
+        $scope.movieTitle = JSON.parse(localStorage.getItem(LOCAL_MOVIE_NAME));
+        var data={
+            'scheduleId': item.scheduleId
+        };
+        BaseService.getAPI(URL_GET_SEAT,data,getSeatSuccess,getSeatFail);
         if(item.theatre == CGV){
             $scope.theatre = 'CGV'
         }else if(item.theatre == GALAXY){
@@ -43,35 +48,39 @@ SWDApp.controller('bookTicketController', function($scope,$controller,$rootScope
             {id: 'E'}
         ];
 
-       var list = item.seats;
-       list.sort(function(a,b){
-           if(a.seatId<b.seatId)
-               return -1;
-           if(a.seatId>b.seatId)
-               return 1;
-           return 0;
-       });
-        $scope.listSeat = list
+    }
+
+    function getSeatSuccess(response){
+        $scope.listSeat = response.data;
+    }
+
+    function getSeatFail(){
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
 
     $scope.addSeat = function (seat) {
-        var isExist = false;
-        // check seat in list seatBook
-        _.any(listSeatBook,function (i) {
-            if(i == seat.seatId){
-                isExist = true;
-                return true;
+        if(!seat.seatStatus){
+            var isExist = false;
+            var index = 0;
+            // check seat in list seatBook
+            _.any(listSeatBook,function (i) {
+                if(i == seat.seatId){
+                    isExist = true;
+                    listSeatBook.splice(index,1);
+                    listSeat.splice(index,1);
+                    $scope.amountOfTicket= $scope.amountOfTicket -1;
+                    return true;
+                }
+                index = index +1;
+            });
+            if(!isExist){
+                listSeatBook.push(seat.seatId);
+                listSeat.push(seat);
+                $scope.amountOfTicket= $scope.amountOfTicket +1;
             }
-        });
-        if(isExist){
-            listSeatBook.splice(seat.seatId,1);
-            $scope.amountOfTicket= $scope.amountOfTicket -1;
-        }else{
-            listSeatBook.push(seat.seatId);
-            $scope.amountOfTicket= $scope.amountOfTicket +1;
-        }
 
-        $scope.totalPrice = $scope.amountOfTicket*50.000;
+            $scope.totalPrice = $scope.amountOfTicket*50.000;
+        }
     };
     
     $scope.bookTicket = function () {
@@ -85,8 +94,33 @@ SWDApp.controller('bookTicketController', function($scope,$controller,$rootScope
             });
             return true;
         });
+
+        if($scope.a){
+             var data ={
+                 'username': $scope.nameOfUser,
+                 'phone': $scope.phoneOfUser,
+                 'price': $scope.totalPrice,
+                 'seatId': listSeatBook ,
+                 'userId': $rootScope.globals.currentUser.userID
+             };
+             BaseService.postAPI(URL_SAVE_TICKET,data,saveTicketSuccess,saveTicketError)
+        }
     };
 
+    function saveTicketSuccess(response){
+        if(!response.data.errorCode){
+            $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.bookTicket'));
+            _.any(listSeat,function (i) {
+                     i.seatStatus = true;
+            });
+        }else{
+            $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
+        }
+    }
+
+    function saveTicketError() {
+        
+    }
     $scope.$on("$destroy", function() {
         delete  $rootScope.bookTicketOfMovie;
         delete  $rootScope.titleMovieB;

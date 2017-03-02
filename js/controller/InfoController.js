@@ -67,7 +67,7 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
     }
 
     function getScheduleFail(){
-        scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
 
     $scope.showTrailer = function(trailer,name,ev){
@@ -95,7 +95,7 @@ SWDApp.controller('InfoController', function($scope,$rootScope, MovieService,$co
             $scope.showAlert('', $translate.instant('message.request'), $translate.instant('message.loginAdmin'));
         }
         else{
-            $rootScope.titleMovieB = $scope.item.movieName;
+            $rootScope.bookMovieName = $scope.item.movieName;
             $rootScope.bookTicketOfMovie = item;
             $location.path('/book-ticket');
         }

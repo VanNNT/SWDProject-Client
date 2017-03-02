@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$location) {
+SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$translate) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -12,25 +12,33 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
     }
 
     function initData() {
-         if($scope.itemMovie == ''){
+         if(!$scope.itemMovie){
              $scope.readonly = false;
              $scope.title = $translate.instant('admin.add');
+             $scope.startDate = new Date();
+             $scope.endDate = new Date();
          }else{
              $scope.readonly = true;
              $scope.title = $scope.itemMovie.movieName;
+             $scope.nameMovie = $scope.itemMovie.movieName;
              $scope.posterMovie = $scope.itemMovie.picture;
+             $scope.movieGenre = $scope.itemMovie.genre;
+             $scope.desMovie = $scope.itemMovie.introduction;
+             $scope.startDate = new Date($scope.itemMovie.startDate);
+             $scope.endDate = new Date($scope.itemMovie.endDate);
+             $scope.movieActor = $scope.itemMovie.actor;
+             $scope.movieTrailer = $scope.itemMovie.trailer;
+             $scope.trailer = $sce.trustAsResourceUrl($scope.itemMovie.trailer);
 
          }
     }
 
     function initView(){
-        $scope.startDate = new Date();
-        $scope.endDate = new Date();
         $scope.startMinDate = new Date(
             $scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()
         );
         $scope.endMinDate = new Date(
-            $scope.endDate.getFullYear(), $scope.endDate.getMonth(), $scope.endDate.getDate()+1
+            $scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+1
         );
         $scope.startMaxDate = new Date(
             $scope.startDate.getFullYear(), $scope.startDate.getMonth() + 4, $scope.startDate.getDate()
