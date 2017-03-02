@@ -1,16 +1,7 @@
 SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,BaseService,$rootScope,$filter) {
     $controller('BaseController', {$scope: $scope});
 
-    $scope.listGalaxy = [];
-    $scope.listCGV = [];
-    $scope.listLotte = [];
-    $scope.listCinebox = [];
-    $scope.listBHD = [];
-    $scope.nameGalaxy = '';
-    $scope.nameCGV = '';
-    $scope.nameLotte = '';
-    $scope.nameCinebox = '';
-    $scope.nameBHD = '';
+    var data;
     initController();
 
     function initController(){
@@ -21,7 +12,7 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     function initData() {
         console.log($scope.itemTime);
         $scope.movieTitle = $scope.itemTime.movieName;
-        var data={
+        data={
             'movieID': $scope.itemTime.movieId
         };
         BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
@@ -63,6 +54,16 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
 
 
     function getScheduleSuccess(response) {
+        $scope.listGalaxy = [];
+        $scope.listCGV = [];
+        $scope.listLotte = [];
+        $scope.listCinebox = [];
+        $scope.listBHD = [];
+        $scope.nameGalaxy = '';
+        $scope.nameCGV = '';
+        $scope.nameLotte = '';
+        $scope.nameCinebox = '';
+        $scope.nameBHD = '';
             if (response.data) {
                 _.each(response.data, function (item) {
                     if (item.theatre == GALAXY) {
@@ -106,17 +107,7 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
 
     function saveSuccess(response) {
         if(!response.data.errorCode) {
-            if(response.data.theatre == CGV){
-                $scope.listCGV.push(response.data);
-            }else if (response.data.theatre == LOTTE){
-                $scope.listLotte.push(response.data);
-            }else if(response.data.theatre == GALAXY){
-                $scope.listGalaxy.push(response.data);
-            }else if(response.data.theatre == BHD){
-                $scope.listBHD.push(response.data);
-            }else if(response.data.theatre == CINEBOX){
-                $scope.listCinebox.push(response.data);
-            }
+            BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
             $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createSchedule'));
         }else{
             $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
