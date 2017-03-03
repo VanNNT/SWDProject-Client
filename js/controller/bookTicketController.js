@@ -113,6 +113,15 @@ SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope
             _.any(listSeat,function (i) {
                      i.seatStatus = true;
             });
+            listSeatBook = [];
+            listSeat = [];
+            $scope.amountOfTicket = 0;
+            $scope.totalPrice=0;
+            $scope.a = false;
+            $scope.nameOfUser = '';
+            $scope.phoneOfUser = '';
+            $scope.totalPrice = '';
+            $scope.seatForm.$setUntouched();
         }else{
             $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
         }
