@@ -30,9 +30,13 @@
                 <li ng-class="{'active': $root.view==5}"><a href="#" translate="toolbar.contact"></a></li>
                 <li ng-show="$root.role == 'admin'" ng-class="{'active': $root.view==4}" class="not-show-on-sm"><a href="#!/admin">ADMIN</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right not-show-on-sm">
+            <ul class="nav navbar-nav navbar-right">
                 <li><a ng-show="!$root.logged" ng-click="showLoginFrom()"><span class="glyphicon glyphicon-log-in cursor-pointer"
                                                         translate="button.login"></span></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a ng-show="!$root.logged" href="#!/register"><span class="glyphicon glyphicon glyphicon-registration-mark cursor-pointer"
+                                                        translate="button.register"></span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right not-show-on-sm">
                 <li><a ng-show="$root.logged" ng-click="logoutConfirm()"><span class="glyphicon glyphicon-log-out cursor-pointer"
@@ -48,6 +52,36 @@
 <div id="main" class="background-primary">
     <div ng-view=""></div>
 </div>
+<footer>
+    <div id="contact_info">
+        <div id="info_wrapper">
+            <div id="left_info">
+                <ul layout-align="center">
+                    <li><a href="/">&copy; 2017 Team WhiteBear, No 1</a></li>
+                    <li><a href="/">Liên Hệ</a></li>
+                    <li><a href="/">SITE USE</a></li>
+                    <li><a href="/">TERMS</a></li>
+                    <li><a href="/">FAQS</a></li>
+                    <li><a href="/">CONTACT</a></li>
+                    <li><a href="/">SITE BY DuyTNB</a></li>
+                </ul>
+            </div>
+            <div id="right_info">
+                <ul>
+                    <li><a href="/">SOCIAL HUB</a></li>
+                    <li>
+                        <a href="/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    </li>
+                    <li><a href="/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="/"><i class="fa fa-google-wallet" aria-hidden="true"></i></a></li>
+                    <li><a href="/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li><a href="/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</footer>
 <!--Lib-->
 <script src="lib/jquery.min.js"></script>
 <script src="lib/jquery.min.js"></script>
@@ -92,6 +126,7 @@
 <script type="text/javascript" src="js/controller/SaleController.js"></script>
 <script type="text/javascript" src="js/controller/InfoController.js"></script>
 <script type="text/javascript" src="js/controller/BaseController.js"></script>
+<script type="text/javascript" src="js/controller/RegisterController.js"></script>
 <script type="text/javascript" src="js/controller/BookTicketController.js"></script>
 <script type="text/javascript" src="js/controller/admin/AdminController.js"></script>
 <script type="text/javascript" src="js/controller/admin/UpdateInfoController.js"></script>
