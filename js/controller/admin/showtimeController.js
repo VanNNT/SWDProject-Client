@@ -109,6 +109,11 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
         if(!response.data.errorCode) {
             BaseService.postAPI(URL_GET_SHOWTIME,data,getScheduleSuccess, getScheduleFail);
             $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createSchedule'));
+            $scope.movieTheatre = '';
+            $scope.movieTime ='';
+            $scope.movieRoom = '';
+            $scope.startDate = new Date();
+            $scope.infoForm.$setUntouched();
         }else{
             $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
         }
@@ -130,6 +135,10 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
 
     var itemDelete = '';
     $scope.delete = function (item) {
+        $scope.movieTheatre = item.theatre;
+        $scope.movieTime = item.startTime;
+        $scope.movieRoom = item.room;
+        $scope.startDate = new Date(item.startDate);
         $scope.showConfirm('',$translate.instant('message.confirm'),$translate.instant('message.confirmDelete'),
             // OK
             function () {

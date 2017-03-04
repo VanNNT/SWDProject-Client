@@ -11,7 +11,8 @@
     "login": " ĐăngNhập",
     "logout": " ĐăngXuất",
     "buy": "Mua vé",
-    "save": "Save"
+    "save": "Save",
+    "register": " ĐăngKý"
   },
   "label":{
     "now": "Phim Đang Chiếu",
@@ -20,7 +21,8 @@
     "password": "Password",
     "seemore": "Xem Thêm",
     "sale": "Sale & Service",
-    "info": "Thông tin phim"
+    "info": "Thông tin phim",
+    "userInfo" : "Nhập thông tin"
   },
   "sale":{
     "promotion": "Dịch vụ quảng cáo",
