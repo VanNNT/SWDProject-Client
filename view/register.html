@@ -1,0 +1,77 @@
+<div class="register-wapper" layout-align="center center" layout="row" ng-controller="RegisterController">
+    
+    <div class="register-form" layout="column" layout-align="center center" >
+        <h3>Register Form</h3>
+        <form ng-model="userRegister" layout="column" flex>              
+            
+         
+        <div class="login-content" layout="column" flex>
+            <md-input-container class="mag-b-0">
+                <label translate="label.username"></label>
+                <input type="text"
+                       ng-model="userRegister.username"
+                       name="username"
+                       required/>
+                <div ng-messages="regiterForm.username.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="">
+                <label translate="label.password"></label>
+                <input type="password"
+                       ng-model="userRegister.password"
+                       name="password"
+                       required/>
+                <div ng-messages="regiterForm.password.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="">
+                <label translate="Confirm password"></label>
+                <input type="password"
+                       ng-model="userRegister.confirm"
+                       name="password"
+                       required/>
+                <div ng-messages="regiterForm.password.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+            <md-input-container class="mag-b-0">
+                <label translate="Fullname"></label>
+                <input type="text"
+                       ng-model="userRegister.fullname"
+                       name="fullname"
+                       required/>
+                <div ng-messages="regiterForm.username.$error">
+                    <div ng-message="required" translate="message.required"></div>
+                </div>
+            </md-input-container>
+           
+                       Birthday
+                        <md-datepicker  ng-model="userRegister.birthday" flex></md-datepicker>
+             
+                       <!-- <input type="date"
+           ng-model="userRegister.birthday" placeholder="Birthday"
+           required/>  -->
+                   
+            
+            
+                <md-button class="md-raised md-primary mag-t-15 login-btn"
+                       ng-class=""
+                       type = "submit"
+                       ng-disabled="loginForm.$invalid"
+                       ng-click="signup()"  flex>
+                <span translate="Register"></span>
+            </md-button>
+        </div>
+                
+                
+                          
+                
+            
+        </form>
+   
+       </div>  
+</div>
+
+

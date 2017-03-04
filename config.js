@@ -28,6 +28,10 @@ SWDApp.config(function($routeProvider,$translateProvider,$compileProvider,$mdDat
             templateUrl : 'view/bookTicket.html',
             controller  : 'BookTicketController'
         })
+        .when('/register',{
+            templateUrl : 'view/register.html',
+            controller  : 'RegisterController'
+        })
         .otherwise({
             redirectTo: '/'
         });

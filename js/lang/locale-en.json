@@ -11,7 +11,8 @@
     "login": " Login",
     "logout": " Logout",
     "buy": "Buy Ticket",
-    "save": "Save"
+    "save": "Save",
+    "register": " Register"
   },
   "label":{
     "now": "Now Showing",

@@ -76,7 +76,7 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
             clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
         }).then();
-    }
+    };
 
     $scope.$on("$destroy", function() {
         delete  $rootScope.isShowInfo;
