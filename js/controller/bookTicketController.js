@@ -39,6 +39,7 @@ SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope
         }
         $scope.startDate = item.startDate;
         $scope.startTime = item.startTime;
+        $scope.room = 'ROOM' + item.room;
 
         $scope.seatRow = [
             {id: 'A'},
@@ -128,7 +129,7 @@ SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope
     }
 
     function saveTicketError() {
-        
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
     $scope.$on("$destroy", function() {
         delete  $rootScope.bookTicketOfMovie;

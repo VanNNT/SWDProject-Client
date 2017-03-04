@@ -1,0 +1,137 @@
+@media (max-width: @screen-sm) {
+  .ticket-wrapper{
+    .seat-ticket{
+      width: 100%;
+      padding: 0px;
+      .movie-info{
+        .showtime-movie{
+          .theatre-name{
+            font-size: 23px;
+          }
+          .date-time{
+            padding: 0px;
+            .date{
+              font-size: 16px;
+            }
+            .time{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .seat-group{
+        max-width: 350px;
+        padding-top: 30px;
+        .seat-item{
+          width: 35px;
+          height: 35px;
+          background-color: @color_white;
+          padding: 4px;
+          border: 1px solid;
+          color: @color_primary;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          text-align: center;
+        }
+        .active{
+          background-color: @color_primary;
+          color: @color_white;
+        }
+        .sold{
+          background-color: #5e5e5e !important;
+          color: @color_white !important;
+        }
+      }
+      .row-group{
+        padding-top: 33px;
+        width: 100px;
+        .seat-row{
+          font-size: 18px;
+          height: 35px;
+          padding-top: 6px;
+          text-align: center;
+        }
+      }
+      .condition{
+        padding: 20px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    .user-info{
+      border-top: 1px solid @color_primary;
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .ticket-wrapper{
+    .seat-ticket{
+      width: 100%;
+      padding: 0px;
+      .movie-info{
+        .showtime-movie{
+          .theatre-name{
+            font-size: 23px;
+          }
+          .date-time{
+            padding: 10px;
+            .date{
+              font-size: 16px;
+            }
+            .time{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      .seat-group{
+        max-width: 280px;
+        padding-top: 30px;
+        .seat-item{
+          width: 28px;
+          height: 28px;
+          background-color: @color_white;
+          padding: 4px;
+          border: 1px solid;
+          color: @color_primary;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          text-align: center;
+        }
+        .active{
+          background-color: @color_primary;
+          color: @color_white;
+        }
+        .sold{
+          background-color: #5e5e5e !important;
+          color: @color_white !important;
+        }
+      }
+      .row-group{
+        padding-top: 33px;
+        width: 30px;
+        .seat-row{
+          font-size: 18px;
+          height: 28px;
+          padding-top: 6px;
+          text-align: center;
+        }
+      }
+      .display{
+        display: none;
+      }
+      .condition{
+        padding: 20px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    .user-info{
+      border-top: 1px solid @color_primary;
+      .info{
+        padding: 0px
+      }
+    }
+  }
+}
