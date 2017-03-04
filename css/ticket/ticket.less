@@ -14,21 +14,25 @@
         text-transform: uppercase;
       }
       .showtime-movie{
+        padding-left: 20px;
         .theatre-name{
           color: @color_primary;
           font-size: 30px;
           font-weight: 600;
         }
-        .date{
-          border-right: 1px solid;
-          padding-right: 10px;
-          padding-left: 10px;
-          font-size: 20px;
-        }
-        .time{
-          padding-right: 10px;
-          padding-left: 10px;
-          font-size: 20px;
+        .date-time{
+          padding: 10px;
+          .date{
+            border-right: 1px solid;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 20px;
+          }
+          .time{
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 20px;
+          }
         }
       }
     }
@@ -55,10 +59,6 @@
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         text-align: center;
-        &:hover{
-           background-color: hotpink;
-          color: deepskyblue;
-        }
       }
       .active{
         background-color: @color_primary;
@@ -101,6 +101,9 @@
   }
   .user-info{
     border-left: 1px solid @color_primary;
+    .info{
+      padding: 30px
+    }
   }
 }
 

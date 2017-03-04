@@ -18,7 +18,6 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
              $scope.startDate = new Date();
              $scope.endDate = new Date();
          }else{
-             $scope.readonly = true;
              $scope.title = $scope.itemMovie.movieName;
              $scope.nameMovie = $scope.itemMovie.movieName;
              $scope.posterMovie = $scope.itemMovie.picture;

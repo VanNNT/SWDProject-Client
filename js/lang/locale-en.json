@@ -21,7 +21,8 @@
     "password": "Password",
     "seemore": "See More",
     "sale": "Sale & Service",
-    "info": "Movie Information"
+    "info": "Movie Information",
+    "userInfo" : "Your Information"
   },
   "sale":{
     "promotion": "advertising services",
