@@ -1,18 +1,18 @@
 <div class="ticket-wrapper" layout="row" flex layout-wrap>
-<div flex="70" class="seat-ticket" layout="column">
-    <div class="movie-info" layout="row" flex="20">
-            <div class="movie-title" flex="75" layout="row" layout-align="center center">
+<div class="seat-ticket" layout="column">
+    <div class="movie-info" layout="row"  layout-wrap="">
+            <div class="movie-title"  layout="row" layout-align="center center">
                 {{movieTitle}}
             </div>
-        <div class="showtime-movie" layout="column" flex="25">
+        <div class="showtime-movie" layout="column" >
             <div class="theatre-name">{{theatre}}</div>
-            <div layout="row" style="padding-top: 10px;">
+            <div layout="row" class="date-time">
                 <div class="date">{{startDate}}</div>
                 <div class="time">{{startTime}}</div>
             </div>
         </div>
     </div>
-    <div flex="80">
+    <div>
         <div class="screen">Screen</div>
         <div layout="row" layout-align="center center">
             <div layout="column" class="row-group">
@@ -26,7 +26,7 @@
                     <div>{{($index%10)+1}}</div>
                 </div>
             </div>
-            <div layout="column" class="row-group">
+            <div layout="column" class="row-group display">
                 <div class="seat-row" ng-repeat="s in seatRow">{{s.id}}</div>
             </div>
         </div>
@@ -40,9 +40,9 @@
         </div>
     </div>
 </div>
-    <div flex="30" class="user-info" layout-align="center center" layout="column">
+    <div class="user-info" layout-align="center center" layout="column" flex>
         <form name="seatForm" layout="row" flex style="width: 80%">
-            <div style="padding: 30px" flex layout="column">
+            <div class="info" flex layout="column">
                 <md-input-container class="mag-b-0">
                     <label translate="seat.amount"></label>
                     <input type="text"
@@ -58,7 +58,7 @@
                     </md-input-container>
                     <div style="padding-top: 24px" flex="15">VND</div>
                 </div>
-                <h2 style="text-align: center">Your Infomation</h2>
+                <h2 style="text-align: center" translate="label.userInfo"></h2>
                 <md-input-container class="mag-b-0">
                     <label translate="seat.name"></label>
                     <input type="text"
@@ -83,7 +83,7 @@
                 <md-checkbox ng-click="a = !a" ng-checked="a">
                     <div translate="seat.confirm"></div>
                 </md-checkbox>
-                <md-button class="md-raised md-primary" ng-disabled="seatForm.$invalid || !a" ng-click="bookTicket()" translate="seat.bookTicket">
+                <md-button class="md-raised md-primary" ng-disabled="seatForm.$invalid || !a || totalPrice==0" ng-click="bookTicket()" translate="seat.bookTicket">
                 </md-button>
             </div>
         </form>

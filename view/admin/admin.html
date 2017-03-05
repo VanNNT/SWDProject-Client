@@ -1,16 +1,10 @@
 <div class="admin-wappper background-white" style="height: 535px" flex>
     <div ng-show="!$root.isShow && !$root.isShowInfo" id="showFilm" class="choice">
-            <div layout="row" flex>
+            <div layout="row" flex layout-align="center center">
                 <h2 translate="admin.list"></h2>
-                <!-- Button Add Film To List -->
-                <div layout-align="center center" layout="row" flex>
-                    <md-button class="md-raised md-primary" ng-click="showPageInfo()" style="width:auto;"
-                            translate="admin.add">
-                    </md-button>
-                </div>
             </div>
             <!--Show film in list-->
-        <div style="height: 470px; overflow: auto;">
+        <div style="height: 410px; overflow: auto;">
             <table>
                 <thead style="text-align: center;">
                 <tr>
@@ -36,6 +30,12 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <!-- Button Add Film To List -->
+        <div layout-align="center center" layout="row" flex>
+            <md-button class="md-raised md-primary" ng-click="showPageInfo()" style="width:auto; padding: 0px 20px 0px 20px;"
+                       translate="admin.add">
+            </md-button>
         </div>
         </div>
     <div ng-include="'view/admin/showtimeInfo.html'" ng-if="$root.isShow"></div>

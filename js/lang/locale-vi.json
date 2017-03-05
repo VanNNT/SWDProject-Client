@@ -23,7 +23,8 @@
     "fullname": "Họ tên",
     "seemore": "Xem Thêm",
     "sale": "Sale & Service",
-    "info": "Thông tin phim"
+    "info": "Thông tin phim",
+    "userInfo" : "Nhập thông tin"
   },
   "sale":{
     "promotion": "Dịch vụ quảng cáo",

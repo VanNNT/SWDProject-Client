@@ -1,5 +1,5 @@
 /**
- * Created by Kimbii on 2/20/2017.
+ * Created by VanNNT on 3/05/2017.
  */
 
 SWDApp.directive('confirmPass', function () {
