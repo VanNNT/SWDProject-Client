@@ -19,6 +19,8 @@
     "soon": "Phim Sắp Chiếu",
     "username": "UserName",
     "password": "Password",
+    "confirmPass": "Xác nhận",
+    "fullname": "Họ tên",
     "seemore": "Xem Thêm",
     "sale": "Sale & Service",
     "info": "Thông tin phim"
@@ -97,7 +99,8 @@
     "requestLogin": "Vui lòng đăng nhập để đặt vé",
     "loginAdmin": "Admin khổng thể đặt vé",
     "bookTicket": "Bạn đã hoàn thành việc đặt vé. Xin cảm ơn.",
-    "deleteSuccess": "Đã xóa lịch chiếu này"
+    "deleteSuccess": "Đã xóa lịch chiếu này",
+    "pwmatch": "Password và password xác nhận không giống nhau"
   },
   "errors":{
     "ER001": "Sai username hoặc password!!!",
