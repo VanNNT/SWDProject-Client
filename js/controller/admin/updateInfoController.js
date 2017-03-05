@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$translate) {
+SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$translate,BaseService) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -26,6 +26,7 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
              $scope.startDate = new Date($scope.itemMovie.startDate);
              $scope.endDate = new Date($scope.itemMovie.endDate);
              $scope.movieActor = $scope.itemMovie.actor;
+             $scope.movieTime = $scope.itemMovie.length;
              $scope.movieTrailer = $scope.itemMovie.trailer;
              $scope.trailer = $sce.trustAsResourceUrl($scope.itemMovie.trailer);
 
@@ -77,6 +78,66 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
         }).then();
     };
 
+    $scope.addMovie = function () {
+        //create
+        if(!$scope.itemMovie){
+            var data = {
+                'movieName': $scope.nameMovie,
+                'introduction':  $scope.desMovie,
+                'actor': $scope.movieActor,
+                'genre': $scope.movieGenre,
+                'startDate': $scope.startDate.toISOString().substr(0, 10),
+                'endDate': $scope.endDate.toISOString().substr(0, 10),
+                'trailer': $scope.movieTrailer,
+                'picture': $scope.posterMovie,
+                'lenght': $scope.movieTime
+            };
+            BaseService.postAPI(URL_CREATE_MOVIE,data,createMovieSuccess,updateMovieFail);
+        }else{
+            //update
+            var data = {
+                'movieID': $scope.itemMovie.movieId ,
+                'movieName': $scope.nameMovie,
+                'introduction':  $scope.desMovie,
+                'actor': $scope.movieActor,
+                'genre': $scope.movieGenre,
+                'startDate': $scope.startDate.toISOString().substr(0, 10),
+                'endDate': $scope.endDate.toISOString().substr(0, 10),
+                'trailer': $scope.movieTrailer,
+                'picture': $scope.posterMovie,
+                'lenght': $scope.movieTime
+            };
+            BaseService.postAPI(URL_UPDATE_MOVIE,data,updateMovieSuccess,updateMovieFail);
+        }
+    };
+   
+    function updateMovieSuccess(response) {
+        $scope.newData = {
+            'movieID': $scope.itemMovie.movieId ,
+            'movieName': $scope.nameMovie,
+            'introduction':  $scope.desMovie,
+            'actor': $scope.movieActor,
+            'genre': $scope.movieGenre,
+            'startDate': $scope.startDate.toISOString().substr(0, 10),
+            'endDate': $scope.endDate.toISOString().substr(0, 10),
+            'trailer': $scope.movieTrailer,
+            'picture': $scope.posterMovie,
+            'lenght': $scope.movieTime
+        };
+        $scope.updateMovie(newData);
+        $rootScope.isShowInfo = false;
+        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.updateMovie'));
+    }
+    
+    function updateMovieFail() {
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
+    }
+    
+    function createMovieSuccess(response) {
+        $scope.createMovie(response);
+        $rootScope.isShowInfo = false;
+        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createMovie'));
+    }
     $scope.$on("$destroy", function() {
         delete  $rootScope.isShowInfo;
     });

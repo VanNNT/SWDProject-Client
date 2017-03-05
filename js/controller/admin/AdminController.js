@@ -38,6 +38,26 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         $rootScope.isShow = true;
     };
 
+    $scope.updateMovie = function (data) {
+        _.any($scope.listFilm,function (i) {
+             if(i.movieId == data.movieID){
+                 i.movieName = data.movieName;
+                 i.picture = data.picture;
+                 i.genre = data.genre;
+                 i.introduction =data.introduction;
+                 i.startDate = data.startDate;
+                 i.endDate=data.endDate;
+                 i.actor =data.actor;
+                 i.length =data.lenght;
+                 i.trailer =data.trailer;
+                 return true;
+             }
+        })
+    };
+
+    $scope.createMovie = function(data){
+        $scope.listFilm.unshift(data);
+    };
     // SortData
 
     $scope.sortColumn = 'name';
