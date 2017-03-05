@@ -10,7 +10,6 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     }
 
     function initData() {
-        console.log($scope.itemTime);
         $scope.movieTitle = $scope.itemTime.movieName;
         data={
             'movieID': $scope.itemTime.movieId
@@ -184,7 +183,11 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
             })
         }
         $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSuccess'));
-
+        $scope.movieTheatre = '';
+        $scope.movieTime ='';
+        $scope.movieRoom = '';
+        $scope.startDate = new Date();
+        $scope.infoForm.$setUntouched();
     }
     $scope.$on("$destroy", function() {
         delete $rootScope.itemTime;
