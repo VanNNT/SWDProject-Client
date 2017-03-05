@@ -23,7 +23,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr  ng-repeat="film in listFilm | orderBy:sortColumn:reverse">
+                <tr ng-show="film.isActive" ng-repeat="film in listFilm | orderBy:sortColumn:reverse">
                     <td ng-click="showPageInfo(film)" class="text-center cursor-pointer none-outline">{{film.movieName}}</td>
                     <td class="text-center">{{film.actor}}</td>
                     <td class="text-center">{{film.genre}}</td>

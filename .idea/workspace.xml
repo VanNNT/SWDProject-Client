@@ -20,7 +20,58 @@
     <favorites_list name="SWD-client" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="locale-en.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lang/locale-en.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/controller/admin/AdminController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="73" column="107" lean-forward="false" selection-start-line="73" selection-start-column="107" selection-end-line="73" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="locale-vi.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lang/locale-vi.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="411">
+              <caret line="101" column="46" lean-forward="true" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showtimeController.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/controller/admin/showtimeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="454">
+              <caret line="193" column="33" lean-forward="true" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,7 +127,6 @@
         <option value="$PROJECT_DIR$/js/controller/IndexController.js" />
         <option value="$PROJECT_DIR$/run.js" />
         <option value="$PROJECT_DIR$/js/controller/admin/updateInfoController.js" />
-        <option value="$PROJECT_DIR$/js/controller/admin/AdminController.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/view/home.html" />
         <option value="$PROJECT_DIR$/view/movie.html" />
@@ -88,18 +138,19 @@
         <option value="$PROJECT_DIR$/view/bookTicket.html" />
         <option value="$PROJECT_DIR$/js/controller/BaseController.js" />
         <option value="$PROJECT_DIR$/js/controller/BookTicketController.js" />
-        <option value="$PROJECT_DIR$/js/lang/locale-en.json" />
-        <option value="$PROJECT_DIR$/js/lang/locale-vi.json" />
         <option value="$PROJECT_DIR$/js/controller/admin/ShowtimeController.js" />
         <option value="$PROJECT_DIR$/view/admin/showtimeInfo.html" />
         <option value="$PROJECT_DIR$/js/Constant.js" />
         <option value="$PROJECT_DIR$/css/ticket/ticket-sm.less" />
         <option value="$PROJECT_DIR$/css/common.less" />
-        <option value="$PROJECT_DIR$/js/controller/admin/showtimeController.js" />
         <option value="$PROJECT_DIR$/css/admin/updateInfo.less" />
         <option value="$PROJECT_DIR$/view/admin/updateInfo.html" />
-        <option value="$PROJECT_DIR$/view/admin/admin.html" />
         <option value="$PROJECT_DIR$/css/admin/admin.less" />
+        <option value="$PROJECT_DIR$/view/admin/admin.html" />
+        <option value="$PROJECT_DIR$/js/lang/locale-vi.json" />
+        <option value="$PROJECT_DIR$/js/lang/locale-en.json" />
+        <option value="$PROJECT_DIR$/js/controller/admin/AdminController.js" />
+        <option value="$PROJECT_DIR$/js/controller/admin/showtimeController.js" />
       </list>
     </option>
   </component>
@@ -202,6 +253,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SWD-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SWD-client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -230,8 +299,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -372,17 +441,18 @@
       <workItem from="1488414602311" duration="6460000" />
       <workItem from="1488597470280" duration="4303000" />
       <workItem from="1488684926128" duration="769000" />
+      <workItem from="1488707419025" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225978000" />
+    <option name="totallyTimeSpent" value="226614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19399707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19399707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5401575" sideWeight="0.5087848" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -615,20 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lang/locale-vi.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="89" column="55" lean-forward="false" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lang/locale-en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="99" column="4" lean-forward="false" selection-start-line="99" selection-start-column="4" selection-end-line="99" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/filter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -636,14 +692,6 @@
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/admin/AdminController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,13 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/admin/admin.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -741,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/admin/showtimeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1088">
-          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/service/MovieService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -778,6 +812,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="52" column="156" lean-forward="false" selection-start-line="52" selection-start-column="146" selection-end-line="52" selection-end-column="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin/AdminController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="73" column="107" lean-forward="false" selection-start-line="73" selection-start-column="107" selection-end-line="73" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lang/locale-en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lang/locale-vi.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="101" column="46" lean-forward="true" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller/admin/showtimeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="193" column="33" lean-forward="true" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
           <folding />
         </state>
       </provider>

@@ -71,7 +71,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
     };
 
     function deleteSuccess(response){
-        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSuccess'));
+        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteMovie'));
 
     }
     function saveFail() {

@@ -98,7 +98,8 @@
     "requestLogin": "Vui lòng đăng nhập để đặt vé",
     "loginAdmin": "Admin khổng thể đặt vé",
     "bookTicket": "Bạn đã hoàn thành việc đặt vé. Xin cảm ơn.",
-    "deleteSuccess": "Đã xóa lịch chiếu này"
+    "deleteMovie": "Bộ phim đã được xóa.",
+    "deleteSchedule": "Giờ chiếu đã được xóa."
   },
   "errors":{
     "ER001": "Sai username hoặc password!!!",
