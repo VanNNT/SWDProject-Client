@@ -19,6 +19,8 @@
     "soon": "Coming soon",
     "username": "UserName",
     "password": "Password",
+    "confirmPass": "Confirm password",
+    "fullname": "Fullname",
     "seemore": "See More",
     "sale": "Sale & Service",
     "info": "Movie Information",
@@ -98,7 +100,8 @@
     "requestLogin": "Please login to book ticket",
     "loginAdmin": "Admin can not book ticket",
     "bookTicket": "You have completed the booking ticket. Thanks",
-    "deleteSuccess": "Deleted this schedule."
+    "deleteSuccess": "Deleted this schedule.",
+    "pwmatch": "Password and confirm password not match"
   },
   "errors":{
     "ER001": "Wrong username or password!!!",
