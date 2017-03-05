@@ -1,7 +1,7 @@
 /**
  * Created by Van on 02/02/2017.
  */
-SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootScope,$controller,BaseService) {
+SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMedia,$rootScope,$controller,BaseService) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -57,4 +57,24 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$mdMedia,$rootSco
         return '';
     };
 
+    var itemDelete = '';
+    $scope.delete = function (item) {
+        $scope.showConfirm('',$translate.instant('message.confirm'),$translate.instant('message.confirmDelete'),
+            // OK
+            function () {
+                itemDelete = item;
+                var data = {
+                    'movieID': item.movieId
+                };
+                BaseService.postAPI(URL_DELETE_MOVIE,data,deleteSuccess,saveFail);
+            }, function () {})
+    };
+
+    function deleteSuccess(response){
+        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSuccess'));
+
+    }
+    function saveFail() {
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
+    }
 });
