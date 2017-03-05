@@ -142,9 +142,9 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
             // OK
             function () {
                 itemDelete = item;
-            var data = {
-                'scheduleId': item.scheduleId
-            };
+                var data = {
+                    'scheduleId': item.scheduleId
+                };
             BaseService.postAPI(URL_DELETE_SHOWTIME,data,deleteSuccess,saveFail);
         }, function () {})
     };

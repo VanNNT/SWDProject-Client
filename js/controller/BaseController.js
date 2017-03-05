@@ -9,7 +9,6 @@ SWDApp.controller('BaseController', function($scope, $mdDialog) {
                 .clickOutsideToClose(true)
                 .title(title)
                 .textContent(content)
-                .ariaLabel('Alert Dialog Demo')
                 .ok('OK')
                 .targetEvent(ev)
         );
@@ -19,7 +18,6 @@ SWDApp.controller('BaseController', function($scope, $mdDialog) {
         var confirm = $mdDialog.confirm()
             .title(title)
             .textContent(content)
-            .ariaLabel('Lucky day')
             .targetEvent(ev)
             .ok('OK')
             .cancel('Cancel');
