@@ -2,7 +2,7 @@
     
     <div class="register-form" layout="column" layout-align="center center" >
         <h3>Register Form</h3>
-        <form ng-model="userRegister" layout="column" flex>              
+        <form ng-model="userRegister" layout="column" name="registerForm" flex>              
             
          
         <div class="login-content" layout="column" flex>
@@ -12,7 +12,7 @@
                        ng-model="userRegister.username"
                        name="username"
                        required/>
-                <div ng-messages="regiterForm.username.$error">
+                <div ng-messages="registerForm.username.$error">
                     <div ng-message="required" translate="message.required"></div>
                 </div>
             </md-input-container>
@@ -22,7 +22,7 @@
                        ng-model="userRegister.password"
                        name="password"
                        required/>
-                <div ng-messages="regiterForm.password.$error">
+                <div ng-messages="registerForm.password.$error">
                     <div ng-message="required" translate="message.required"></div>
                 </div>
             </md-input-container>
@@ -32,9 +32,11 @@
                        ng-model="userRegister.confirm"
                        name="password"
                        required/>
-                <div ng-messages="regiterForm.password.$error">
+                <div ng-messages="registerForm.password.$error">
                     <div ng-message="required" translate="message.required"></div>
+                    
                 </div>
+               
             </md-input-container>
             <md-input-container class="mag-b-0">
                 <label translate="Fullname"></label>
@@ -42,13 +44,13 @@
                        ng-model="userRegister.fullname"
                        name="fullname"
                        required/>
-                <div ng-messages="regiterForm.username.$error">
+                <div ng-messages="registerForm.fullname.$error">
                     <div ng-message="required" translate="message.required"></div>
                 </div>
             </md-input-container>
            
                        Birthday
-                        <md-datepicker  ng-model="userRegister.birthday" flex></md-datepicker>
+                        <md-datepicker  ng-model="userRegister.inputBirthday" flex></md-datepicker>
              
                        <!-- <input type="date"
            ng-model="userRegister.birthday" placeholder="Birthday"
