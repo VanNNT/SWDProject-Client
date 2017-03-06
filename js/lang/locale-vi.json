@@ -24,7 +24,8 @@
     "seemore": "Xem Thêm",
     "sale": "Sale & Service",
     "info": "Thông tin phim",
-    "userInfo" : "Nhập thông tin"
+    "userInfo" : "Nhập thông tin",
+    "time": "phút"
   },
   "sale":{
     "promotion": "Dịch vụ quảng cáo",
@@ -38,15 +39,15 @@
     "address": "Địa chỉ:"
   },
   "slide":{
-    "packet": "Gói Phim Năm Mới",
-    "packet1": "Đón năm mới cùng các gói phim hấp dẫn",
-    "combo": "Combo Độc-Lạ",
-    "combo1": "Nhận ngay combo khi đến với Cinema",
-    "ticket": "Đón xuân rộn ràng củng ngàn vé tặng",
+    "packet": "Gói Phim Năm Mới.",
+    "packet1": "Đón năm mới cùng các gói phim hấp dẫn.",
+    "combo": "Combo Độc-Lạ.",
+    "combo1": "Nhận ngay combo khi đến với Cinema.",
+    "ticket": "Đón xuân rộn ràng củng ngàn vé tặng.",
     "ticket1": "Rạp phim sẽ tổ chức một chương trình xem phim miễn phí lớn nhất từ trước đến nay.",
-    "lixi": "Ngàn bao lì-xi đón xuân như ý",
+    "lixi": "Ngàn bao lì-xi đón xuân như ý.",
     "lixi1": "Rạp phim tặng ngay bộ bao lì xì cực dễ thương để khởi đầu một năm đầy may mắn các Stars nhé.",
-    "type": "Xem phim theo đối tượng",
+    "type": "Xem phim theo đối tượng.",
     "type1": "Ưu đãi hấp dẫn cho sinh viên và học sinh. Go go!!!"
   },
   "infoMovie":{
@@ -69,7 +70,8 @@
     "start": "Ngày bắt đầu",
     "end":"Ngày kết thúc",
     "list": "Danh sách phim",
-    "add": "Thêm một phim"
+    "add": "Thêm một phim",
+    "time": "Thời lượng"
   },
   "seat": {
     "seatChose": "Đang chọn",
@@ -87,20 +89,22 @@
     "error": "Lỗi!!!",
     "success": "Thành công",
     "required": "Trường bắt buộc.",
-    "number": "Điện thoại chỉ được là số",
-    "valid":"Giá trị không phải ngày",
-    "mindate": "Ngày này quá sớm",
-    "maxdate": "Ngày này quá trễ",
+    "number": "Điện thoại chỉ được là số.",
+    "valid":"Giá trị không phải ngày.",
+    "mindate": "Ngày này quá sớm.",
+    "maxdate": "Ngày này quá trễ.",
     "connect": "Vui lòng kiểm tra kết nối tới server.",
     "confirmLogout": "Xác nhận đăng xuất?",
     "formatTime": "Giờ chiếu sai!!!",
     "createSchedule": "Đã tạo thành công một lịch chiếu.",
     "confirmDelete": "Bạn chắc chắn xóa?",
     "confirm": "Xác nhận!!!",
-    "requestLogin": "Vui lòng đăng nhập để đặt vé",
-    "loginAdmin": "Admin khổng thể đặt vé",
+    "requestLogin": "Vui lòng đăng nhập để đặt vé.",
+    "loginAdmin": "Admin không thể đặt vé.",
     "bookTicket": "Bạn đã hoàn thành việc đặt vé. Xin cảm ơn.",
-    "deleteSuccess": "Đã xóa lịch chiếu này",
+    "deleteSuccess": "Đã xóa lịch chiếu này.",
+    "updateMovie": "Bộ phim này đã được cập nhật.",
+    "createMovie": "Một bộ phim mới đã được tạo.",
     "pwmatch": "Password và password xác nhận không giống nhau"
   },
   "errors":{
