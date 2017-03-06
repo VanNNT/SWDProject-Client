@@ -19,6 +19,8 @@
     "soon": "Coming soon",
     "username": "UserName",
     "password": "Password",
+    "confirmPass": "Confirm password",
+    "fullname": "Fullname",
     "seemore": "See More",
     "sale": "Sale & Service",
     "info": "Movie Information",
@@ -102,7 +104,8 @@
     "bookTicket": "You have completed the booking ticket. Thanks",
     "deleteSuccess": "Deleted this schedule.",
     "updateMovie": "This movie has been updated.",
-    "createMovie": "New movie has been created."
+    "createMovie": "New movie has been created.",
+    "pwmatch": "Password and confirm password not match"
   },
   "errors":{
     "ER001": "Wrong username or password!!!",
