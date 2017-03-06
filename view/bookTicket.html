@@ -83,7 +83,7 @@
                 <md-checkbox ng-click="a = !a" ng-checked="a">
                     <div translate="seat.confirm"></div>
                 </md-checkbox>
-                <md-button class="md-raised md-primary" ng-disabled="seatForm.$invalid || !a || totalPrice==0" ng-click="bookTicket()" translate="seat.bookTicket">
+                <md-button aria-label="" class="md-raised md-primary" ng-disabled="seatForm.$invalid || !a || totalPrice==0" ng-click="bookTicket()" translate="seat.bookTicket">
                 </md-button>
             </div>
         </form>

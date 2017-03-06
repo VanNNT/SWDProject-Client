@@ -100,16 +100,29 @@
                         </div>
                     </md-input-container>
                 </div>
-                <md-input-container class="mag-b-0">
-                    <label translate="admin.actor"></label>
-                    <input type="text"
-                           ng-model="movieActor"
-                           name="actor"
-                           required/>
-                    <div ng-messages="infoForm.actor.$error">
-                        <div ng-message="required" translate="message.required"></div>
-                    </div>
-                </md-input-container>
+                <div layout="row">
+                    <md-input-container flex="60" class="mag-b-0 pad-r-50">
+                        <label translate="admin.actor"></label>
+                        <input type="text"
+                               ng-model="movieActor"
+                               name="actor"
+                               required/>
+                        <div ng-messages="infoForm.actor.$error">
+                            <div ng-message="required" translate="message.required"></div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container flex="40" class="mag-b-0">
+                        <label translate="admin.time"></label>
+                        <input type="text"
+                               ng-model="movieTime"
+                               name="time"
+                               required/>
+                        <div ng-messages="infoForm.time.$error">
+                            <div ng-message="required" translate="message.required"></div>
+                        </div>
+                    </md-input-container>
+                    <div layout="column" layout-align="center center" translate="label.time"></div>
+                </div>
                 <div layout="row">
                     <md-input-container class="mag-b-0" flex="95">
                         <label translate="infoMovie.movieTrailer"></label>
@@ -133,7 +146,7 @@
             </div>
         </div>
         <div layout="row" layout-align="center center">
-            <md-button class="md-raised md-primary" ng-disabled="infoForm.$invalid || !infoForm.$dirty" ng-click="showPageInfo()" style="width:auto; padding: 0px 20px 0px 20px;"
+            <md-button class="md-raised md-primary" ng-disabled="infoForm.$invalid || !infoForm.$dirty" ng-click="addMovie()" style="width:auto; padding: 0px 20px 0px 20px;"
                        translate="admin.add">
             </md-button>
         </div>
