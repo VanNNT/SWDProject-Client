@@ -26,7 +26,7 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
              $scope.startDate = new Date($scope.itemMovie.startDate);
              $scope.endDate = new Date($scope.itemMovie.endDate);
              $scope.movieActor = $scope.itemMovie.actor;
-             $scope.movieTime = $scope.itemMovie.length;
+             $scope.movieTime = $scope.itemMovie.lenght;
              $scope.movieTrailer = $scope.itemMovie.trailer;
              $scope.trailer = $sce.trustAsResourceUrl($scope.itemMovie.trailer);
 
@@ -124,7 +124,7 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
             'picture': $scope.posterMovie,
             'lenght': $scope.movieTime
         };
-        $scope.updateMovie(newData);
+        $scope.updateMovie($scope.newData);
         $rootScope.isShowInfo = false;
         $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.updateMovie'));
     }
