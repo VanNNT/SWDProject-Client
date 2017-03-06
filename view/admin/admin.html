@@ -23,7 +23,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr  ng-repeat="film in listFilm | orderBy:sortColumn:reverse">
+                <tr  ng-repeat="film in listFilm | orderBy:sortColumn:reverse" ng-show="film.isActive != 0">
+
                     <td ng-click="showPageInfo(film)" class="text-center cursor-pointer none-outline">{{film.movieName}}</td>
                     <td class="text-center">{{film.actor}}</td>
                     <td class="text-center">{{film.genre}}</td>
@@ -33,6 +34,7 @@
                         <i ng-click="delete(film)" class="fa fa-trash w3-xxlarge none-outline"></i>
                         <i ng-click="showTime(ev,film)" class="fa fa-calendar none-outline" aria-hidden="true" ></i>
                     </td>
+
                 </tr>
                 </tbody>
             </table>
