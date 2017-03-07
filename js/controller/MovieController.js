@@ -1,7 +1,7 @@
 /**
  * Created by Van on 10/01/2017.
  */
-SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieService,$controller) {
+SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieService,$controller,BaseService) {
 
     $controller('BaseController', {$scope: $scope});
 
@@ -20,8 +20,18 @@ SWDApp.controller('MovieController', function($scope,$mdDialog,$rootScope,MovieS
     }
 
     function initData() {
-        $scope.listFilmSoon = JSON.parse(localStorage.getItem(LOCAL_MOVIE_SOON));
-        $scope.listFilmNow = JSON.parse(localStorage.getItem(LOCAL_MOVIE_NOW));
+        BaseService.getAPI(URL_MOVIE_SOON,'',getSoonSuccess, getSoonFail);
+        BaseService.getAPI(URL_MOVIE_NOW,'',getNowSuccess, getSoonFail);
+    }
+
+    function getNowSuccess(response){
+        $scope.listFilmNow = response.data;
+    }
+    function getSoonSuccess(response){
+        $scope.listFilmSoon = response.data;
+    }
+    function getSoonFail(){
+        $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
 
     $scope.setData = function(value,boolean){
