@@ -102,7 +102,8 @@
     "requestLogin": "Please login to book ticket.",
     "loginAdmin": "Admin can not book ticket.",
     "bookTicket": "You have completed the booking ticket. Thanks",
-    "deleteSuccess": "Deleted this schedule.",
+    "deleteMovie": "This movie has been deleted.",
+    "deleteSchedule": "This schedule has been deleted",
     "updateMovie": "This movie has been updated.",
     "createMovie": "New movie has been created.",
     "pwmatch": "Password and confirm password not match"

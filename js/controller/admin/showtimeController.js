@@ -182,7 +182,7 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
                 }
             })
         }
-        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSuccess'));
+        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSchedule'));
         $scope.movieTheatre = '';
         $scope.movieTime ='';
         $scope.movieRoom = '';
