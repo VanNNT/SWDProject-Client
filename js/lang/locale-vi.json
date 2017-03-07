@@ -102,7 +102,8 @@
     "requestLogin": "Vui lòng đăng nhập để đặt vé.",
     "loginAdmin": "Admin không thể đặt vé.",
     "bookTicket": "Bạn đã hoàn thành việc đặt vé. Xin cảm ơn.",
-    "deleteSuccess": "Đã xóa lịch chiếu này.",
+    "deleteMovie": "Bộ phim đã được xóa.",
+    "deleteSchedule": "Giờ chiếu đã được xóa.",
     "updateMovie": "Bộ phim này đã được cập nhật.",
     "createMovie": "Một bộ phim mới đã được tạo.",
     "pwmatch": "Password và password xác nhận không giống nhau"
