@@ -123,7 +123,7 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     }
     $scope.saveSchedule = function () {
         var data = {
-            'movieId': $scope.itemTime.movieId,
+            'movieID': $scope.itemTime.movieId,
             'theatre': $scope.movieTheatre,
             'startDate': $scope.startDate.toISOString().substr(0, 10),
             'startTime': $scope.movieTime,

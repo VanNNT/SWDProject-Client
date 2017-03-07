@@ -50,7 +50,7 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
                  i.startDate = data.startDate;
                  i.endDate=data.endDate;
                  i.actor =data.actor;
-                 i.length =data.lenght;
+                 i.lenght =data.lenght;
                  i.trailer =data.trailer;
                  return true;
              }

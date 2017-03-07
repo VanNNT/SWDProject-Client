@@ -93,6 +93,7 @@
     "valid":"The entered value is not a date!",
     "mindate": "Date is too early!",
     "maxdate": "Date is too late!",
+    "time": "Maxlength 3 number",
     "connect": "Please check connect to server. Check network again!!!",
     "confirmLogout": "Are you sure to logout?",
     "formatTime": "Time is wrong format!!!",
