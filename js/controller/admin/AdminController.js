@@ -23,7 +23,9 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
     }
 
     function getAllSuccess(response){
+
         $scope.listFilm = response.data;
+
     }
     function getAllFail(){
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
@@ -67,7 +69,8 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
                     'movieID': item.movieId
                 };
                 BaseService.postAPI(URL_DELETE_MOVIE,data,deleteSuccess,saveFail);
-            }, function () {})
+                location.reload();
+            }, function() {})
     };
 
     function deleteSuccess(response){
