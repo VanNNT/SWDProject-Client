@@ -19,10 +19,13 @@
     "soon": "Coming soon",
     "username": "UserName",
     "password": "Password",
+    "confirmPass": "Confirm password",
+    "fullname": "Fullname",
     "seemore": "See More",
     "sale": "Sale & Service",
     "info": "Movie Information",
-    "userInfo" : "Your Information"
+    "userInfo" : "Your Information",
+    "time": "minute"
   },
   "sale":{
     "promotion": "advertising services",
@@ -36,15 +39,15 @@
     "address": "Address:"
   },
   "slide":{
-    "packet": "Package Movies of New Year",
-    "packet1": "The new year with attractive film packages",
-    "combo": "Single-Strange Combo",
-    "combo1": "Get the combo coming to Cinema",
-    "ticket": "Boisterous welcome spring with thousands of tickets donated",
+    "packet": "Package Movies of New Year.",
+    "packet1": "The new year with attractive film packages.",
+    "combo": "Single-Strange Combo.",
+    "combo1": "Get the combo coming to Cinema.",
+    "ticket": "Boisterous welcome spring with thousands of tickets donated.",
     "ticket1": "Cinema will host a free program greatest movie ever.",
-    "lixi": "Thousand packets-cylinder as standard welcome spring",
+    "lixi": "Thousand packets-cylinder as standard welcome spring.",
     "lixi1": "Theaters immediately donated the ultra cute red envelopes to start a year of good luck the Stars offline.",
-    "type": "View movie by audience",
+    "type": "View movie by audience.",
     "type1": "Attractive incentives for students and pupils. Go go !!!"
   },
   "infoMovie":{
@@ -67,7 +70,8 @@
     "start": "Start Date",
     "end":"End Date",
     "list": "List Of Movie",
-    "add": "Add a Movie"
+    "add": "Add a Movie",
+    "time": "Time"
   },
   "seat": {
     "seatChose": "Choosing",
@@ -78,7 +82,7 @@
     "price": "Total price",
     "bookTicket": "Book ticket",
     "ticketGet": "Please come to the ticket counter 30 minutes ago.After that time, we will cancel the ticket.",
-    "confirm": "Please confirm the movie information is correct"
+    "confirm": "Please confirm the movie information is correct."
   },
   "message":{
     "request": "Request",
@@ -95,11 +99,14 @@
     "createSchedule": "Creating schedule is successful.",
     "confirmDelete": "Are you sure delete?",
     "confirm": "Confirm!!!",
-    "requestLogin": "Please login to book ticket",
-    "loginAdmin": "Admin can not book ticket",
+    "requestLogin": "Please login to book ticket.",
+    "loginAdmin": "Admin can not book ticket.",
     "bookTicket": "You have completed the booking ticket. Thanks",
     "deleteMovie": "This movie has been deleted.",
-    "deleteSchedule": "This schedule has been deleted"
+    "deleteSchedule": "This schedule has been deleted",
+    "updateMovie": "This movie has been updated.",
+    "createMovie": "New movie has been created.",
+    "pwmatch": "Password and confirm password not match"
   },
   "errors":{
     "ER001": "Wrong username or password!!!",

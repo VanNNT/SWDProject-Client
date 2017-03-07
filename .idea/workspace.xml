@@ -21,58 +21,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="popupWeb.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/popupWeb.html">
+      <file leaf-file-name="locale-en.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lang/locale-en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="309">
+              <caret line="104" column="50" lean-forward="true" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/admin/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller/admin/AdminController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            <state relative-caret-position="386">
+              <caret line="95" column="107" lean-forward="false" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="107" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="locale-vi.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/lang/locale-vi.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="110" column="12" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>$rootScope.closePopUp</find>
-      <find>$rootScope.nameUser</find>
-      <find>closePopUp</find>
-      <find>md-datepicker</find>
-      <find>#style-3</find>
-      <find>_.each</find>
-      <find>imgcontainer</find>
-      <find>avatar</find>
-      <find>setTrailer</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -127,10 +106,10 @@
         <option value="$PROJECT_DIR$/view/admin/updateInfo.html" />
         <option value="$PROJECT_DIR$/css/admin/admin.less" />
         <option value="$PROJECT_DIR$/view/admin/admin.html" />
-        <option value="$PROJECT_DIR$/js/lang/locale-vi.json" />
-        <option value="$PROJECT_DIR$/js/lang/locale-en.json" />
         <option value="$PROJECT_DIR$/js/controller/admin/showtimeController.js" />
         <option value="$PROJECT_DIR$/js/controller/admin/AdminController.js" />
+        <option value="$PROJECT_DIR$/js/lang/locale-en.json" />
+        <option value="$PROJECT_DIR$/js/lang/locale-vi.json" />
       </list>
     </option>
   </component>
@@ -277,20 +256,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SWD-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SWD-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -306,12 +271,6 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\GitTree\SWD-client\js\controller\admin" />
-      <recent name="F:\GitTree\SWD-client\view\admin" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -440,10 +399,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226869000" />
+    <option name="totallyTimeSpent" value="227522000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19399707" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -802,14 +761,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lang/locale-vi.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller/admin/showtimeController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -817,10 +768,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/lang/locale-en.json">
+    <entry file="file://$PROJECT_DIR$/view/admin/admin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="102" column="4" lean-forward="true" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="4" />
+        <state relative-caret-position="258">
+          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -833,18 +784,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/admin/admin.html">
+    <entry file="file://$PROJECT_DIR$/js/controller/admin/AdminController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="43" />
+        <state relative-caret-position="386">
+          <caret line="95" column="107" lean-forward="false" selection-start-line="95" selection-start-column="96" selection-end-line="95" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller/admin/AdminController.js">
+    <entry file="file://$PROJECT_DIR$/js/lang/locale-en.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        <state relative-caret-position="309">
+          <caret line="104" column="50" lean-forward="true" selection-start-line="104" selection-start-column="50" selection-end-line="104" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lang/locale-vi.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="110" column="12" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
           <folding />
         </state>
       </provider>
