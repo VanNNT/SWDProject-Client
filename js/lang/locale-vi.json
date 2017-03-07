@@ -93,6 +93,7 @@
     "valid":"Giá trị không phải ngày.",
     "mindate": "Ngày này quá sớm.",
     "maxdate": "Ngày này quá trễ.",
+    "time": "Thời lượng chỉ 3 số",
     "connect": "Vui lòng kiểm tra kết nối tới server.",
     "confirmLogout": "Xác nhận đăng xuất?",
     "formatTime": "Giờ chiếu sai!!!",

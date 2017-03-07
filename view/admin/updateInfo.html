@@ -113,12 +113,14 @@
                     </md-input-container>
                     <md-input-container flex="40" class="mag-b-0">
                         <label translate="admin.time"></label>
-                        <input type="text"
+                        <input type="number"
                                ng-model="movieTime"
                                name="time"
+                               ng-maxlength="3"
                                required/>
                         <div ng-messages="infoForm.time.$error">
                             <div ng-message="required" translate="message.required"></div>
+                            <div ng-message="maxlength" translate="message.time"></div>
                         </div>
                     </md-input-container>
                     <div layout="column" layout-align="center center" translate="label.time"></div>
