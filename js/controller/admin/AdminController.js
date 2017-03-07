@@ -69,12 +69,12 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
                     'movieID': item.movieId
                 };
                 BaseService.postAPI(URL_DELETE_MOVIE,data,deleteSuccess,saveFail);
-                location.reload();
             }, function() {})
     };
 
     function deleteSuccess(response){
         $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteMovie'));
+        BaseService.getAPI(URL_ALL_MOVIE,'',getAllSuccess, getAllFail);
 
     }
     function saveFail() {
