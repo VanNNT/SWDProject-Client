@@ -112,6 +112,12 @@
   "errors":{
     "ER001": "Wrong username or password!!!",
     "ER004": "This schedule is existed. Please check the infomation you have entered!",
-    "ER002": "The choosen seat have been sold!. Please choose again."
+    "ER002": "The choosen seat have been sold!. Please choose again.",
+    "ER003": "This schedule is not existed.",
+    "ER005": "This schedule has been deleted. Please try again!",
+    "ER006": "This movie has been deleted. Please try again!",
+    "ER007": "This movie is existed. Please check the information you have entered!",
+    "ER008": "This user is not existed."
+
   }
 }

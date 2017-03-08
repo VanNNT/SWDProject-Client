@@ -112,6 +112,11 @@
   "errors":{
     "ER001": "Sai username hoặc password!!!",
     "ER004": "Lịch chiếu đã tồn tại. Vui lòng kiểm tra lại thông tin đã nhập.",
-    "ER002": "Ghế chọn đã được bán. Vui lòng chọn lại."
+    "ER002": "Ghế chọn đã được bán. Vui lòng chọn lại.",
+    "ER003": "Lịch chiếu này không tồn tại.",
+    "ER005": "Lịch chiếu này đã bị xóa.",
+    "ER006": "Bộ phim này đã bị xóa",
+    "ER007": "Bộ phim này đã tồn tại. Vui lòng kiểm tra lại thông tin đã nhập.",
+    "ER008": "Account này không tồn tại."
   }
 }
