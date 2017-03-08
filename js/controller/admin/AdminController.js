@@ -57,8 +57,8 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
         })
     };
 
-    $scope.createMovie = function(data){
-        $scope.listFilm.unshift(data);
+    $scope.createMovie = function(response){
+        $scope.listFilm.unshift(response.data);
     };
     // SortData
 
