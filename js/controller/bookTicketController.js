@@ -102,7 +102,7 @@ SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope
                  'phone': $scope.phoneOfUser,
                  'price': $scope.totalPrice,
                  'seatId': listSeatBook ,
-                 'userId': $rootScope.globals.currentUser.userID
+                 'userID': $rootScope.globals.currentUser.userID
              };
              BaseService.postAPI(URL_SAVE_TICKET,data,saveTicketSuccess,saveTicketError)
         }

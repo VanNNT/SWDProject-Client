@@ -93,8 +93,12 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
     };
 
     function deleteSuccess(response){
-        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteMovie'));
-        BaseService.getAPI(URL_ALL_MOVIE,'',getAllSuccess, getAllFail);
+        if(!response.data.errorCode){
+            BaseService.getAPI(URL_ALL_MOVIE,'',getAllSuccess, getAllFail);
+            $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteMovie'));
+        }else{
+            $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
+        }
 
     }
     function saveFail() {

@@ -150,44 +150,48 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
     };
 
     function deleteSuccess(response){
-        if(response.data.theatre == CGV){
-            _.any($scope.listCGV,function (i) {
-                if(i.scheduleId == response.data.scheduleId){
-                    $scope.listCGV.splice($scope.listCGV.indexOf(i),1);
-                }
-            })
-        }else if (response.data.theatre == LOTTE){
-            _.any($scope.listLotte,function (i) {
-                if(i.scheduleId == response.data.scheduleId){
-                    $scope.listLotte.splice($scope.listLotte.indexOf(i),1);
-                }
-            })
-        }else if(response.data.theatre == GALAXY){
-            $scope.listGalaxy.splice($scope.listGalaxy.indexOf(item),1);
-            _.any($scope.listGalaxy,function (i) {
-                if(i.scheduleId == response.data.scheduleId){
-                    $scope.listGalaxy.splice($scope.listGalaxy.indexOf(i),1);
-                }
-            })
-        }else if(response.data.theatre == BHD){
-            _.any($scope.listBHD,function (i) {
-                if(i.scheduleId == response.data.scheduleId){
-                    $scope.listBHD.splice($scope.listBHD.indexOf(i),1);
-                }
-            })
-        }else if(response.data.theatre == CINEBOX){
-            _.any($scope.listCinebox,function (i) {
-                if(i.scheduleId == response.data.scheduleId){
-                    $scope.listCinebox.splice($scope.listCinebox.indexOf(i),1);
-                }
-            })
+        if(!response.data.errorCode){
+            if(response.data.theatre == CGV){
+                _.any($scope.listCGV,function (i) {
+                    if(i.scheduleId == response.data.scheduleId){
+                        $scope.listCGV.splice($scope.listCGV.indexOf(i),1);
+                    }
+                })
+            }else if (response.data.theatre == LOTTE){
+                _.any($scope.listLotte,function (i) {
+                    if(i.scheduleId == response.data.scheduleId){
+                        $scope.listLotte.splice($scope.listLotte.indexOf(i),1);
+                    }
+                })
+            }else if(response.data.theatre == GALAXY){
+                _.any($scope.listGalaxy,function (i) {
+                    if(i.scheduleId == response.data.scheduleId){
+                        $scope.listGalaxy.splice($scope.listGalaxy.indexOf(i),1);
+                    }
+                })
+            }else if(response.data.theatre == BHD){
+                _.any($scope.listBHD,function (i) {
+                    if(i.scheduleId == response.data.scheduleId){
+                        $scope.listBHD.splice($scope.listBHD.indexOf(i),1);
+                    }
+                })
+            }else if(response.data.theatre == CINEBOX){
+                _.any($scope.listCinebox,function (i) {
+                    if(i.scheduleId == response.data.scheduleId){
+                        $scope.listCinebox.splice($scope.listCinebox.indexOf(i),1);
+                    }
+                })
+            }
+            $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSchedule'));
+            $scope.movieTheatre = '';
+            $scope.movieTime ='';
+            $scope.movieRoom = '';
+            $scope.startDate = new Date();
+            $scope.infoForm.$setUntouched();
+        }else{
+            $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
         }
-        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.deleteSchedule'));
-        $scope.movieTheatre = '';
-        $scope.movieTime ='';
-        $scope.movieRoom = '';
-        $scope.startDate = new Date();
-        $scope.infoForm.$setUntouched();
+
     }
     $scope.$on("$destroy", function() {
         delete $rootScope.itemTime;

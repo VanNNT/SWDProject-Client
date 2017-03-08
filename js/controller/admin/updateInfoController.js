@@ -113,21 +113,25 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
     };
    
     function updateMovieSuccess(response) {
-        $scope.newData = {
-            'movieID': $scope.itemMovie.movieId ,
-            'movieName': $scope.nameMovie,
-            'introduction':  $scope.desMovie,
-            'actor': $scope.movieActor,
-            'genre': $scope.movieGenre,
-            'startDate': $scope.startDate.toISOString().substr(0, 10),
-            'endDate': $scope.endDate.toISOString().substr(0, 10),
-            'trailer': $scope.movieTrailer,
-            'picture': $scope.posterMovie,
-            'lenght': $scope.movieTime
-        };
-        $scope.updateMovie($scope.newData);
-        $rootScope.isShowInfo = false;
-        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.updateMovie'));
+        if(!response.data.errorCode){
+            $scope.newData = {
+                'movieID': $scope.itemMovie.movieId ,
+                'movieName': $scope.nameMovie,
+                'introduction':  $scope.desMovie,
+                'actor': $scope.movieActor,
+                'genre': $scope.movieGenre,
+                'startDate': $scope.startDate.toISOString().substr(0, 10),
+                'endDate': $scope.endDate.toISOString().substr(0, 10),
+                'trailer': $scope.movieTrailer,
+                'picture': $scope.posterMovie,
+                'lenght': $scope.movieTime
+            };
+            $scope.updateMovie($scope.newData);
+            $rootScope.isShowInfo = false;
+            $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.updateMovie'));
+        }else{
+            $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
+        }
     }
     
     function updateMovieFail() {
@@ -135,9 +139,13 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
     }
     
     function createMovieSuccess(response) {
-        $scope.createMovie(response);
-        $rootScope.isShowInfo = false;
-        $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createMovie'));
+        if(!response.data.errorCode){
+            $scope.createMovie(response);
+            $rootScope.isShowInfo = false;
+            $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createMovie'));
+        }else{
+            $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
+        }
     }
     $scope.$on("$destroy", function() {
         delete  $rootScope.isShowInfo;
