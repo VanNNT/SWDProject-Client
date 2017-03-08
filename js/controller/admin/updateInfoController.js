@@ -82,7 +82,7 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
         //create
         if(!$scope.itemMovie){
             var data = {
-                'userID': $rootScope.globals.currentUser.userID,
+                'userId': $rootScope.globals.currentUser.userID,
                 'movieName': $scope.nameMovie,
                 'introduction':  $scope.desMovie,
                 'actor': $scope.movieActor,
