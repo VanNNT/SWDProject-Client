@@ -37,14 +37,24 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
         var chieu = new Date($scope.itemTime.startDate);
         var het = new Date($scope.itemTime.endDate);
         $scope.startDate = new Date();
-        $scope.startMaxDate = new Date(
-            $scope.startDate.getFullYear(), het.getMonth(), het.getDate()
-        );
-        if(chieu > $scope.startDate){
-            $scope.startMinDate = new Date(
-                chieu.getFullYear(), chieu.getMonth(), chieu.getDate()+1
+        if((het> new Date($scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+7) && chieu < $scope.startDate)
+         || chieu < new Date($scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+7)){
+            $scope.startMaxDate = new Date(
+                $scope.startDate.getFullYear(),  $scope.startDate.getMonth(), $scope.startDate.getDate()+7
             );
         }else{
+            $scope.startMaxDate = new Date(
+                $scope.startDate.getFullYear(), het.getMonth(), het.getDate()
+            );
+        }
+        if(chieu > new Date($scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+7)){
+            $scope.diable = true;
+        }else if(chieu < new Date($scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+7) && chieu >$scope.startDate){
+            $scope.startMinDate = new Date(
+                chieu.getFullYear(), chieu.getMonth(), chieu.getDate()
+            );
+        }
+        else{
             $scope.startMinDate = new Date(
                 $scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+1
             );
