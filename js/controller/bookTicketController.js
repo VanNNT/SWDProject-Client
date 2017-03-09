@@ -80,7 +80,7 @@ SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope
                 $scope.amountOfTicket= $scope.amountOfTicket +1;
             }
 
-            $scope.totalPrice = $scope.amountOfTicket*50.000;
+            $scope.totalPrice = $scope.amountOfTicket*50;
         }
     };
     
