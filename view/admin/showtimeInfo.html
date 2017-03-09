@@ -19,7 +19,7 @@
                 <md-input-container class="input-wide mag-b-0" flex>
                     <label translate="infoMovie.date"></label>
                     <md-datepicker ng-model="startDate" required name="start" id="start" md-min-date="startMinDate"
-                                   md-max-date="startMaxDate" ng-disabled="diable" ng-change="checkEndDate()" flex></md-datepicker>
+                                   md-max-date="startMaxDate"  ng-change="checkEndDate()" flex></md-datepicker>
                     <div ng-messages="infoForm.start.$error">
                         <div ng-message="valid" class="pad-t-0" translate="message.valid"></div>
                         <div ng-message="required" class="pad-t-0" translate="message.required"></div>

@@ -49,6 +49,9 @@ SWDApp.controller('ShowtimeController', function($scope,$controller,$translate,B
         }
         if(chieu > new Date($scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+7)){
             $scope.diable = true;
+            $scope.startMinDate = new Date(
+                chieu.getFullYear(), chieu.getMonth(), chieu.getDate()
+            );
         }else if(chieu < new Date($scope.startDate.getFullYear(), $scope.startDate.getMonth(), $scope.startDate.getDate()+7) && chieu >$scope.startDate){
             $scope.startMinDate = new Date(
                 chieu.getFullYear(), chieu.getMonth(), chieu.getDate()

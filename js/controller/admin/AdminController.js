@@ -36,8 +36,13 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
         $rootScope.isShowInfo = true;
     };
     $scope.showTime = function (ev,item) {
-        $scope.itemTime = item;
-        $rootScope.isShow = true;
+        var d = new Date();
+        if(new Date(item.startDate) > new Date(d.getFullYear(), d.getMonth(), d.getDate()+7)){
+            return;
+        }else{
+            $scope.itemTime = item;
+            $rootScope.isShow = true;
+        }
     };
 
     $scope.updateMovie = function (data) {
@@ -103,5 +108,9 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
     }
     function saveFail() {
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
+    }
+
+    $scope.checkDisable = function () {
+        return true;
     }
 });
