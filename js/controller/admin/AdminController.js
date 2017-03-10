@@ -109,8 +109,4 @@ SWDApp.controller('AdminController', function($scope,$mdDialog,$translate,$mdMed
     function saveFail() {
         $scope.showAlert('', $translate.instant('message.error'), $translate.instant('message.connect'));
     }
-
-    $scope.checkDisable = function () {
-        return true;
-    }
 });
