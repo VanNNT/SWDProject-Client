@@ -34,7 +34,7 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
     }
 
     function initView(){
-        if(new Date($scope.itemMovie.startDate) < new Date()){
+        if($scope.itemMovie && new Date($scope.itemMovie.startDate) < new Date()){
             $scope.disabled = true;
         }
         $scope.startMinDate = new Date(
