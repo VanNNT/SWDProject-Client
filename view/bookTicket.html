@@ -46,6 +46,7 @@
                 <md-input-container class="mag-b-0">
                     <label translate="seat.amount"></label>
                     <input type="text"
+                           ng-readonly="true"
                            ng-model="amountOfTicket"
                            name="amount"/>
                 </md-input-container>
@@ -53,6 +54,7 @@
                     <md-input-container class="mag-b-0" flex="85">
                         <label translate="seat.price"></label>
                         <input type="text"
+                               ng-readonly="true"
                                ng-model="totalPrice"
                                name="price"/>
                     </md-input-container>
