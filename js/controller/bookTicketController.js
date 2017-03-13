@@ -85,13 +85,15 @@ SWDApp.controller('BookTicketController', function($scope,$controller,$rootScope
     };
     
     $scope.bookTicket = function () {
+        listSeatBook.sort(function(a, b){return a-b});
         _.any(listSeatBook,function (i) {
             _.any(listSeatBook,function (j) {
-                 if(i - j > 1 || j-i > 1){
+                 if(i - j >= 1 || j-i >= 1){
                      $scope.a = !$scope.a;
                      $scope.showAlert('','','Vui lòng không để trống ghế bên cạnh');
                      return true;
                  }
+                i=i+1;
             });
             return true;
         });
