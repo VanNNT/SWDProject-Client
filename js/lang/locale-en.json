@@ -107,7 +107,8 @@
     "deleteSchedule": "This schedule has been deleted",
     "updateMovie": "This movie has been updated.",
     "createMovie": "New movie has been created.",
-    "pwmatch": "Password and confirm password not match"
+    "pwmatch": "Password and confirm password not match",
+    "account": "Your account has registered successfully"
   },
   "errors":{
     "ER001": "Wrong username or password!!!",
@@ -117,7 +118,7 @@
     "ER005": "This schedule has been deleted. Please try again!",
     "ER006": "This movie has been deleted. Please try again!",
     "ER007": "This movie is existed. Please check the information you have entered!",
-    "ER008": "This user is not existed."
-
+    "ER008": "This user is not existed.",
+    "EM009": "This username is existed. Please try again!"
   }
 }

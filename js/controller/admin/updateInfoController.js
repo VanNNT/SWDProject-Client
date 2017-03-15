@@ -1,7 +1,7 @@
 /**
  * Created by Van on 07/02/2017.
  */
-SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$translate,BaseService) {
+SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,$sce,$rootScope,$translate,BaseService,$timeout) {
     $controller('BaseController', {$scope: $scope});
 
     initController();
@@ -15,9 +15,11 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
          if(!$scope.itemMovie){
              $scope.readonly = false;
              $scope.title = $translate.instant('admin.add');
+             $scope.button = $translate.instant('admin.add');
              $scope.startDate = new Date();
              $scope.endDate = new Date();
          }else{
+             $scope.button = $translate.instant('button.save');
              $scope.title = $scope.itemMovie.movieName;
              $scope.nameMovie = $scope.itemMovie.movieName;
              $scope.posterMovie = $scope.itemMovie.picture;
@@ -130,8 +132,10 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
                 'lenght': $scope.movieTime
             };
             $scope.updateMovie($scope.newData);
-            $rootScope.isShowInfo = false;
             $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.updateMovie'));
+            $timeout(function () {
+                $rootScope.isShowInfo = false;
+            }, 1000);
         }else{
             $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
         }
@@ -144,8 +148,10 @@ SWDApp.controller('UpdateInfoController', function($scope,$mdDialog,$controller,
     function createMovieSuccess(response) {
         if(!response.data.errorCode){
             $scope.createMovie(response);
-            $rootScope.isShowInfo = false;
             $scope.showAlert('', $translate.instant('message.success'), $translate.instant('message.createMovie'));
+            $timeout(function () {
+                $rootScope.isShowInfo = false;
+            }, 1000);
         }else{
             $scope.showAlert('', $translate.instant('message.error'),$translate.instant('errors.' + response.data.errorCode));
         }

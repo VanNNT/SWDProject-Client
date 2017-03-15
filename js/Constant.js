@@ -4,6 +4,7 @@ var SERVER_PORT = ':8080';
 var SERVER_PATH= '/cm';
 
 // API
+var URL_REGISTER=  HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/account/register";
 var URL_LOGIN = HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/account/login";
 var URL_MOVIE_SOON= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/comingSoon";
 var URL_MOVIE_NOW= HTTP + SERVER_IP + SERVER_PORT + SERVER_PATH + "/movie/moviePresenting";
