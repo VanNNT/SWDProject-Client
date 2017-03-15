@@ -28,9 +28,9 @@
                     <label translate="label.confirmPass"></label>
                     <input type="password"
                            ng-model="userRegister.confirm"
-                           name="password"
+                           name="confirm"
                            required confirm-pass="password"/>
-                    <div ng-messages="registerForm.password.$error">
+                    <div ng-messages="registerForm.confirm.$error">
                         <div ng-message="required" translate="message.required"></div>
                         <div ng-message="pwmatch" translate="message.pwmatch"></div>
                     </div>
@@ -38,10 +38,10 @@
                 <md-input-container class="mag-b-0">
                     <label translate="label.fullname"></label>
                     <input type="text"
-                           ng-model="userRegister.fullname"
+                           ng-model="userRegister.nameOfCustomer"
                            name="fullname"
                            required/>
-                    <div ng-messages="registerForm.fullname.$error">
+                    <div ng-messages="registerForm.nameOfCustomer.$error">
                         <div ng-message="required" translate="message.required"></div>
                     </div>
                 </md-input-container>
@@ -49,7 +49,7 @@
                     <md-input-container>
                         <label>Birthday</label>
                         <md-datepicker required ng-model="userRegister.inputBirthday" name="birthday" flex></md-datepicker>
-                        <div ng-messages="registerForm.birthday.$error">
+                        <div ng-messages="registerForm.inputBirthday.$error">
                             <div ng-message="required" class="pad-t-0" translate="message.required"></div>
                         </div>
                     </md-input-container>
