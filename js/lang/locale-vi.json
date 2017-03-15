@@ -107,7 +107,8 @@
     "deleteSchedule": "Giờ chiếu đã được xóa.",
     "updateMovie": "Bộ phim này đã được cập nhật.",
     "createMovie": "Một bộ phim mới đã được tạo.",
-    "pwmatch": "Password và password xác nhận không giống nhau"
+    "pwmatch": "Password và password xác nhận không giống nhau",
+    "account": "Tài khoản của bạn đã được đăng ký."
   },
   "errors":{
     "ER001": "Sai username hoặc password!!!",
@@ -117,6 +118,7 @@
     "ER005": "Lịch chiếu này đã bị xóa.",
     "ER006": "Bộ phim này đã bị xóa",
     "ER007": "Bộ phim này đã tồn tại. Vui lòng kiểm tra lại thông tin đã nhập.",
-    "ER008": "Account này không tồn tại."
+    "ER008": "Account này không tồn tại.",
+    "EM009": "Username đã tồn tại. Vui lòng thử lại."
   }
 }

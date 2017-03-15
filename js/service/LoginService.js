@@ -24,7 +24,7 @@ SWDApp.service('LoginService',  function ($http,$cookies,$rootScope) {
 
         // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
         var cookieExp = new Date();
-        cookieExp.setDate(cookieExp.getDate() + 7);
+        cookieExp.setDate(cookieExp.getDate() + 1);
         $cookies.putObject('globals', $rootScope.globals, { expires: cookieExp });
     }
 
