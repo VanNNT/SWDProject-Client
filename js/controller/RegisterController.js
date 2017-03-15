@@ -4,13 +4,20 @@
 SWDApp.controller('RegisterController', function ($scope, $controller, $translate, BaseService) {
     $controller('BaseController', {$scope: $scope});
 
-    initController();
-
+    
     function initController() {
         $scope.userRegister = {
             inputBirthday: new Date()
         };
     }
+    initController();
+    function initController(){
+        $scope,userRegister ={
+            inputBirthday: new Date
+        };
+        $scope.maxInputBirthday = new Date();
+    }     
+         
     function SignUpSuccess(response) {
         if(!response.data.errorCode){
            console.log("response")
@@ -20,8 +27,7 @@ SWDApp.controller('RegisterController', function ($scope, $controller, $translat
                  
                 window.location.href= "/index.html";
             }, 500);
-           
-            
+       
         }
         else {
             $scope.showAlert('', $translate.instant('message.error'), $translate.instant(response.data.message)); 

@@ -48,7 +48,7 @@
                 <div flex layout="row" layout-align="center center">
                     <md-input-container>
                         <label>Birthday</label>
-                        <md-datepicker required ng-model="userRegister.inputBirthday" name="birthday" flex></md-datepicker>
+                        <md-datepicker required ng-model="userRegister.inputBirthday" name="birthday" md-max-date="maxInputBirthday" flex></md-datepicker>
                         <div ng-messages="registerForm.inputBirthday.$error">
                             <div ng-message="required" class="pad-t-0" translate="message.required"></div>
                         </div>
