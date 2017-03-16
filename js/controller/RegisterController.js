@@ -4,18 +4,16 @@
 SWDApp.controller('RegisterController', function ($scope, $controller, $translate, BaseService) {
     $controller('BaseController', {$scope: $scope});
 
-    
-    function initController() {
-        $scope.userRegister = {
-            inputBirthday: new Date()
-        };
-    }
     initController();
     function initController(){
-        $scope,userRegister ={
-            inputBirthday: new Date
+        $scope.userRegister ={
+            inputBirthday: new Date()
         };
-        $scope.maxInputBirthday = new Date();
+       var now = new Date() 
+        $scope.maxInputBirthday = new Date(
+            now.getFullYear()-12, now.getMonth(), now.getDate()
+        );
+        
     }     
          
     function SignUpSuccess(response) {
