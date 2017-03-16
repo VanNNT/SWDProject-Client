@@ -108,7 +108,8 @@
     "updateMovie": "Bộ phim này đã được cập nhật.",
     "createMovie": "Một bộ phim mới đã được tạo.",
     "pwmatch": "Password và password xác nhận không giống nhau",
-    "account": "Tài khoản của bạn đã được đăng ký."
+    "account": "Tài khoản của bạn đã được đăng ký.",
+    "notOld": "Bạn chưa đủ tuổi để đặt vé"
   },
   "errors":{
     "ER001": "Sai username hoặc password!!!",

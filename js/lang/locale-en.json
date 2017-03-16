@@ -108,7 +108,8 @@
     "updateMovie": "This movie has been updated.",
     "createMovie": "New movie has been created.",
     "pwmatch": "Password and confirm password not match",
-    "account": "Your account has registered successfully"
+    "account": "Your account has registered successfully",
+    "notOld": "You are not old enough"
   },
   "errors":{
     "ER001": "Wrong username or password!!!",
