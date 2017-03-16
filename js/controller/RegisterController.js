@@ -10,6 +10,10 @@ SWDApp.controller('RegisterController', function ($scope, $controller, $translat
         $scope.userRegister = {
             inputBirthday: new Date()
         };
+        var now = new Date();
+        $scope.maxInputBirthday = new Date(
+            now.getFullYear()-12, now.getMonth(), now.getDate()
+        );
     }
     function SignUpSuccess(response) {
         if(!response.data.errorCode){

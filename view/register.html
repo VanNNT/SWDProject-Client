@@ -41,16 +41,18 @@
                            ng-model="userRegister.nameOfCustomer"
                            name="fullname"
                            required/>
-                    <div ng-messages="registerForm.nameOfCustomer.$error">
+                    <div ng-messages="registerForm.fullname.$error">
                         <div ng-message="required" translate="message.required"></div>
                     </div>
                 </md-input-container>
                 <div flex layout="row" layout-align="center center">
                     <md-input-container>
                         <label>Birthday</label>
-                        <md-datepicker required ng-model="userRegister.inputBirthday" name="birthday" flex></md-datepicker>
-                        <div ng-messages="registerForm.inputBirthday.$error">
+                        <md-datepicker required ng-model="userRegister.inputBirthday" name="birthday"
+                                       md-max-date="maxInputBirthday" flex></md-datepicker>
+                        <div ng-messages="registerForm.birthday.$error">
                             <div ng-message="required" class="pad-t-0" translate="message.required"></div>
+                            <div ng-message="maxdate" class="pad-t-0" style="margin-left: 35px;" translate="message.notOld"></div>
                         </div>
                     </md-input-container>
                 </div>
