@@ -30,7 +30,7 @@ SWDApp.controller('IndexController', function($scope, $mdDialog, $mdMedia,$locat
     };
 
     $scope.logoutConfirm = function(){
-        $scope.showConfirm('','Logout', "Are you sure to logout?",function () {
+        $scope.showConfirm('',$translate.instant('message.logout'), $translate.instant('message.logoutConfirm'),function () {
             LoginService.ClearCredentials();
             localStorage.removeItem(LOCAL_USER_INFO);
             if($location.path() == '/admin' || $location.path() == '/add-movie'
@@ -39,6 +39,6 @@ SWDApp.controller('IndexController', function($scope, $mdDialog, $mdMedia,$locat
             }
             delete $rootScope.logged;
             delete $rootScope.role;
-        },'')
+        },function(){})
     }
 });

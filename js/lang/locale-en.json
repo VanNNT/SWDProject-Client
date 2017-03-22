@@ -88,6 +88,8 @@
     "request": "Request",
     "error": "Error!!!",
     "success": "Success",
+    "logout": "Logout",
+    "logoutConfirm": "Are you sure to logout?",
     "required": "This is required.",
     "number": "Phone is only number.",
     "valid":"The entered value is not a date!",
@@ -120,6 +122,7 @@
     "ER006": "This movie has been deleted. Please try again!",
     "ER007": "This movie is existed. Please check the information you have entered!",
     "ER008": "This user is not existed.",
-    "EM009": "This username is existed. Please try again!"
+    "ER009": "This username is existed. Please try again!",
+    "ER0010": "In this time, having movie is watching."
   }
 }

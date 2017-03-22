@@ -88,6 +88,8 @@
     "request": "Yêu cầu",
     "error": "Lỗi!!!",
     "success": "Thành công",
+    "logout": "Đăng xuất",
+    "logoutConfirm": "Bạn chắc chắn muốn thoát?",
     "required": "Trường bắt buộc.",
     "number": "Điện thoại chỉ được là số.",
     "valid":"Giá trị không phải ngày.",
@@ -120,6 +122,7 @@
     "ER006": "Bộ phim này đã bị xóa",
     "ER007": "Bộ phim này đã tồn tại. Vui lòng kiểm tra lại thông tin đã nhập.",
     "ER008": "Account này không tồn tại.",
-    "EM009": "Username đã tồn tại. Vui lòng thử lại."
+    "ER009": "Username đã tồn tại. Vui lòng thử lại.",
+    "ER0010": "Tại thời gian này, đã có phim đang chiếu."
   }
 }

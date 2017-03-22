@@ -25,7 +25,7 @@ SWDApp.controller('RegisterController', function ($scope, $controller, $translat
             BaseService.postAPI(URL_LOGIN, data, LoginSuccessful, SignUpFail);
         }
         else {
-            $scope.showAlert('', $translate.instant('message.error'), $translate.instant(response.data.message)); 
+            $scope.showAlert('', $translate.instant('message.error'), $translate.instant('errors.' + response.data.errorCode));
         }
             
     }
